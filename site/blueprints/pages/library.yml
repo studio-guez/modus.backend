@@ -19,6 +19,7 @@ columns:
           headerImage:
             required: true
           body: false
+          preview: false
   - width: 1/1
     sections:
       pages:
