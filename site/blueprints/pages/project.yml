@@ -44,32 +44,7 @@ sections:
           imaginary: La fabrique des imaginaires
           planting: La plantation
       tags:
-        label: tag
-        type: multiselect
-        width: 1/2
-        options:
-          podcast: "podcast"
-          video: "vidéo"
-          photographie: "photographie"
-          presentation: "présentation"
-          enquete: "enquête"
-          rapport: "rapport"
-          mobilite_pietonne: "mobilité piétonne"
-          velo: "vélo"
-          micro_logistique: "micro-logistique"
-          logistique_urbaine: "logistique urbaine"
-          amenagement_du_territoire: "aménagement du territoire"
-          formation: "formation"
-          train: "train"
-          recherche: "recherche"
-          plan_de_mobilite: "plan de mobilité"
-          covoiturage: "covoiturage"
-          evenement: "événement"
-          experimentation: "expérimentation"
-          transports_publics: "transports publics"
-          enfance: "enfance"
-          sante: "santé"
-          seniors: "seniors"
+        extends: fields/tags
 
       dateStart:
         required: true
