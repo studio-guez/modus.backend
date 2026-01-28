@@ -17,7 +17,7 @@ $children = $page->children()->listed()->sort()->sortBy('dateStart', 'desc')->ma
   $content = $item->content();
 
   return [
-    'headerImage' => [],
+    'headerImage' => array_values( Utils::getImageArrayDataInPage( $content->headerimage()->toFiles() ) ),
     'slug'        => $item->slug(),
     'content'     => $content->toArray(),
   ];
