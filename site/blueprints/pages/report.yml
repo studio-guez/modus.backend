@@ -1,19 +1,13 @@
 title: Report
-
 status:
   listed: true
   draft: true
-
 options:
   changeSlug: true
   delete: true
   changeTitle: true
   changeStatus: true
   preview: "https://modus-ge.ch/report/{{ page.slug }}"
-
-
-
-
 sections:
   fields:
     type: fields
@@ -30,6 +24,23 @@ sections:
               - body
               - mdreportimage
               - list
+      bibliography:
+        type: structure
+        label: Bibliographie
+        fields:
+          id:
+            type: unique-shortcode
+            label: Shortcode
+            prefix: ref
+            width: 1
+          text:
+            type: textarea
+            label: Référence
+            width: 1
+          url:
+            type: url
+            label: URL
+            width: 1
       device:
         label: Dispositif
         type: select
@@ -67,7 +78,6 @@ sections:
           enfance: "enfance"
           sante: "santé"
           seniors: "seniors"
-
       dateStart:
         required: true
         width: 1/2

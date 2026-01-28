@@ -34,5 +34,6 @@ $json['options'] = [
 
 $json['body'] = $body;
 $json['title'] = $page->title();
+$json['bibliography'] = $page->bibliography()->toStructure()->toArray();
 
 echo json_encode($json);
