@@ -26,6 +26,7 @@ $json['options'] = [
   'showInNav'             => $page->showMenu()->toBool(),
   'showNewsletter'        => $page->showNewsletter()->toBool(),
   'headerTitle'           => $page->headerTitle()->value(),
+  'preview'               => $page->preview()->value(),
   'headerImage'           => $page->headerImage()->toFile() ? Utils::getJsonEncodeImageData($page->headerImage()->toFile()) : null,
   'category'              => $page->device()->value(),
   'dateStart'             => $page->dateStart()->value(),
