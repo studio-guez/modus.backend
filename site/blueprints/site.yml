@@ -36,3 +36,4 @@ columns:
           - default-admin
           - projects
           - outils-modus
+          - library

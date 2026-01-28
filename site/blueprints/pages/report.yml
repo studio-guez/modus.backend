@@ -1,0 +1,76 @@
+title: Report
+
+status:
+  listed: true
+  draft: true
+
+options:
+  changeSlug: true
+  delete: true
+  changeTitle: true
+  changeStatus: true
+  preview: "https://modus-ge.ch/report/{{ page.slug }}"
+
+
+
+
+sections:
+  fields:
+    type: fields
+    fields:
+      content:
+        extends: fields/body
+        fields:
+          headerImage:
+            required: true
+          showInNav: false
+          body:
+            fieldsets:
+              - mdheading
+              - body
+              - mdreportimage
+              - list
+      device:
+        label: Dispositif
+        type: select
+        width: 1/2
+        options:
+          platform: La plateforme
+          laboratory: Le laboratoire
+          library: La Bibliothèque
+          imaginary: La fabrique des imaginaires
+          planting: La plantation
+      tags:
+        label: tag
+        type: multiselect
+        width: 1/2
+        options:
+          podcast: "podcast"
+          video: "vidéo"
+          photographie: "photographie"
+          presentation: "présentation"
+          enquete: "enquête"
+          rapport: "rapport"
+          mobilite_pietonne: "mobilité piétonne"
+          velo: "vélo"
+          micro_logistique: "micro-logistique"
+          logistique_urbaine: "logistique urbaine"
+          amenagement_du_territoire: "aménagement du territoire"
+          formation: "formation"
+          train: "train"
+          recherche: "recherche"
+          plan_de_mobilite: "plan de mobilité"
+          covoiturage: "covoiturage"
+          evenement: "événement"
+          experimentation: "expérimentation"
+          transports_publics: "transports publics"
+          enfance: "enfance"
+          sante: "santé"
+          seniors: "seniors"
+
+      dateStart:
+        required: true
+        width: 1/2
+        label: Date
+        type: date
+        display: YYYY-MM
