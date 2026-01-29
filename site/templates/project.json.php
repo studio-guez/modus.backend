@@ -34,6 +34,7 @@ $json['options'] = [
   'dateEnd'               => $page->dateEnd()->value(),
   'tags'                  => $page->tags()->value(),
   'subpages'              => array_values($page->children()->toArray()),
+  'isModusProject'          => $page->projectType()->value() === 'modus',
 ];
 
 $json['body'] = $body;

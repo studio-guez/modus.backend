@@ -17,3 +17,4 @@ columns:
         extends: fields/body
         fields:
           preview: false
+          projectType: false

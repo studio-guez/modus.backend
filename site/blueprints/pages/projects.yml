@@ -20,6 +20,7 @@ columns:
             required: true
           body: false
           preview: false
+          projectType: false
   - width: 1/1
     sections:
       pages:

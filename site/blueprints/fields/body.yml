@@ -27,6 +27,15 @@ fields:
       - "non"
       - "oui"
     default: true
+  projectType:
+    width: 1/4
+    label: Type de projet
+    type: select
+    options:
+      modus: Projet modus
+      external: Soutenu
+    default: modus
+    required: true
   headerTitle:
     label: Titre dans le header
     type: text

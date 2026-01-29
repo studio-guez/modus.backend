@@ -17,6 +17,7 @@ columns:
         extends: fields/body
         fields:
           preview: false
+          projectType: false
       info:
         type: info
         label: info

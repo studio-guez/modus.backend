@@ -24,6 +24,7 @@ sections:
               - body
               - mdreportimage
               - list
+          projectType: false
       bibliography:
         type: structure
         label: Bibliographie
