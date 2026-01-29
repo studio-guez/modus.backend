@@ -50,3 +50,4 @@ sections:
         label: Date
         type: date
         display: YYYY-MM
+        default: today
