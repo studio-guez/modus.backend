@@ -26,7 +26,6 @@ fields:
     options:
       default: Par défaut
       circle: Circle
-      device: Dispositifs
   width:
     width: 1/4
     label: Width
