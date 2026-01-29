@@ -42,16 +42,6 @@ sections:
             type: url
             label: URL
             width: 1
-      device:
-        label: Dispositif
-        type: select
-        width: 1/2
-        options:
-          platform: La plateforme
-          laboratory: Le laboratoire
-          library: La Bibliothèque
-          imaginary: La fabrique des imaginaires
-          planting: La plantation
       tags:
         extends: fields/tags
       dateStart:

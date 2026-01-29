@@ -16,16 +16,6 @@ columns:
 
   - width: 2/3
     sections:
-      tagList:
-        width: 1/2
-        label: "Tags / Catégories"
-        type: pages
-        status: listed
-        image: false
-        templates: seasons
-        layout: cards
-        size: medium
-
       tags:
         label: "Tags"
         type: pages
