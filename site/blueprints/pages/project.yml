@@ -43,10 +43,6 @@ sections:
         type: date
         display: YYYY-MM
 
-      gap:
-        type: gap
-        width: 1/2
-
       isProjectWithDuration:
         required: false
         type: toggle
