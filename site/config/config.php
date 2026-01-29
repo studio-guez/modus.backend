@@ -1,5 +1,20 @@
 <?php
 
+use Kirby\Toolkit\V;
+
+// Custom validators for conditional URL validation
+V::$validators['spotifyUrl'] = function ($value, $mediaType) {
+    if ($mediaType !== 'podcast') return true;
+    if (empty($value)) return true; // Let required handle empty values
+    return str_starts_with($value, 'https://open.spotify.com/episode/');
+};
+
+V::$validators['youtubeUrl'] = function ($value, $mediaType) {
+    if ($mediaType !== 'video') return true;
+    if (empty($value)) return true;
+    return str_starts_with($value, 'https://youtube.com/watch?v=');
+};
+
 /**
  * The config file is optional. It accepts a return array with config options
  * Note: Never include more than one return statement, all options go within this single return array
@@ -12,6 +27,46 @@ return [
     'hooks' => [
         'page.render:before' => function ($event) {
             header("Access-Control-Allow-Origin: *");
+        },
+        'page.update:before' => function ($page, $values, $strings) {
+            // Validate media URLs conditionally (only when page is listed)
+            if ($page->status() === 'listed' && $page->intendedTemplate()->name() === 'media') {
+                $mediaType = $values['mediaType'] ?? $page->mediaType()->value();
+
+                if ($mediaType === 'podcast') {
+                    $spotifyUrl = $values['spotifyUrl'] ?? $page->spotifyUrl()->value();
+                    if (!empty($spotifyUrl) && !str_starts_with($spotifyUrl, 'https://open.spotify.com/episode/')) {
+                        throw new Exception('Le lien Spotify doit commencer par https://open.spotify.com/episode/');
+                    }
+                }
+
+                if ($mediaType === 'video') {
+                    $youtubeUrl = $values['youtubeUrl'] ?? $page->youtubeUrl()->value();
+                    if (!empty($youtubeUrl) && !preg_match('/^https:\/\/(www\.)?youtube\.com\/(watch\?v=|shorts\/)/', $youtubeUrl)) {
+                        throw new Exception('Le lien YouTube doit commencer par https://youtube.com/watch?v=');
+                    }
+                }
+            }
+        },
+        'page.changeStatus:before' => function ($page, $status) {
+            // Validate before publishing
+            if ($status === 'listed' && $page->intendedTemplate()->name() === 'media') {
+                $mediaType = $page->mediaType()->value();
+
+                if ($mediaType === 'podcast') {
+                    $spotifyUrl = $page->spotifyUrl()->value();
+                    if (!empty($spotifyUrl) && !str_starts_with($spotifyUrl, 'https://open.spotify.com/episode/')) {
+                        throw new Exception('Le lien Spotify doit commencer par https://open.spotify.com/episode/');
+                    }
+                }
+
+                if ($mediaType === 'video') {
+                    $youtubeUrl = $page->youtubeUrl()->value();
+                    if (!empty($youtubeUrl) && !preg_match('/^https:\/\/(www\.)?youtube\.com\/(watch\?v=|shorts\/)/', $youtubeUrl)) {
+                        throw new Exception('Le lien YouTube doit commencer par https://youtube.com/watch?v=');
+                    }
+                }
+            }
         },
         'page.delete:before' => function ($page) {
             // When a tag is deleted, remove its reference from all pages

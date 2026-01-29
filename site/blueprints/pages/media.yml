@@ -1,0 +1,63 @@
+title: Media
+
+status:
+  listed: true
+  draft: true
+
+options:
+  changeSlug: true
+  delete: true
+  changeTitle: true
+  changeStatus: true
+  preview: "https://modus-ge.ch/media/{{ page.slug }}"
+
+
+
+
+sections:
+  fields:
+    type: fields
+    fields:
+      content:
+        extends: fields/body
+        fields:
+          headerImage:
+            required: true
+          showInNav: false
+          body: false
+          projectType: false
+      tags:
+        extends: fields/tags
+
+      dateStart:
+        required: true
+        width: 1/2
+        label: Date
+        type: date
+        display: YYYY-MM
+        default: today
+
+      mediaType:
+        label: Type de média
+        type: radio
+        required: true
+        default: video
+        options:
+          podcast: Podcast
+          video: Vidéo
+
+      spotifyUrl:
+        label: Lien du podcast Spotify
+        type: url
+        placeholder: "https://open.spotify.com/episode/…"
+        required: true
+        when:
+          mediaType: podcast
+
+      youtubeUrl:
+        label: Lien de la vidéo YouTube
+        type: url
+        placeholder: "https://youtube.com/?v=…"
+        required: true
+        when:
+          mediaType: video
