@@ -26,6 +26,15 @@ columns:
         layout: cards
         size: medium
 
+      tags:
+        label: "Tags"
+        type: pages
+        status: listed
+        image: false
+        templates: tags
+        layout: cards
+        size: medium
+
       pages:
         image: false
         type: pages

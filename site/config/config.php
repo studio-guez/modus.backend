@@ -12,18 +12,45 @@ return [
     'hooks' => [
         'page.render:before' => function ($event) {
             header("Access-Control-Allow-Origin: *");
+        },
+        'page.delete:before' => function ($page) {
+            // When a tag is deleted, remove its reference from all pages
+            if ($page->intendedTemplate()->name() === 'tag') {
+                $tagUuid = 'page://' . $page->uuid()->id();
+
+                // Find all pages that have a tags field
+                $allPages = site()->index();
+                foreach ($allPages as $p) {
+                    $tagsField = $p->tags();
+                    if ($tagsField->isNotEmpty()) {
+                        $currentTags = $tagsField->value();
+                        // Check if this tag is referenced
+                        if (strpos($currentTags, $tagUuid) !== false) {
+                            // Remove the tag UUID from the list
+                            $tagsArray = array_map('trim', explode(',', $currentTags));
+                            $tagsArray = array_filter($tagsArray, function ($t) use ($tagUuid) {
+                                return trim($t) !== $tagUuid;
+                            });
+                            $newTags = implode(', ', $tagsArray);
+
+                            // Update the page
+                            $p->update(['tags' => $newTags]);
+                        }
+                    }
+                }
+            }
         }
     ],
     'routes' => [
         [
             'pattern' => '/',
-            'action'  => function() {
+            'action'  => function () {
                 return go('/panel');
             }
         ],
         [
             'pattern' => '/links-tree/formulaire_inscription_202502',
-            'action'  => function() {
+            'action'  => function () {
                 return go('https://modus-ge.ch/forms/declic-mobilite');
             }
         ],
