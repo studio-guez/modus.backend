@@ -19,14 +19,6 @@ fields:
       - "non"
       - "oui"
     default: true
-  showNewsletter:
-    width: 1/4
-    label: Afficher la newsletter
-    type: toggle
-    text:
-      - "non"
-      - "oui"
-    default: true
   projectType:
     width: 1/4
     label: Type de projet

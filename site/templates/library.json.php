@@ -12,12 +12,12 @@ use Kirby\Cms\Site;
 
 $json = [];
 
-$children = $page->children()->listed()->sort()->sortBy('dateStart', 'desc')->map(function ($item){
+$children = $page->children()->listed()->sort()->sortBy('dateStart', 'desc')->map(function ($item) {
 
   $content = $item->content();
 
   return [
-    'headerImage' => array_values( Utils::getImageArrayDataInPage( $content->headerimage()->toFiles() ) ),
+    'headerImage' => array_values(Utils::getImageArrayDataInPage($content->headerimage()->toFiles())),
     'slug'        => $item->slug(),
     'content'     => $content->toArray(),
   ];
@@ -25,9 +25,8 @@ $children = $page->children()->listed()->sort()->sortBy('dateStart', 'desc')->ma
 
 $json['options'] = [
   'showInNav'       => $page->showMenu()->toBool(),
-  'showNewsletter'  => $page->showNewsletter()->toBool(),
   'headerTitle'     => $page->headerTitle()->value(),
-  'headerImage'     => $page->headerImage()->toFile() ? Utils::getJsonEncodeImageData( $page->headerImage()->toFile() ) : null,
+  'headerImage'     => $page->headerImage()->toFile() ? Utils::getJsonEncodeImageData($page->headerImage()->toFile()) : null,
 ];
 
 $json['children'] = $children;
