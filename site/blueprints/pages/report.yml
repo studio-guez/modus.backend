@@ -24,6 +24,11 @@ sections:
               - body
               - mdreportimage
               - list
+      summary:
+        label: Résumé du projet
+        type: textarea
+        buttons: false
+        required: true
       bibliography:
         type: structure
         label: Bibliographie
