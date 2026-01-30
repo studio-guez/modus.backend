@@ -1,4 +1,4 @@
-panel.plugin('modus/unique-shortcode', {
+panel.plugin('oplus/unique-shortcode', {
   fields: {
     'unique-shortcode': {
       props: {
