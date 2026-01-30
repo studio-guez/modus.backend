@@ -20,6 +20,7 @@ $children = $page->children()->listed()->sort()->sortBy('dateStart')->map(functi
     'headerImage' => array_values(Utils::getImageArrayDataInPage($content->headerimage()->toFiles())),
     'slug'        => $item->slug(),
     'content'     => $content->toArray(),
+    'modified'    => $item->modified('c'),
   ];
 })->data();
 
