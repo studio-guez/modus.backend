@@ -11,9 +11,6 @@ options:
   changeStatus: true
   preview: "https://modus-ge.ch/project/{{ page.slug }}"
 
-
-
-
 sections:
   fields:
     type: fields
