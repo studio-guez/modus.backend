@@ -1,0 +1,35 @@
+title: Toolkit
+
+status:
+  listed: true
+
+options:
+  changeSlug: false
+  delete: false
+  changeTitle: true
+  changeStatus: false
+  preview: "https://modus-ge.ch/{{ page.slug }}"
+
+columns:
+  - width: 1/1
+    fields:
+      content:
+        extends: fields/body
+        fields:
+          headerImage:
+            required: true
+          body: false
+          preview: false
+  - width: 1/1
+    sections:
+      pages:
+        layout: cards
+        cover: true
+        sortBy: dateStart desc
+        sortable: false
+        type: pages
+        create: tool
+        search: true
+        limit: 500
+        templates:
+          - tool

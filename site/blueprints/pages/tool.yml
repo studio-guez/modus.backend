@@ -1,0 +1,70 @@
+title: Tool
+
+status:
+  listed: true
+  draft: true
+
+options:
+  changeSlug: true
+  delete: true
+  changeTitle: true
+  changeStatus: true
+  preview: "https://modus-ge.ch/tool/{{ page.slug }}"
+
+
+
+
+sections:
+  fields:
+    type: fields
+    fields:
+      content:
+        extends: fields/body
+        fields:
+          headerImage:
+            required: true
+          showInNav: false
+          body: false
+
+      isExternalLink:
+        width: 1/4
+        label: Lien externe
+        type: toggle
+        text:
+          - "non"
+          - "oui"
+        default: false
+
+      externalUrl:
+        width: 3/4
+        label: Lien externe URL
+        type: url
+        placeholder: "https://…"
+        required: true
+        when:
+          isExternalLink: true
+
+      body:
+        label: Contenu de la page
+        type: blocks
+        fieldsets:
+          - body
+          - internalLink
+          - listPoints
+          - mdheading
+          - mdimage
+          - profiles
+          - simpleText
+          - video
+          - actuality
+          - dropdown
+        when:
+          isExternalLink: false
+
+      dateStart:
+        required: true
+        width: 1/2
+        label: Date
+        type: date
+        display: YYYY-MM
+        default: today
