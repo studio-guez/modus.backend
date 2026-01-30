@@ -25,7 +25,6 @@ sections:
             required: true
           showInNav: false
           body: false
-          projectType: false
       tags:
         extends: fields/tags
 

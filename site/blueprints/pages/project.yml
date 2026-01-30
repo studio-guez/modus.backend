@@ -33,6 +33,17 @@ sections:
               - video
               - spotify
               - linksSection
+
+      projectType:
+        width: 1/2
+        label: Type de projet
+        type: select
+        options:
+          modus: Projet modus
+          external: Soutenu
+        default: modus
+        required: true
+
       tags:
         extends: fields/tags
 
