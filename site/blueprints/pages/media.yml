@@ -37,8 +37,10 @@ sections:
         default: today
 
       mediaType:
+        width: 1/2
         label: Type de média
         type: radio
+        columns: 2
         required: true
         default: video
         options:
