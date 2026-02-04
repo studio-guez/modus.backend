@@ -329,6 +329,6 @@ if (!empty($bibliography)) {
 }
 
 // Generate filename and output
-$filename = $page->slug() . '-rapport.pdf';
+$filename = $page->slug() . '.pdf';
 $mpdf->Output($filename, \Mpdf\Output\Destination::DOWNLOAD);
 exit;
