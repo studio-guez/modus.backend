@@ -21,9 +21,8 @@ sections:
           body:
             fieldsets:
               - mdheading
-              - body
+              - reportbody
               - mdreportimage
-              - list
       summary:
         label: Résumé du projet
         type: textarea
