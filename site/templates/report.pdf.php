@@ -261,10 +261,9 @@ $mpdf->SetTitle($title);
 $mpdf->SetAuthor('Modus');
 $mpdf->SetCreator('Modus - modus-ge.ch');
 $mpdf->defaultfooterline = 0;
-$mpdf->setFooter('<div class="pdf-footer"><span class="page-number">{PAGENO}</span></div>');
 $mpdf->WriteHTML($css, \Mpdf\HTMLParserMode::HEADER_CSS);
 
-// === COVER PAGE ===
+// === COVER PAGE (no footer) ===
 $html = '<div class="cover-page">';
 $html .= '<div class="cover-overtitle"><span class="cover-author">Modus</span>';
 if ($dateFormatted) {
@@ -284,6 +283,8 @@ $mpdf->WriteHTML($html, \Mpdf\HTMLParserMode::HTML_BODY);
 
 // === TABLE OF CONTENTS with page numbers ===
 $mpdf->AddPage();
+// Set footer starting from page 2
+$mpdf->setFooter('<div class="pdf-footer"><span class="page-number">{PAGENO}</span></div>');
 $tocHtml = '<div class="toc-page-container">';
 $tocHtml .= '<div class="toc-title">Sommaire</div>';
 $tocHtml .= '<table class="toc-table" cellpadding="0" cellspacing="0">';
