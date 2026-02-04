@@ -60,13 +60,31 @@ $body = $page->body()->toBlocks()->map(function ($item) use ($refMap) {
   ];
 })->data();
 
+// Resolve tag UUIDs to objects with name and slug
+// Tags are stored as "page://UUID, page://UUID" format
+$tagUuids = array_filter(array_map('trim', explode(',', $page->tags()->value())));
+$tagsPage = $site->find('tags');
+$resolvedTags = [];
+if ($tagsPage) {
+  foreach ($tagUuids as $tagUuid) {
+    // tagUuid already includes "page://" prefix
+    $tagPage = $tagsPage->children()->listed()->findBy('uuid', $tagUuid);
+    if ($tagPage) {
+      $resolvedTags[] = [
+        'name' => $tagPage->title()->value(),
+        'slug' => $tagPage->slug(),
+      ];
+    }
+  }
+}
+
 $json['options'] = [
   'showInNav'             => $page->showMenu()->toBool(),
   'headerTitle'           => $page->headerTitle()->value(),
   'preview'               => $page->preview()->value(),
   'headerImage'           => $page->headerImage()->toFile() ? Utils::getJsonEncodeImageData($page->headerImage()->toFile()) : null,
   'dateStart'             => $page->dateStart()->value(),
-  'tags'                  => $page->tags()->value(),
+  'tags'                  => $resolvedTags,
 ];
 
 $json['body'] = $body;
