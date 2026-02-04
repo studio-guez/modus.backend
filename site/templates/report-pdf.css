@@ -28,7 +28,7 @@ body {
 }
 
 .cover-author {
-  color: #01983B;
+  color: #01983b;
 }
 
 .cover-image {
@@ -39,21 +39,24 @@ body {
 .cover-title {
   font-family: "wallop-semibold", sans-serif;
   font-size: 34pt;
-  color: #01983B;
+  color: #01983b;
   text-align: left;
+}
+
+.cover-image {
+  margin: 30px 0 0 0;
 }
 
 .cover-image img {
   max-width: 100%;
   max-height: 280px;
   object-fit: cover;
-  border-radius: 12px;
 }
 
 /* Table of Contents */
 .toc-title {
   font-family: "wallop-bold", sans-serif;
-  color: #00695B;
+  color: #00695b;
   font-size: 22pt;
   margin: 0 0 20px 0;
 }
@@ -89,16 +92,18 @@ body {
 /* Section headings */
 .section-heading {
   font-family: "wallop-bold", sans-serif;
-  color: #00695B;
+  color: #00695b;
   font-size: 22pt;
   margin: 0 0 20px 0;
   page-break-after: avoid;
+  page-break-inside: avoid;
 }
 
 .section-subheading {
   font-family: "wallop-bold", sans-serif;
   margin: 0 0 20px 0;
   page-break-after: avoid;
+  page-break-inside: avoid;
 }
 
 .body-text {
@@ -109,7 +114,7 @@ body {
   margin: 0 0 15px 0;
 }
 
-.body-text mark{
+.body-text mark {
   padding: 0;
   background-color: transparent;
   color: #01983b;
@@ -160,12 +165,6 @@ body {
 .bibliography-url {
   color: #01983b;
   text-decoration: none;
-  word-break: break-all;
-}
-
-/* Utility classes */
-.page-break {
-  page-break-before: always;
 }
 
 /* Footer */

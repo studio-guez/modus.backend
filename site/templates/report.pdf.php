@@ -107,9 +107,9 @@ function renderBlockToHtml($block): string
       $text = $content->text()->value();
 
       if ($level === 'h2') {
-        $html = '<h2 class="section-heading">' . $text . '</h2>';
+        $html = '<div class="section-heading">' . $text . '</div>';
       } else {
-        $html = '<h3 class="section-subheading">' . $text . '</h3>';
+        $html = '<div class="section-subheading">' . $text . '</div>';
       }
       break;
 
@@ -169,18 +169,21 @@ function processBlocks(Mpdf $mpdf, iterable $blocks, bool $collectToc = false, i
         $level = $content->level()->value() ?: 'h2';
         if ($level === 'h2') {
           $text = $content->text()->value();
+          // Write the heading first, then record page number (after mPDF decides placement)
+          $mpdf->WriteHTML('<div class="section-heading">' . $text . '</div>', \Mpdf\HTMLParserMode::HTML_BODY);
           $tocEntries[] = [
             'title' => strip_tags($text),
             'page' => $mpdf->page + $pageOffset,
           ];
+          continue; // Skip normal rendering
         }
       } elseif ($type === 'reportbody') {
         $text = $content->text()->value();
         // Extract h2 for TOC before rendering
-        preg_match_all('/<h2[^>]*>(.*?)<\/h2>/si', $text, $matches, PREG_OFFSET_CAPTURE);
+        preg_match_all('/<div[^>]*>(.*?)<\/h2>/si', $text, $matches, PREG_OFFSET_CAPTURE);
 
         if (!empty($matches[0])) {
-          // Process text in segments, capturing page number before each h2
+          // Process text in segments, capturing page number after each h2 is written
           $lastPos = 0;
           foreach ($matches[0] as $idx => $match) {
             $h2Pos = $match[1];
@@ -193,14 +196,12 @@ function processBlocks(Mpdf $mpdf, iterable $blocks, bool $collectToc = false, i
               $mpdf->WriteHTML('<div class="body-text">' . $beforeH2 . '</div>', \Mpdf\HTMLParserMode::HTML_BODY);
             }
 
-            // Record page number for this h2
+            // Write the h2 first, then record page number (after mPDF decides placement)
+            $mpdf->WriteHTML('<div class="section-heading">' . $matches[1][$idx][0] . '</div>', \Mpdf\HTMLParserMode::HTML_BODY);
             $tocEntries[] = [
               'title' => $h2Text,
               'page' => $mpdf->page + $pageOffset,
             ];
-
-            // Write the h2
-            $mpdf->WriteHTML('<h2 class="section-heading">' . $matches[1][$idx][0] . '</h2>', \Mpdf\HTMLParserMode::HTML_BODY);
 
             $lastPos = $h2Pos + strlen($h2Tag);
           }
@@ -270,7 +271,7 @@ if ($dateFormatted) {
   $html .= ' - <span class="cover-date">' . $dateFormatted . '</span>';
 }
 $html .= '</div>';
-$html .= '<h1 class="cover-title">' . htmlspecialchars($title) . '</h1>';
+$html .= '<div class="cover-title">' . htmlspecialchars($title) . '</div>';
 if ($headerImage) {
   $imagePath = $headerImage->root();
   $html .= '<div class="cover-image">';
@@ -284,7 +285,7 @@ $mpdf->WriteHTML($html, \Mpdf\HTMLParserMode::HTML_BODY);
 // === TABLE OF CONTENTS with page numbers ===
 $mpdf->AddPage();
 $tocHtml = '<div class="toc-page-container">';
-$tocHtml .= '<h2 class="toc-title">Sommaire</h2>';
+$tocHtml .= '<div class="toc-title">Sommaire</div>';
 $tocHtml .= '<table class="toc-table" cellpadding="0" cellspacing="0">';
 
 foreach ($tocEntries as $entry) {
@@ -307,7 +308,7 @@ processBlocks($mpdf, $bodyBlocks);
 // === BIBLIOGRAPHY ===
 if (!empty($bibliography)) {
   $mpdf->AddPage();
-  $bibHtml = '<h2 class="section-heading">Bibliographie</h2>';
+  $bibHtml = '<div class="section-heading">Bibliographie</div>';
   $bibHtml .= '<div class="bibliography">';
 
   $index = 1;
@@ -315,10 +316,13 @@ if (!empty($bibliography)) {
     $bibHtml .= '<p class="bibliography-item">';
     $bibHtml .= '<span class="bibliography-number">[' . $index . ']</span>';
     if (!empty($ref['text'])) {
-      $bibHtml .= ' <span class="bibliography-text">' . htmlspecialchars($ref['text']) . '</span>';
+      $bibHtml .= ' ' . htmlspecialchars($ref['text']) . '';
     }
     if (!empty($ref['url'])) {
-      $bibHtml .= ' <a href="' . htmlspecialchars($ref['url']) . '" class="bibliography-url">' . htmlspecialchars($ref['url']) . '</a>';
+      // Insert <wbr> (word break opportunity) after each character to allow mPDF to break anywhere
+      $urlDisplay = htmlspecialchars($ref['url']);
+      $urlBreakable = preg_replace('/(.)/u', '$1<wbr>', $urlDisplay);
+      $bibHtml .= ' <a href="' . htmlspecialchars($ref['url']) . '" class="bibliography-url">' . $urlBreakable . '</a>';
     }
     $bibHtml .= '</p>';
     $index++;
