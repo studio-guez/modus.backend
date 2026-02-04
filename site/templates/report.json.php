@@ -12,9 +12,47 @@ use Kirby\Cms\Site;
 
 $json = [];
 
-$body = $page->body()->toBlocks()->map(function ($item) {
+// Build bibliography reference map (shortcode id => number) and add index to each item
+$bibliographyRaw = $page->bibliography()->toStructure()->toArray();
+$refMap = [];
+$bibliography = [];
+$index = 1;
+foreach ($bibliographyRaw as $ref) {
+  if (!empty($ref['id'])) {
+    // Normalize the id by removing [ref:...] wrapper if present
+    $id = $ref['id'];
+    if (preg_match('/^\[ref:([a-zA-Z0-9]+)\]$/', $id, $matches)) {
+      $id = $matches[1];
+    }
+    $refMap[$id] = $index;
+  }
+  $ref['index'] = $index;
+  $bibliography[] = $ref;
+  $index++;
+}
+
+/**
+ * Replace bibliography shortcodes [ref:xxx] with <b>[number]</b>
+ */
+function replaceBibliographyRefs(string $text, array $refMap): string
+{
+  return preg_replace_callback('/\[ref:([a-zA-Z0-9]+)\]/', function ($matches) use ($refMap) {
+    $id = $matches[1];
+    if (isset($refMap[$id])) {
+      return '<b>[' . $refMap[$id] . ']</b>';
+    }
+    return $matches[0]; // Keep original if not found
+  }, $text);
+}
+
+$body = $page->body()->toBlocks()->map(function ($item) use ($refMap) {
 
   $content = $item->toArray();
+
+  // Replace bibliography shortcodes in text content
+  if (isset($content['content']['text'])) {
+    $content['content']['text'] = replaceBibliographyRefs($content['content']['text'], $refMap);
+  }
 
   return [
     'image'     => array_values(Utils::getImageArrayDataInPage($item->image()->toFiles())),
@@ -34,7 +72,7 @@ $json['options'] = [
 $json['body'] = $body;
 $json['title'] = $page->title();
 $json['summary'] = $page->summary()->value();
-$json['bibliography'] = $page->bibliography()->toStructure()->toArray();
+$json['bibliography'] = $bibliography;
 
 // Get related reports by shared tags
 $currentTags = array_filter(array_map('trim', explode(',', $page->tags()->value())));
