@@ -1,0 +1,182 @@
+/* Report PDF Stylesheet */
+/* Modus Brand Colors:
+   Primary Dark Green: #00695B
+   Primary Green: #01983B
+   Text: #000
+*/
+
+/* Base styles */
+body {
+  font-family: "wallop-medium", sans-serif;
+  font-size: 12pt;
+  line-height: 1.11;
+  color: #000;
+}
+
+/* Cover page */
+.cover-page {
+  position: relative;
+  text-align: left;
+}
+
+.cover-overtitle {
+  margin: 0 0 30px 0;
+}
+
+.cover-date {
+  text-transform: capitalize;
+}
+
+.cover-author {
+  color: #01983B;
+}
+
+.cover-image {
+  margin: 0 0 30px 0;
+  text-align: center;
+}
+
+.cover-title {
+  font-family: "wallop-semibold", sans-serif;
+  font-size: 34pt;
+  color: #01983B;
+  text-align: left;
+}
+
+.cover-image img {
+  max-width: 100%;
+  max-height: 280px;
+  object-fit: cover;
+  border-radius: 12px;
+}
+
+/* Table of Contents */
+.toc-title {
+  font-family: "wallop-bold", sans-serif;
+  color: #00695B;
+  font-size: 22pt;
+  margin: 0 0 20px 0;
+}
+
+.toc-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.toc-table tr {
+  border-width: 0;
+  padding: 0;
+  background: transparent;
+}
+
+.toc-table td {
+  vertical-align: top;
+  border-width: 0;
+}
+
+.toc-text {
+  padding: 0 40px 20px 0;
+  font-family: "wallop-bold", sans-serif;
+}
+
+.toc-page {
+  font-family: "wallop-bold", sans-serif;
+  text-align: right;
+  padding: 0 0 20px 0;
+  white-space: nowrap;
+}
+
+/* Section headings */
+.section-heading {
+  font-family: "wallop-bold", sans-serif;
+  color: #00695B;
+  font-size: 22pt;
+  margin: 0 0 20px 0;
+  page-break-after: avoid;
+}
+
+.section-subheading {
+  font-family: "wallop-bold", sans-serif;
+  margin: 0 0 20px 0;
+  page-break-after: avoid;
+}
+
+.body-text {
+  margin: 0 0 15px 0;
+}
+
+.body-text p {
+  margin: 0 0 15px 0;
+}
+
+.body-text mark{
+  padding: 0;
+  background-color: transparent;
+  color: #01983b;
+}
+
+.body-text ul,
+.body-text ol {
+  margin: 0 0 15px 0;
+  padding-left: 35px;
+}
+
+.body-text a {
+  color: #01983b;
+  text-decoration: underline;
+}
+
+.body-text strong,
+.body-text b {
+  font-family: "wallop-semibold", sans-serif;
+}
+
+.body-text em,
+.body-text i {
+  font-style: italic;
+}
+
+/* Images */
+.report-image {
+  margin: 0 0 15px 0;
+  page-break-inside: avoid;
+}
+
+.image-caption {
+  font-size: 8pt;
+  color: #01983b;
+  margin: 0 0 10px 0;
+}
+
+/* Bibliography */
+.bibliography-item {
+  margin: 0 0 15px 0;
+}
+
+.bibliography-number {
+  font-family: "wallop-bold", sans-serif;
+}
+
+.bibliography-url {
+  color: #01983b;
+  text-decoration: none;
+  word-break: break-all;
+}
+
+/* Utility classes */
+.page-break {
+  page-break-before: always;
+}
+
+/* Footer */
+.pdf-footer {
+  border: none;
+  border-top: none;
+  text-align: left;
+}
+
+.page-number {
+  text-align: left;
+  font-family: "wallop-bold", sans-serif;
+  font-size: 12pt;
+}
