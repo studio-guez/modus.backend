@@ -9,7 +9,7 @@
 body {
   font-family: "wallop-medium", sans-serif;
   font-size: 12pt;
-  line-height: 1.11;
+  line-height: 1.41;
   color: #000;
 }
 
@@ -39,6 +39,7 @@ body {
 .cover-title {
   font-family: "wallop-semibold", sans-serif;
   font-size: 34pt;
+  line-height: 1.14;
   color: #01983b;
   text-align: left;
 }
@@ -58,6 +59,7 @@ body {
   font-family: "wallop-bold", sans-serif;
   color: #00695b;
   font-size: 22pt;
+  line-height: 1.11;
   margin: 0 0 20px 0;
 }
 
@@ -94,6 +96,7 @@ body {
   font-family: "wallop-bold", sans-serif;
   color: #00695b;
   font-size: 22pt;
+  line-height: 1.11;
   margin: 0 0 20px 0;
   page-break-after: avoid;
   page-break-inside: avoid;
@@ -149,6 +152,7 @@ body {
 
 .image-caption {
   font-size: 8pt;
+  line-height: 1.08;
   color: #01983b;
   margin: 0 0 10px 0;
 }
