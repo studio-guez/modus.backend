@@ -132,18 +132,18 @@ return [
             }
         ],
         [
-            'pattern' => 'bibliotheque/(:any)/report.pdf',
+            'pattern' => 'rapport/(:any)/pdf',
             'method' => 'GET',
             'action' => function ($slug) {
                 header("Access-Control-Allow-Origin: *");
-                
+
                 // Find the report page
                 $page = site()->find('bibliotheque/' . $slug);
-                
+
                 if (!$page || $page->intendedTemplate()->name() !== 'report') {
                     return site()->errorPage();
                 }
-                
+
                 // Render using the PDF content representation (report.pdf.php)
                 return $page->render([], 'pdf');
             }
