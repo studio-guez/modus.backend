@@ -1,0 +1,21 @@
+Title: DÉCLIC MOBILITÉ
+
+----
+
+Headerimage: - file://Gp6pjzuWOJtiQRG2
+
+----
+
+Showinnav: false
+
+----
+
+Headertitle: 
+
+----
+
+Body: [{"content":{"level":"h2","text":"<strong>Déclic Mobilité, c’est quoi ?</strong>"},"id":"2d7b2d78-2f3b-4f4f-bcde-7511146c8cd9","isHidden":false,"type":"mdheading"},{"content":{"text":"<p>Le concept est simple : vous stationnez (dans un parking prévu à cet effet) votre véhicule durant le mois de mai 2025 et vous recevez un accès gratuit à des alternatives de déplacement de votre choix parmi lesquelles un abonnement général CFF, un vélo/vélo électrique/vélo cargo, un abonnement Mobility, et bien d’autres services.</p>"},"id":"619dac83-609f-4ec2-a3e4-03a2ec487350","isHidden":false,"type":"body"},{"content":{"level":"h2","text":"<strong>Quelles sont les conditions de participation ?</strong>"},"id":"26741932-6dc1-4eb8-91da-d30fe3177f73","isHidden":false,"type":"mdheading"},{"content":{"text":"<p>·       Avoir 18 ans ou plus</p><p>·       Résider sur le territoire communal de Genève ou Carouge</p><p>·       Détenir un ou plusieur(s) véhicule(s) (voiture, moto ou scooter ; thermique ou électrique)</p><p>·       S’engager à ne pas utiliser son véhicule pendant un mois</p><p>·       Participer à la séance de lancement (samedi 3 mai matin) et de restitution (date, heure)</p><p>NB : les familles ou ménages composés de plusieurs personnes peuvent participer en groupe.</p>"},"id":"f4717428-0974-45ec-b303-655e0353000a","isHidden":false,"type":"body"},{"content":{"level":"h2","text":"<strong>Comment s’inscrire ?</strong>"},"id":"0afb4679-e6de-41c1-982d-b30592935f64","isHidden":false,"type":"mdheading"},{"content":{"text":"<p>Pour participer au défi « Déclic Mobilité », vous devez vous enregistrer en répondant à quelques questions (2 minutes) sur votre profil et vos habitudes de déplacement. Une sélection sera réalisée pour garantir une diversité des profils et les personnes sélectionnées seront recontactées par email avec toutes les informations nécessaires pour commencer l’aventure.</p>"},"id":"17b6dbff-966b-4bde-9ecc-c693d50a4e25","isHidden":false,"type":"body"},{"content":{"level":"h2","text":"<strong>Comment sont utilisées mes données personnelles ?</strong>"},"id":"481da54d-3496-42a7-8908-af07decbed45","isHidden":false,"type":"mdheading"},{"content":{"text":"<p>L’enquête est effectuée sur la plateforme de sondage Qualtrics, hébergée sur un serveur sécurisé répondant à toutes les normes de sécurité en vigueur. Les données recueillies dans le cadre de cette enquête seront traitées de manière strictement confidentielle dans le respect des dispositions applicables en matière de protection des données1. Elles seront utilisées à des fins statistiques et d'évaluation de l’impact de la prise en charge des abonnements unireso. Elles ne seront pas transmises à des tiers et seront détruites à la fin de l’opération. </p>"},"id":"66e5e187-872f-467b-a1ad-a486ff95e75a","isHidden":false,"type":"body"}]
+
+----
+
+Uuid: URV8tCoQmUyBeWJC

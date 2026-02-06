@@ -1,0 +1,33 @@
+Title: L'association "Rue de l'Avenir" souhaite améliorer la cohabitation entre piétons et cyclistes dans l’espace urbain
+
+----
+
+Headerimage: - file://TPYPqg6HBDC5VAnJ
+
+----
+
+Headertitle: Une journée d’étude organisée pour échanger sur les bonnes pratiques relatives aux relations urbaines entre les personnes qui roulent et celles qui marchent.
+
+----
+
+Body: [{"content":{"text":"<p>Rue de l’Avenir<a href=\"https://rue-avenir.ch\"> </a>est une association romande à but non lucratif fondée en 1981. Elle regroupe trois membres : Mobilité piétonne suisse, Pro Vélo Suisse et ATE Bureau romand à Genève. Elle consacre ses efforts à l’information, au dialogue et à la réflexion autour de l’aménagement de l’espace public. Elle promeut les mobilités actives et la vie urbaine en réunissant des professionnel·le·s pour partager et discuter des meilleures approches en la matière.</p><p>Elle programme le 26 septembre 2024 une journée d’étude à Genève sur la cohabitation entre piétons et cyclistes dans l’espace public. L’objectif est de comprendre les difficultés vécues et d’identifier des solutions : comment éviter ces rencontres lorsque c'est possible et les organiser là où elles sont inévitables ?, comment favoriser des comportements appropriés par les usagers des voiries ? La journée comportera trois blocs thématiques : courtes interventions, tables rondes et une visite de terrain accompagnée.</p><p>Rue de l’Avenir attend environ 100 à 140 personnes, principalement des professionnel·les de l’aménagement urbain de Suisse romande. Les résultats et enseignements seront diffusés en 2025, par la voie d'un bulletin papier et PDF, ainsi que sur le site internet de l’association, touchant ainsi une large audience. Une enquête de satisfaction sera réalisée pour évaluer l’impact et les retours des participant·es.</p><p>La Fondation Modus soutient cette journée d’étude qui contribue à améliorer la compréhension et les pratiques de cohabitation entre piétons et cyclistes, favorisant un urbanisme plus sûr et efficace. </p>"},"id":"c23f3a1b-8887-438d-b9a5-f4c215ac6205","isHidden":false,"type":"body"},{"content":{"title":"Partenaire","links":[{"name":"Rue de l'avenir","url":"https://rue-avenir.ch"}]},"id":"261639c9-7b44-4832-b461-dd7c6cba9f22","isHidden":false,"type":"linksSection"}]
+
+----
+
+Datestart: 2024-09-01
+
+----
+
+Isprojectwithduration: true
+
+----
+
+Dateend: 2024-09-01
+
+----
+
+Pdffile: 
+
+----
+
+Uuid: e5RjQxtnzQm2JUxs

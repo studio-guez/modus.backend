@@ -1,0 +1,37 @@
+Title: L’exposition "La Mobilité au cœur du patrimoine" retrace les 120 ans du tram à Genève
+
+----
+
+Headerimage: - file://NDfcxOtgEwHbtZ2f
+
+----
+
+Headertitle: Les cent vingt ans d’histoire des Transports Publics Genevois ont été présentés en s’appuyant sur des textes, photos, témoignages vidéo, objets du passé et modèles réduits. 
+
+----
+
+Body: [{"content":{"text":"<p>L’exposition La Mobilité au cœur du patrimoine a été organisée par l’Association Genevoise du Musée des tramways (AGMT), qui fête son 50e anniversaire avec le soutien de la Loterie Romande et des TPG. </p><p>Elle avait avait pour thème central les 120 ans du tram, de son développement à son apogée, de sa presque disparition à sa résurrection. Son avenir a aussi été esquissé. Organisée en six thématiques : la Belle Époque, les vaches maigres, rigueur et paternalisme, voix de femmes, le tout voiture et retour vers le futur, l'exposition a permis de partager de savoureuses anecdotes qui ont ravi les amoureux du canton, les férus de mobilité et toutes les personnes intéressées par l’histoire locale et la destinée de Genève. </p><p>L’exposition a été montrée une première fois dans le bâtiment de l’Horloge, siège historique des TPG, situé à la Jonction, du 30 août au 5 novembre 2023 avant de rejoindre l’espace Tourbillon, du 16 janvier au 28 mars 2024 grâce au soutien de la Fondation FIDES. </p><p>Pour la Fondation Modus, il est primordial de renforcer le lien entre le patrimoine, la culture et la mobilité, car, en s’inspirant du passé, il est possible d’envisager les services de demain.  </p><p>Un ouvrage \"La Mobilité au cœur du patrimoine\", Genève : 120 ans de transports publics entre « Grande Histoire » et petites histoires, écrit par Moreno Berva et Ludovic Maugué, aux éditions Alphil permet d’approfondir le sujet. </p>"},"id":"4b7a56ff-8264-4163-9de7-2e76cf3ed321","isHidden":false,"type":"body"},{"content":{"title":"Réseaux sociaux","links":[{"name":"Post Linkedin de la Fondation Modus","url":"https://www.linkedin.com/feed/update/urn:li:ugcPost:7160216695268143107/?actorCompanyId=101119623"}]},"id":"009e82c2-9064-4635-8ea7-a6d460d7c776","isHidden":false,"type":"linksSection"}]
+
+----
+
+Datestart: 2024-01-01
+
+----
+
+Isprojectwithduration: true
+
+----
+
+Dateend: 2024-03-01
+
+----
+
+Pdffile: 
+
+----
+
+Showinnav: false
+
+----
+
+Uuid: dXBldm5bUChprPvJ

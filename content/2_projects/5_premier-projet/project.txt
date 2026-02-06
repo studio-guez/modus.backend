@@ -1,0 +1,41 @@
+Title: Lors du Tour de Romandie, Genève en Selle fait découvrir la campagne genevoise à vélo
+
+----
+
+Headerimage: - file://uucOZ1tD6ses3o9r
+
+----
+
+Headertitle: L’association Genève en Selle veut faire changer changer la perception de la mobilité décarbonée en promouvant le vélo et en organisant des événements dans la campagne genevoise.
+
+----
+
+Body: [{"content":{"text":"<p>L’association <a href=\"https://www.instagram.com/geneve_en_selle/\">Genève en Selle</a> encourage l’usage du vélo en coordonnant des événements, notamment des promenades à vélo dans le terroir genevois afin d’attirer les citadin·es à la campagne. </p><p>Le 28 avril 2024, lors du passage du Tour de Romandie à Genève, qui n’y était plus revenu depuis 25 ans, la Fondation Modus a soutenu la création d’un « village » à Dardagny. Plusieurs activités y ont été proposées pour les enfants et les adultes. Ainsi, un parcours pour les novices et les plus petits, des balades pour les familles, des itinéraires en boucle ont été organisés. La dégustation de vins locaux et de saucisses a également accompagné les efforts.  </p><p>Cette journée a permis de faire venir à vélo des habitant·es de la ville à la campagne pour assister à une compétition sportive exceptionnelle. L’ensemble du dispositif devrait pousser les enfants et leurs parents à utiliser le vélo pour se déplacer.  </p><p>L’association Genève en Selle a d’autres projets comme la création d’une course ou balade à vélo à travers la campagne genevoise avec des points de ravitaillement où les participant·es pourront découvrir les produits du terroir genevois.</p><p>La Fondation Modus a soutenu Genève en Selle pour aider les citadin·es à changer leur regard sur le vélo tout en découvrant la campagne et le terroir genevois. De plus, les enfants qui se déplacent à vélo seront plus susceptibles d'adopter par la suite ce mode de transport durablement.  </p>"},"id":"7c41dbf8-8561-4ab6-ad3f-3066b8aea2b1","isHidden":false,"type":"body"},{"content":{"title":"Vidéo de l'événement","links":[]},"id":"4eeada53-f35e-4c79-9ebc-2b0bda777471","isHidden":false,"type":"linksSection"},{"content":{"url":"https://www.youtube.com/watch?v=RahhD9yKQtc","caption":"<strong>Le Tour de Romandie organisé par Genève en Selle</strong>"},"id":"03ac1c93-6885-4489-917a-049fe4b54d32","isHidden":false,"type":"video"},{"content":{"title":"On en parle","links":[{"name":"Leman bleu","url":"https://www.lemanbleu.ch/fr/Actualite/Sport/Le-Tour-de-Romandie-celebre-comme-il-se-doit-a-Dardagny.html"},{"name":"Cycliste actualité","url":"https://www.cycliste.ch/news/tour-de-romandie-2024-a-geneve-une-journee-historique-pour-la-campagne-genevoise/"}]},"id":"a976f522-6326-4725-8667-f2342b1f895f","isHidden":false,"type":"linksSection"},{"content":{"title":"Partenaire","links":[{"name":"Genève en Selle","url":"https://www.instagram.com/geneve_en_selle/"}]},"id":"0b213a9c-b38b-4687-8a06-c2cdc46c0344","isHidden":false,"type":"linksSection"},{"content":{"title":"Partenaires","links":[{"name":"","url":""}]},"id":"3857cdf0-ab40-4798-bc87-f4e011fadbb7","isHidden":true,"type":"linksSection"},{"content":{"title":"Réseaux sociaux","links":[{"name":"Post Fondation Modus sur Linkedin","url":"https://www.linkedin.com/feed/update/urn:li:ugcPost:7193632382124449793/?actorCompanyId=101119623"}]},"id":"3ef3a1a1-1c1a-40c0-96dc-85f25c23f235","isHidden":false,"type":"linksSection"}]
+
+----
+
+Datestart: 2024-04-01
+
+----
+
+Isprojectwithduration: true
+
+----
+
+Dateend: 2024-04-01
+
+----
+
+Date: 
+
+----
+
+Pdffile: 
+
+----
+
+Showinnav: false
+
+----
+
+Uuid: 0yIi7wVeY91h9G78

@@ -1,0 +1,41 @@
+Title: Une mobilité durable sur-mesure pour la Ville de Meyrin
+
+----
+
+Headerimage: - file://O7Ny2d9a9NhKr5xF
+
+----
+
+Projecttype: modus
+
+----
+
+Headertitle: Les TPG pilotent un projet innovant, visant à créer un catalogue d’offres de mobilité durable adapté aux besoins réels des habitant·e·s des communes, fondé sur un diagnostic précis de leurs pratiques de déplacement.
+
+----
+
+Preview: 
+
+----
+
+Body: [{"content":{"text":"<p>La Ville de Meyrin sert de territoire pour expérimenter et tester les solutions dans un contexte réel. Cette démarche pilote est soutenue par la Fondation Modus. </p><p><strong>Un diagnostic détaillé pour mieux comprendre les besoins</strong><br>La plateforme digitale développée dans le cadre du projet permet de collecter et visualiser des données précises sur les habitudes de déplacement des habitant·e·s : modes de transport utilisés, trajets réguliers, points de friction ou besoins non satisfaits. Ce diagnostic offre une vision claire et concrète, indispensable pour concevoir des solutions pertinentes et efficaces.</p><p><strong>Des offres de mobilité adaptées, attractives et concrètes</strong><br>À partir des enseignements du diagnostic, un <strong>catalogue d’offres de mobilité durable</strong> est co-construit avec la commune : transports publics, solutions partagées, infrastructures pour vélo ou marche. Chaque proposition est pensée pour être pratique, accessible et attractive, offrant des alternatives réelles à la voiture individuelle.</p><p><strong>Une expérimentation en conditions réelles</strong><br>La Ville de Meyrin est le terrain d’expérimentation de ce dispositif. L’approche permet de tester les solutions, de recueillir les retours des habitant·e·s et de réajuster le catalogue en continu, garantissant ainsi que les offres répondent aux besoins concrets et aux attentes des utilisateur·trice·s.</p><p><strong>Un partenariat stratégique et complémentaire</strong><br>Le projet mobilise les TPG comme pilote opérationnel, la Ville de Meyrin pour l’accompagnement local et la Fondation Modus pour le soutien méthodologique et stratégique. Le bureau BMH apporte son expertise sur les comportements de mobilité, assurant que les solutions proposées soient à la fois attractives et efficaces.</p><p><strong>Vers une mobilité durable centrée sur les habitants</strong><br>Cette démarche innovante permet aux communes de proposer des offres de mobilité durable réellement adaptées aux besoins de leurs habitant·e·s. Elle ouvre la voie à une transition vers des déplacements plus efficaces, respectueux de l’environnement et mieux intégrés au quotidien des citoyen·ne·s.</p>"},"id":"b80220ba-5ce9-4fb4-b927-6fb98740d7ce","isHidden":false,"type":"body"}]
+
+----
+
+Tags: page://GvvkGbkIppkHyL38, page://pRGcQAqg2Ndf9WRF, page://XISLQ17r6VlcoxCx, page://btfMxpBTCdFVqkUY, page://9uPy2r9BfjnpBvhg, page://JyPTPQeSljUTxjPk
+
+----
+
+Datestart: 2025-09-01
+
+----
+
+Isprojectwithduration: true
+
+----
+
+Dateend: 2026-07-01
+
+----
+
+Uuid: cFBpAaQye1UstTW8

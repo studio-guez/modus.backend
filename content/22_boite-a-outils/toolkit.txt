@@ -1,0 +1,17 @@
+Title: Boîte à outils
+
+----
+
+Headerimage: 
+
+----
+
+Showinnav: true
+
+----
+
+Headertitle: Toolkit
+
+----
+
+Uuid: Tk7xL2mQp9vNw4Yd

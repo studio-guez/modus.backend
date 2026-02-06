@@ -1,0 +1,33 @@
+Title: Collecte de données pour la Course de l'Escalade
+
+----
+
+Headerimage: - file://23YhNUhDih1qI3vO
+
+----
+
+Headertitle: Soutien de la Fondation Modus pour le déploiement d'une enquête mobilité lors de l'édition 2024 de la Course de l'Escalade.
+
+----
+
+Body: [{"content":{"text":"<p>Cette enquête vise à comprendre d’où sont venu les participant·e·s et spectateurs·trices, avec quel(s) mode(s), et pour quelle raison ils ont fait ce choix modal.</p><p><strong>Enseignements</strong></p><p>L'enquête a permis d'identifier des axes de progression ainsi que des points forts de la mobilité des participant·e·s et spectateur·trice·s à l'évènement. Parmi ces derniers se trouve notamment le covoiturage, fortement plébiscité pour venir à la Course de l'Escalade, ainsi que la part modale assez faible des modes motorisés pour les déplacements depuis la ville de Genève (8% pour voitures et motos). Cependant, des progrès sont possibles sur les déplacements depuis le reste du canton de Genève (à 46% en modes motorisés), alors que le canton de Genève représente 73% des origines de déplacements.</p><p>D'autres éléments de l'enquêtes (logiques explicatives des choix du mode, lieu de stationnement, part des modes actifs...) sont également exploitables afin de dresser des axes d'action intéressants.</p><p>En 2025, cette première analyse sera étoffée par la mise en place d'un système de monitoring plus complet sur lequel la Fondation Modus est actuellement en réflexion avec différents partenaires. L'objectif de ce monitoring est de mettre en place des mécanismes systématiques de suivi de l'action et de l'évolution des comportements de mobilité autour des grands évènements dont fait partie la Course de l'Escalade.</p><p><strong>Objectifs clés</strong></p><ul><li><p>obtenir des données sur 500 à 800 participant·e·s des courses de l’Escalade</p></li><li><p>établir un diagnostic mobilité pour cibler des actions pendant la session 2025</p><p></p></li></ul><p><strong>Durée estimée du projet</strong></p><p>2 jours</p>"},"id":"c9dc7e88-78f2-4088-a4a3-194b1c7fc47c","isHidden":false,"type":"body"},{"content":{"title":"Partenaires du projet ","links":[{"name":"Course de l'Escalade","url":"https://escalade.ch/"},{"name":"Match a day","url":"https://match-day.ch/"}]},"id":"8621f3a2-ccf5-479a-b596-add496b91726","isHidden":false,"type":"linksSection"}]
+
+----
+
+Tags: page://GvvkGbkIppkHyL38, page://Xx8cT2jVJ866e3zK
+
+----
+
+Datestart: 2024-12-01
+
+----
+
+Isprojectwithduration: true
+
+----
+
+Dateend: 2024-12-01
+
+----
+
+Uuid: 2AWiIyFSUig6jfM9

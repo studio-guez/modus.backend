@@ -1,0 +1,33 @@
+Title: Mes trajets
+
+----
+
+Headerimage: - file://0KsQkw9gvOWJ47Bb
+
+----
+
+Headertitle: Récompenser les efforts individuels en vue de pérenniser une mobilité plus durable.
+
+----
+
+Body: [{"content":{"text":"<p>Mes trajets, une initiative des TPG, soutenue par la Fondation Modus, met en œuvre, dès le mois de mai, sur le territoire transfrontalier du Grand Genève, une expérimentation récompensant les changements de comportements en matière de mobilité individuelle afin d’encourager un report modal significatif et à long terme vers les modes de transports durables.</p><p>Pendant 9 semaines, les déplacements des participant·e·s sont enregistrés via une application mobile, et leur offre la possibilité de relever des défis liés à la mobilité et de gagner ainsi des récompenses à chaque trajet réalisé.</p><p>Participer à cette expérience, permet de prendre conscience de sa mobilité et de son impact environnemental, prendre part à une recherche scientifique en étant récompensé et se défier dans un cadre ludique.</p><p>L'objectif de cette étude est de mieux comprendre les mobilités dans le Grand Genève, analyser les obstacles pratiques à une mobilité décarbonée (vélo, marche, transports publics) et tester un dispositif de récompense permettant d’accompagner les changements de pratique.</p>"},"id":"29c6c4e0-bf40-4d05-8baf-fd7b3e4652fd","isHidden":false,"type":"body"},{"content":{"title":"En savoir plus","links":[{"name":"Mes trajets","url":"https://mestrajets.ch/"}]},"id":"4ddf7508-872b-483b-9504-1b50a573aa00","isHidden":false,"type":"linksSection"},{"content":{"title":"Partenaires du projet","links":[{"name":"TPG ","url":"https://www.tpg.ch/"},{"name":"Codos","url":"https://www.codos.network/"},{"name":"BMH","url":"https://b-mh.ch/"}]},"id":"45372585-527c-44ca-abf8-ef6157f41a32","isHidden":false,"type":"linksSection"}]
+
+----
+
+Tags: page://XISLQ17r6VlcoxCx, page://pRGcQAqg2Ndf9WRF, page://A5Wx7xUKxD5DeWEZ, page://btfMxpBTCdFVqkUY, page://9uPy2r9BfjnpBvhg
+
+----
+
+Datestart: 2025-05-01
+
+----
+
+Isprojectwithduration: true
+
+----
+
+Dateend: 
+
+----
+
+Uuid: 77tLJQMxv4kL51MZ

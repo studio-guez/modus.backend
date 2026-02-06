@@ -1,0 +1,41 @@
+Title: Moving with Trees
+
+----
+
+Headerimage: - file://KnvwVzWK26hfQGoT
+
+----
+
+Projecttype: external
+
+----
+
+Headertitle: Végétalisons et apaisons l'espace urbain grâce à l'urbanisme tactique !
+
+----
+
+Preview: 
+
+----
+
+Body: [{"content":{"text":"<p>Avec moving with trees, nous accompagnons l’Office de l’Urbanisme et la Fondation Braillard Architectes afin d’organiser le festival 1000 arbres visant à revitaliser certains sites clés de Genève en réaménagement tactiquement l’espace public.</p><p>Cette initiative s’inscrit dans le cadre du Plan Climat, de la stratégie d’arborisation et de la Loi L1 07 sur l’arborisation, la végétalisation de l’espace public et la promotion de la mobilité douce et des transports publics en ville. L’objectif à moyen terme est d’organiser le festival 1000 arbres durant l'été 2027, pendant lequel différents sites genevois seront transformés durant quelques semaines par un urbanisme tactique mettant en avant du mobilier modulaire déplaçable, des arbres et autres éléments pour apaiser les mobilités tout en redonnant vie à l’espace public.</p><p>Nous soutenons, en 2025, la première phase de ce projet qui consiste en la participation de Genève au concours EUROPAN 2025. Ce concours d’idée internationalement reconnu permettra de recueillir de nombreux projets pour la mise en oeuvre de ce festival 1000 arbres.</p><p>Ce projet comprend également l’exposition des projets qui auront été proposés lors du concours EUROPAN, au grand public tout comme aux représentants des communes qui pourront alors se projeter dans l’évènement de l'été 2027 !</p><p><strong>Objectifs clés</strong></p><ul><li><p>permettre la réception de plusieurs projets en participant à un concours de niveau international</p></li><li><p>enclencher chez les habitants, lors du festival, une prise de conscience des enjeux de revitalisation des espaces publics</p></li><li><p>créer des imaginaires différents autour de plusieurs sites genevois</p></li><li><p>engendrer de nouveaux comportements de mobilité</p></li></ul><p><strong>Organisations partenaires et personnes clés</strong></p><p>Office de l’Urbanisme et Fondation Braillard Architectes</p>"},"id":"02ba0f66-b9c5-4e64-8209-1620eb0cb120","isHidden":false,"type":"body"},{"content":{"title":"Partenaires du projet","links":[{"name":"Office de l'Urbanisme","url":"https://www.ge.ch/organisation/office-urbanisme"},{"name":"Fondation Braillard Architectes","url":"https://braillard.ch/"}]},"id":"9d1b8721-5085-40b2-97cd-97ef25ecea40","isHidden":false,"type":"linksSection"},{"content":{"title":"Pour en savoir plus sur le concours EUROPAN","links":[{"name":"EUROPAN (Genève)","url":"https://www.europan-europe.eu/fr/session/europan-18/site/geneve-ch"}]},"id":"b54c8988-91ae-4c49-9c0e-b3b903ec68b9","isHidden":false,"type":"linksSection"}]
+
+----
+
+Tags: page://hDSrAHfRrHxuX3TO, page://Xx8cT2jVJ866e3zK
+
+----
+
+Datestart: 2025-09-01
+
+----
+
+Isprojectwithduration: false
+
+----
+
+Dateend: 
+
+----
+
+Uuid: EOcPsUI7GsVATD9F

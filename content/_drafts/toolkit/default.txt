@@ -1,0 +1,21 @@
+Title: A SUPPRIMER
+
+----
+
+Headerimage: 
+
+----
+
+Showinnav: false
+
+----
+
+Headertitle: Domaine prévu pour le toolkit mobilité
+
+----
+
+Body: 
+
+----
+
+Uuid: PHqKDLEZIZfYAd11

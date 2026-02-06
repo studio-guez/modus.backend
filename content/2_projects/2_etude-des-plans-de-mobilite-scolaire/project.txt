@@ -1,0 +1,33 @@
+Title: Étude des Plans de Mobilité Scolaire
+
+----
+
+Headerimage: - file://mlU0jmXxPptdB8CP
+
+----
+
+Headertitle: L’ATE et ses partenaires proposent d’utiliser les Plans Mobilité Scolaire dans le canton de Genève sur 10 ans comme base de données afin de réaliser une étude d’envergure sur les habitudes de déplacement des écolier·ères, incluant le point de vue des enfants.
+
+----
+
+Body: [{"content":{"text":"<p>Cette étude sera complétée par des ateliers et une conférence afin de co-constuire des recommandations concrètes en termes d’aménagements favorables à la mobilité active et durable des écolier·ères.</p><p><strong>Objectifs clés</strong></p><ul><li><p>Déterminer les habitudes de mobilité effectives des écolier·ères</p></li><li><p>Connaître les souhaits des écolier·ères en matière de mobilité</p></li><li><p>Déterminer les éléments favorables à la sécurité du chemin de l’école selon les usager·ères</p></li><li><p>Déterminer les leviers permettant d’instiguer un changement de mobilité vers une mobilité plus durable et active (notamment auprès des parents-taxis)</p></li><li><p>Déterminer les aménagements favorables à la mobilité active et durable des écolier·ères</p></li><li><p>Emettre des recommandations d’aménagement à destination des communes et du canton</p></li></ul>"},"id":"2b727c09-2dbe-4b06-b010-a43bdd26ebbb","isHidden":false,"type":"body"},{"content":{"title":"Partenaires","links":[{"name":"ATE","url":"https://www.ate.ch"},{"name":"HEDS-FR","url":"https://www.heds-fr.ch/fr/"},{"name":"Bureau de recherche 6T","url":"https://www.6-t.co"},{"name":"Faculté de psychologie et des Science de l'éducation de l'UNIGE","url":"https://www.unige.ch/fapse/"}]},"id":"7afb7719-ac18-45bb-bfb0-ceeb1fb1f74a","isHidden":false,"type":"linksSection"}]
+
+----
+
+Tags: page://s2Z4kLWkr8oDAG7w
+
+----
+
+Datestart: 2024-10-01
+
+----
+
+Isprojectwithduration: true
+
+----
+
+Dateend: 2025-10-01
+
+----
+
+Uuid: MEcAW88p5zkPZWWa

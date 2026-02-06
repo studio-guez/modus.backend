@@ -1,0 +1,25 @@
+Caption: 
+
+----
+
+Alt: 
+
+----
+
+Photographer: ©ATE / Roman Devuyst
+
+----
+
+License: 
+
+----
+
+Link: 
+
+----
+
+Uuid: 3mEzKaPeL77XD2cD
+
+----
+
+Template: blocks/image

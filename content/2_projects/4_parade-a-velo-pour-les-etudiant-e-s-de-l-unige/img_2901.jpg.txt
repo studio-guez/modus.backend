@@ -1,0 +1,29 @@
+Caption: 
+
+----
+
+Alt: 
+
+----
+
+Photographer: 
+
+----
+
+License: 
+
+----
+
+Link: 
+
+----
+
+Uuid: i209ojyiyEL2YXcU
+
+----
+
+Template: blocks/image
+
+----
+
+Focus: 54.0% 73.5%

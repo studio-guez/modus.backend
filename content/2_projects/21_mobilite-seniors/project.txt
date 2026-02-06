@@ -1,0 +1,29 @@
+Title: Mobilité seniors
+
+----
+
+Headerimage: - file://tTCeH6gcaTir5OJZ
+
+----
+
+Headertitle: En partenariat avec l'Association transports et environnement (ATE), la Fondation Modus s'engage à une mobilité durable et active en faveur des seniors.
+
+----
+
+Body: [{"content":{"text":"<p>Avec la participation de 3 communes genevoises, ce projet a pour objectif la réalisation de trois plans de mobilité senior (PMS) et l'organisation de onze cours de sensibilisation et de promotion de l'usage des transports publics auprès de ce public (cours ERM). </p><p><strong>Les objectifs clés pour les plans de mobilité senior (PMS):</strong></p><ul><li><p>Favoriser les déplacements des senior-e-s et adapter l’espace public à leurs besoins, surtout les déplacements en mobilité active et en transports publics</p></li><li><p>Donner une image claire et chiffrée de la mobilité des senior-e-s</p><p></p></li></ul>"},"id":"a3528f31-7957-4452-9e5f-7286c6d9ddc6","isHidden":false,"type":"body"},{"content":{"image":["file://RdNEhOAL2IL1251U"],"alt":"","caption":"©ATE / Roman Devuyst"},"id":"3f66b6ff-973e-45cb-81ee-7c558b8a0895","isHidden":false,"type":"mdimage"},{"content":{"text":"<p><strong>Les objectifs clés pour les cours de sensibilisation et de promotion des transports publics auprès des seniors (Cours ERM) :</strong></p><ul><li><p>Promouvoir l’utilisation des transports publics par les ainé-e-s</p></li><li><p>Renforcer leur compréhension du réseau, leur confiance et leur autonomie pour qu’ils et elles conservent leur mobilité en transports publics et à pied, vers les transports publics</p></li><li><p>Lutter contre la fracture numérique</p><p></p></li></ul>"},"id":"38004ffd-c6d6-43ac-98f5-f5e00d136bee","isHidden":false,"type":"body"},{"content":{"image":["file://O6D3SDydhRV9KPzh"],"alt":"","caption":"©ATE / Roman Devuyst"},"id":"48ed3571-badb-46b7-8c2d-5f8ac02048a9","isHidden":false,"type":"mdimage"},{"content":{"text":"<p><strong>Durée estimée du projet</strong></p><p>3 ans</p>"},"id":"b823ae01-311c-4d7d-b5f8-873c707495ee","isHidden":false,"type":"body"},{"content":{"title":"Partenaires du projet","links":[{"name":"L'association transports et environnement (ATE)","url":"https://www.ate.ch/"}]},"id":"408ad90c-d540-4568-b585-a0405b737516","isHidden":false,"type":"linksSection"}]
+
+----
+
+Datestart: 2024-05-01
+
+----
+
+Isprojectwithduration: true
+
+----
+
+Dateend: 2027-05-01
+
+----
+
+Uuid: DlGgycpMxDwijiaZ
