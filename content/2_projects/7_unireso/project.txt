@@ -2,11 +2,15 @@ Title: Mille abonnements de trois mois offerts pour encourager la multimodalité
 
 ----
 
+Headertitle: Mille abonnements de trois mois offerts pour encourager la multimodalité
+
+----
+
 Headerimage: - file://1estIWJLmSGEKe8G
 
 ----
 
-Headertitle: La Fondation Modus soutient le vélo partage à Genève en finançant mille abonnements de vélo en libre-service (VLS) pour une durée de trois mois.
+Preview: La Fondation Modus soutient le vélo partage à Genève en finançant mille abonnements de vélo en libre-service (VLS) pour une durée de trois mois.
 
 ----
 

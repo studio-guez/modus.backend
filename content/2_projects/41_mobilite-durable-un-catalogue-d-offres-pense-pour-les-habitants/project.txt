@@ -2,6 +2,10 @@ Title: Une mobilité durable sur-mesure pour la Ville de Meyrin
 
 ----
 
+Headertitle: Une mobilité durable sur-mesure pour la Ville de Meyrin
+
+----
+
 Headerimage: - file://O7Ny2d9a9NhKr5xF
 
 ----
@@ -10,7 +14,7 @@ Projecttype: modus
 
 ----
 
-Headertitle: Les TPG pilotent un projet innovant, visant à créer un catalogue d’offres de mobilité durable adapté aux besoins réels des habitant·e·s des communes, fondé sur un diagnostic précis de leurs pratiques de déplacement.
+Preview: Les TPG pilotent un projet innovant, visant à créer un catalogue d’offres de mobilité durable adapté aux besoins réels des habitant·e·s des communes, fondé sur un diagnostic précis de leurs pratiques de déplacement.
 
 ----
 

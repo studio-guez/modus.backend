@@ -2,11 +2,15 @@ Title: Mobilité seniors
 
 ----
 
+Headertitle: Mobilité seniors
+
+----
+
 Headerimage: - file://tTCeH6gcaTir5OJZ
 
 ----
 
-Headertitle: En partenariat avec l'Association transports et environnement (ATE), la Fondation Modus s'engage à une mobilité durable et active en faveur des seniors.
+Preview: En partenariat avec l'Association transports et environnement (ATE), la Fondation Modus s'engage à une mobilité durable et active en faveur des seniors.
 
 ----
 

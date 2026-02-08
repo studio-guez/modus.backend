@@ -2,11 +2,15 @@ Title: Unicycle
 
 ----
 
+Headertitle: Unicycle
+
+----
+
 Headerimage: - file://BT5KXR8cJXnkGeKv
 
 ----
 
-Headertitle: Cet atelier de l'université de Genève a pour but de réparer et d’entretenir les vélos des membres de la communauté estudiantine de Genève.
+Preview: Cet atelier de l'université de Genève a pour but de réparer et d’entretenir les vélos des membres de la communauté estudiantine de Genève.
 
 ----
 

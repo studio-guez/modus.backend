@@ -2,6 +2,10 @@ Title: Moving with Trees
 
 ----
 
+Headertitle: Moving with Trees
+
+----
+
 Headerimage: - file://KnvwVzWK26hfQGoT
 
 ----
@@ -10,7 +14,7 @@ Projecttype: external
 
 ----
 
-Headertitle: Végétalisons et apaisons l'espace urbain grâce à l'urbanisme tactique !
+Preview: Végétalisons et apaisons l'espace urbain grâce à l'urbanisme tactique !
 
 ----
 

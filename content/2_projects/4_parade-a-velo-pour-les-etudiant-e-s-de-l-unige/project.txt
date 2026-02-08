@@ -2,11 +2,15 @@ Title: Parade à vélo pour les étudiant·e·s de l'UNIGE
 
 ----
 
+Headertitle: Parade à vélo pour les étudiant·e·s de l'UNIGE
+
+----
+
 Headerimage: - file://i209ojyiyEL2YXcU
 
 ----
 
-Headertitle: À l'occasion de la rentrée 2024, dans le cadre de ses Welcome Days, l'Université de Genève organise pour la première fois une grande parade à vélo, afin d'accueillir ses nouveaux étudiant·e·s et leur faire découvrir le campus.
+Preview: À l'occasion de la rentrée 2024, dans le cadre de ses Welcome Days, l'Université de Genève organise pour la première fois une grande parade à vélo, afin d'accueillir ses nouveaux étudiant·e·s et leur faire découvrir le campus.
 
 ----
 

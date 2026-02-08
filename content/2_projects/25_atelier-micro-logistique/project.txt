@@ -2,11 +2,15 @@ Title: ATELIER micro-logistique
 
 ----
 
+Headertitle: ATELIER micro-logistique
+
+----
+
 Headerimage: - file://II2yvMlC4YX4GQPh
 
 ----
 
-Headertitle: Comment réduire les nuisances urbaines tout en fluidifiant la logistique ? Lors de l’atelier du 20 novembre 2024 organisé par la Fondation Modus, trois ambitieux projets ont été imaginés pour renforcer la micrologistique à Genève. Conciergeries dans les écoquartiers, faitière du secteur ou laboratoires grandeur nature, les solutions envisagées pourraient accélérer la transition des systèmes de livraison.
+Preview: Comment réduire les nuisances urbaines tout en fluidifiant la logistique ? Lors de l’atelier du 20 novembre 2024 organisé par la Fondation Modus, trois ambitieux projets ont été imaginés pour renforcer la micrologistique à Genève. Conciergeries dans les écoquartiers, faitière du secteur ou laboratoires grandeur nature, les solutions envisagées pourraient accélérer la transition des systèmes de livraison.
 
 ----
 

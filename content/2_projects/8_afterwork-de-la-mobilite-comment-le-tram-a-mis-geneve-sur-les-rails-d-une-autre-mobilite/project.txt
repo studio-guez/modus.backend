@@ -2,11 +2,15 @@ Title: AFTERWORK de la mobilité #1: Comment le tram a mis Genève sur les rails
 
 ----
 
+Headertitle: AFTERWORK de la mobilité #1: Comment le tram a mis Genève sur les rails d’une autre mobilité
+
+----
+
 Headerimage: - file://3fNV7MuLR7tT3UcG
 
 ----
 
-Headertitle: Le tram, plus qu'un vestige du passé, est un pilier de la mobilité de Genève. Il offre une alternative aux autres modes de transport, renforce les liens entre habitants et transforme l'espace public pourtant il suscite toujours des débats.
+Preview: Le tram, plus qu'un vestige du passé, est un pilier de la mobilité de Genève. Il offre une alternative aux autres modes de transport, renforce les liens entre habitants et transforme l'espace public pourtant il suscite toujours des débats.
 
 ----
 

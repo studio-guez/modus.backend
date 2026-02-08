@@ -2,11 +2,15 @@ Title: L’exposition "La Mobilité au cœur du patrimoine" retrace les 120 ans 
 
 ----
 
+Headertitle: L’exposition "La Mobilité au cœur du patrimoine" retrace les 120 ans du tram à Genève
+
+----
+
 Headerimage: - file://NDfcxOtgEwHbtZ2f
 
 ----
 
-Headertitle: Les cent vingt ans d’histoire des Transports Publics Genevois ont été présentés en s’appuyant sur des textes, photos, témoignages vidéo, objets du passé et modèles réduits. 
+Preview: Les cent vingt ans d’histoire des Transports Publics Genevois ont été présentés en s’appuyant sur des textes, photos, témoignages vidéo, objets du passé et modèles réduits. 
 
 ----
 

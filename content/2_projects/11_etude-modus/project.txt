@@ -2,11 +2,15 @@ Title: Une enquête de Modus analyse les pratiques et les aspirations en matièr
 
 ----
 
+Headertitle: Une enquête de Modus analyse les pratiques et les aspirations en matière de mobilité dans le Grand Genève
+
+----
+
 Headerimage: - file://boZ994saMeqDexNG
 
 ----
 
-Headertitle: L'objectif de notre enquête est de comprendre quels types de services sont les plus adaptés et désirés pour remplacer la voiture individuelle des habitant·es du Grand Genève.
+Preview: L'objectif de notre enquête est de comprendre quels types de services sont les plus adaptés et désirés pour remplacer la voiture individuelle des habitant·es du Grand Genève.
 
 ----
 

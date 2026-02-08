@@ -2,11 +2,15 @@ Title: Casiers connectés WECHIP
 
 ----
 
+Headertitle: Casiers connectés WECHIP
+
+----
+
 Headerimage: - file://WRPfLcoYjTj1uYlG
 
 ----
 
-Headertitle: Les casiers connectés WECHIP offrent une solution pratique pour le Click&Collect à Genève 24/7.
+Preview: Les casiers connectés WECHIP offrent une solution pratique pour le Click&Collect à Genève 24/7.
 
 ----
 

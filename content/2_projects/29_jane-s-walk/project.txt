@@ -2,11 +2,15 @@ Title: Jane's Walk
 
 ----
 
+Headertitle: Jane's Walk
+
+----
+
 Headerimage: - file://yRfkAn4XKOiuWs2l
 
 ----
 
-Headertitle: Organisées par Mobilité Piétonne Suisse, chaque année au mois de mai, les Jane’s Walk sont des promenades de quartier ouvertes à toutes et tous.
+Preview: Organisées par Mobilité Piétonne Suisse, chaque année au mois de mai, les Jane’s Walk sont des promenades de quartier ouvertes à toutes et tous.
 
 ----
 

@@ -2,11 +2,15 @@ Title: Organisation d'un congrès de la Commission Transport and Urban Life de l
 
 ----
 
+Headertitle: Organisation d'un congrès de la Commission Transport and Urban Life de l’UITP
+
+----
+
 Headerimage: - file://Hla1KlDuCMNtXLIh
 
 ----
 
-Headertitle: L'Union Internationale des Transports Publics (UITP) est une association internationale de plus de 135 ans réunissant les acteurs des transports publics et de la mobilité durable du monde entier.
+Preview: L'Union Internationale des Transports Publics (UITP) est une association internationale de plus de 135 ans réunissant les acteurs des transports publics et de la mobilité durable du monde entier.
 
 ----
 

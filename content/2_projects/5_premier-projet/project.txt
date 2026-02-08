@@ -2,11 +2,15 @@ Title: Lors du Tour de Romandie, Genève en Selle fait découvrir la campagne ge
 
 ----
 
+Headertitle: Lors du Tour de Romandie, Genève en Selle fait découvrir la campagne genevoise à vélo
+
+----
+
 Headerimage: - file://uucOZ1tD6ses3o9r
 
 ----
 
-Headertitle: L’association Genève en Selle veut faire changer changer la perception de la mobilité décarbonée en promouvant le vélo et en organisant des événements dans la campagne genevoise.
+Preview: L’association Genève en Selle veut faire changer changer la perception de la mobilité décarbonée en promouvant le vélo et en organisant des événements dans la campagne genevoise.
 
 ----
 

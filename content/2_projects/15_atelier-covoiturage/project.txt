@@ -2,11 +2,15 @@ Title: ATELIER covoiturage
 
 ----
 
+Headertitle: ATELIER covoiturage
+
+----
+
 Headerimage: - file://YrOR8kp0PC1noE2j
 
 ----
 
-Headertitle: Le covoiturage représente une solution intéressante dans le Grand Genève pour baisser les émissions de CO2. Bien qu'il soit déjà pratiqué par certaines personnes, il existe encore de nombreux freins pour développer pleinement le potentiel de ce moyen de transport.
+Preview: Le covoiturage représente une solution intéressante dans le Grand Genève pour baisser les émissions de CO2. Bien qu'il soit déjà pratiqué par certaines personnes, il existe encore de nombreux freins pour développer pleinement le potentiel de ce moyen de transport.
 
 ----
 

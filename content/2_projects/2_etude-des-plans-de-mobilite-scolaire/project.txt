@@ -2,11 +2,15 @@ Title: Étude des Plans de Mobilité Scolaire
 
 ----
 
+Headertitle: Étude des Plans de Mobilité Scolaire
+
+----
+
 Headerimage: - file://mlU0jmXxPptdB8CP
 
 ----
 
-Headertitle: L’ATE et ses partenaires proposent d’utiliser les Plans Mobilité Scolaire dans le canton de Genève sur 10 ans comme base de données afin de réaliser une étude d’envergure sur les habitudes de déplacement des écolier·ères, incluant le point de vue des enfants.
+Preview: L’ATE et ses partenaires proposent d’utiliser les Plans Mobilité Scolaire dans le canton de Genève sur 10 ans comme base de données afin de réaliser une étude d’envergure sur les habitudes de déplacement des écolier·ères, incluant le point de vue des enfants.
 
 ----
 

@@ -2,11 +2,15 @@ Title: DÉCLIC MOBILITÉ
 
 ----
 
+Headertitle: DÉCLIC MOBILITÉ
+
+----
+
 Headerimage: - file://uonvyFw9Kh44luIc
 
 ----
 
-Headertitle: Un mois pour changer ses habitudes, tester et repenser sa mobilité, telle est la proposition de cette initiative inédite à Genève.
+Preview: Un mois pour changer ses habitudes, tester et repenser sa mobilité, telle est la proposition de cette initiative inédite à Genève.
 
 ----
 

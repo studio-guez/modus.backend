@@ -2,11 +2,15 @@ Title: L'association "Rue de l'Avenir" souhaite améliorer la cohabitation entre
 
 ----
 
+Headertitle: L'association "Rue de l'Avenir" souhaite améliorer la cohabitation entre piétons et cyclistes dans l’espace urbain
+
+----
+
 Headerimage: - file://TPYPqg6HBDC5VAnJ
 
 ----
 
-Headertitle: Une journée d’étude organisée pour échanger sur les bonnes pratiques relatives aux relations urbaines entre les personnes qui roulent et celles qui marchent.
+Preview: Une journée d’étude organisée pour échanger sur les bonnes pratiques relatives aux relations urbaines entre les personnes qui roulent et celles qui marchent.
 
 ----
 

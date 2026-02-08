@@ -2,11 +2,15 @@ Title: Collecte de lavure des restaurants genevois en triporteur
 
 ----
 
+Headertitle: Collecte de lavure des restaurants genevois en triporteur
+
+----
+
 Headerimage: - file://S3bMhoOjKoZofkI8
 
 ----
 
-Headertitle: Cycloo propose la collecte de déchets à vélo dans plusieurs communes et auprès des personnes âgées.
+Preview: Cycloo propose la collecte de déchets à vélo dans plusieurs communes et auprès des personnes âgées.
 
 ----
 

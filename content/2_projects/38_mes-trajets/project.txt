@@ -2,11 +2,15 @@ Title: Mes trajets
 
 ----
 
+Headertitle: Mes trajets
+
+----
+
 Headerimage: - file://0KsQkw9gvOWJ47Bb
 
 ----
 
-Headertitle: Récompenser les efforts individuels en vue de pérenniser une mobilité plus durable.
+Preview: Récompenser les efforts individuels en vue de pérenniser une mobilité plus durable.
 
 ----
 

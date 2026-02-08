@@ -2,11 +2,15 @@ Title: Toolkit Mobilité
 
 ----
 
+Headertitle: Toolkit Mobilité
+
+----
+
 Headerimage: - file://Q85WKwFPPznvoExM
 
 ----
 
-Headertitle: Un outil gratuit pour vous accompagner dans votre stratégie mobilité
+Preview: Un outil gratuit pour vous accompagner dans votre stratégie mobilité
 
 ----
 

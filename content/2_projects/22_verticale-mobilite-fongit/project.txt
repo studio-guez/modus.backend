@@ -2,11 +2,15 @@ Title: La Verticale Mobilité
 
 ----
 
+Headertitle: La Verticale Mobilité
+
+----
+
 Headerimage: - file://pDqLBY3TTqJqZCc0
 
 ----
 
-Headertitle: Un soutien concret pour les start-ups de la mobilité durable, en collaboration avec le fonds d’innovation FONGIT (FIF)
+Preview: Un soutien concret pour les start-ups de la mobilité durable, en collaboration avec le fonds d’innovation FONGIT (FIF)
 
 ----
 

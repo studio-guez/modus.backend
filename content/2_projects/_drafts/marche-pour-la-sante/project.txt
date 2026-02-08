@@ -2,11 +2,15 @@ Title: Marche pour la santé
 
 ----
 
+Headertitle: Marche pour la santé
+
+----
+
 Headerimage: 
 
 ----
 
-Headertitle: Le projet vise à développer et tester une application sur smartphone pour encourager et inciter les jeunes à intégrer la marche dans leurs déplacements quotidiens et atteindre la recommandation nationale de marcher au moins une heure par jour.
+Preview: Le projet vise à développer et tester une application sur smartphone pour encourager et inciter les jeunes à intégrer la marche dans leurs déplacements quotidiens et atteindre la recommandation nationale de marcher au moins une heure par jour.
 
 ----
 

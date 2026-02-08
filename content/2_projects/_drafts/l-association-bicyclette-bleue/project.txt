@@ -2,11 +2,15 @@ Title: L'association Bicyclette Bleue
 
 ----
 
+Headertitle: L'association Bicyclette Bleue
+
+----
+
 Headerimage: 
 
 ----
 
-Headertitle: Ce projet a pour but d'augmenter les capacités de l’association pour ses trois services proposés à la population : la location longue durée de vélos de seconde main à petits prix, l’ouverture d’un atelier vélo participatif et l’organisation d’ateliers mobiles à travers l’agglomération genevoise.
+Preview: Ce projet a pour but d'augmenter les capacités de l’association pour ses trois services proposés à la population : la location longue durée de vélos de seconde main à petits prix, l’ouverture d’un atelier vélo participatif et l’organisation d’ateliers mobiles à travers l’agglomération genevoise.
 
 ----
 

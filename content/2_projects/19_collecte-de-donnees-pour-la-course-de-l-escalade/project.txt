@@ -2,11 +2,15 @@ Title: Collecte de données pour la Course de l'Escalade
 
 ----
 
+Headertitle: Collecte de données pour la Course de l'Escalade
+
+----
+
 Headerimage: - file://23YhNUhDih1qI3vO
 
 ----
 
-Headertitle: Soutien de la Fondation Modus pour le déploiement d'une enquête mobilité lors de l'édition 2024 de la Course de l'Escalade.
+Preview: Soutien de la Fondation Modus pour le déploiement d'une enquête mobilité lors de l'édition 2024 de la Course de l'Escalade.
 
 ----
 

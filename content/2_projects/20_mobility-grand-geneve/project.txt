@@ -2,11 +2,15 @@ Title: Mobility Grand Genève
 
 ----
 
+Headertitle: Mobility Grand Genève
+
+----
+
 Headerimage: - file://yKLb4Ii4BorHX76H
 
 ----
 
-Headertitle: Développement d’un outil de simulation de scénarios prospectifs de décarbonation de la mobilité, à horizon 2050, sur le Grand Genève.
+Preview: Développement d’un outil de simulation de scénarios prospectifs de décarbonation de la mobilité, à horizon 2050, sur le Grand Genève.
 
 ----
 
