@@ -13,11 +13,11 @@ use Kirby\Cms\Site;
 $json = [];
 $allTags = [];
 
-$children = $page->children()->listed()->sort()->sortBy('dateStart')->map(function ($item) use ($site, &$allTags) {
+$children = $page->children()->listed()->sortBy('dateStart', 'desc', 'dateEnd', 'desc')->map(function ($item) use ($site, &$allTags) {
 
   $content = $item->content();
   $contentArray = $content->toArray();
-  
+
   // Resolve tags from UUIDs
   $resolvedTags = Utils::resolveTagsFromUuids($content->tags()->value(), $site);
   $contentArray['tags'] = $resolvedTags;
