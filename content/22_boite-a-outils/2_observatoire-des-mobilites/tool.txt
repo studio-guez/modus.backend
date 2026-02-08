@@ -6,7 +6,11 @@ Headerimage: - file://bZvSM3jTsAoJslQ5
 
 ----
 
-Headertitle: Ce portail interactif offre un accès simplifié aux statistiques de la mobilité du Canton de Genève à travers une interface intuitive composée de tableaux dynamiques.
+Headertitle: Observatoire des mobilités
+
+----
+
+Preview: Ce portail interactif offre un accès simplifié aux statistiques de la mobilité du Canton de Genève à travers une interface intuitive composée de tableaux dynamiques.
 
 ----
 
