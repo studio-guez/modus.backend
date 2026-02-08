@@ -6,11 +6,11 @@ Headerimage: - file://Hc5RDLrki1pEkffy
 
 ----
 
-Headertitle: La Fondation Modus est allée questionner les Genevois.es sur leurs habitudes de transport dans leur ville.
+Headertitle: Comment se déplacent les genevois·e·s dans leur ville?
 
 ----
 
-Preview: Quel(s) moyen(s) de transport utilisent-ils ? Que faudrait-il améliorer ? Et surtout, comment imaginer la mobilité en 2050 ? Découvrez tout cela dans ce micro-trottoir !
+Preview: La Fondation Modus est allée questionner les Genevois.es sur leurs habitudes de transport dans leur ville.
 
 ----
 

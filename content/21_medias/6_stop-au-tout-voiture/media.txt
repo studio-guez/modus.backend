@@ -6,11 +6,11 @@ Headerimage: - file://24XwTZIwjOTu6oVs
 
 ----
 
-Headertitle: Dans cet épisode du podcast, nous vous proposons de découvrir l'ATE, l'Association Transport Environnement.
+Headertitle: Stop au tout voiture
 
 ----
 
-Preview: Cette association suisse d'utilité publique conduit des campagnes de promotion et de sensibilisation autour de la mobilité douce et mène des actions qui visent à améliorer la sécurité des usagers et usagères les plus vulnérables. Certaines des campagnes phares actuelles sont "Stop à la folie autoroutière", la tarification des Transports Publics et certaines des initiatives dans la canton de Genève sont les plans de mobilité scolaires et les plans de mobilité seniors, le Pedibus et le projet Habitat et Mobilité.
+Preview: Dans cet épisode du podcast, nous vous proposons de découvrir l'ATE, l'Association Transport Environnement.
 
 ----
 

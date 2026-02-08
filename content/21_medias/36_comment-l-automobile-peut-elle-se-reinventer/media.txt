@@ -6,11 +6,11 @@ Headerimage: - file://RDGd94PCYG5bYIbb
 
 ----
 
-Headertitle: Découvrez nos interviews réalisées lors de notre afterwork de la mobilité sur l'automobile
+Headertitle: Comment l'automobile peut-elle se réinventer?
 
 ----
 
-Preview: Comment pensez-vous que la voiture devrait se réinventer ? "La voiture aura très certainement disparu des centres villes", voici l'avis de Sandro Mesquita, directeur du Geneva International Motor Show quant à l'avenir de la voiture. Et vous, comment voyez-vous la voiture en 2050 ?
+Preview: Découvrez nos interviews réalisées lors de notre afterwork de la mobilité sur l'automobile
 
 ----
 

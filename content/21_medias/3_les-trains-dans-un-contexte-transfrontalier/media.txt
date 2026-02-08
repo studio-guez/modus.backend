@@ -6,11 +6,11 @@ Headerimage: - file://lC9605gdNsEsJN4v
 
 ----
 
-Headertitle: Dans cet épisode du podcast, nous vous proposons de découvrir Lémanis, l'opérateur du Léman Express.
+Headertitle: Les trains dans un contexte transfrontalier
 
 ----
 
-Preview: Ce train transfrontalier qui relie les territoires autour du bassin franco-valdo-genevois et relie ses habitant·e·s en gommant l'effet frontière. Comme nous allons le voir, rejoindre les deux côtés de la frontière de manière fréquente n'est pas une chose aisée mais reste une des solutions les plus efficaces, fiables et bas carbone.
+Preview: Dans cet épisode du podcast, nous vous proposons de découvrir Lémanis, l'opérateur du Léman Express.
 
 ----
 

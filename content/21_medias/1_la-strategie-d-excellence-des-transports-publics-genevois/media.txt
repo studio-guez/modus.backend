@@ -6,11 +6,11 @@ Headerimage: - file://tBMnloGgTVgv79K1
 
 ----
 
-Headertitle: Dans cet épisode, nous vous proposons de découvrir les TPG, acteur incontournable de la mobilité à Genève, au cœur d'un réseau de partenaires favorisant la mobilité douce et bas carbone.
+Headertitle: La stratégie d'excellence des Transports publics genevois
 
 ----
 
-Preview: Ensemble nous allons présenter les activités des TPG et certaines de leurs initiatives telles que Cap2030 ou EvoMoov. Nous allons aussi comprendre comment les TPG s'insèrent et collaborent avec l'écosystème des acteurs de la mobilité genevoise. Pour nous parler de ces sujets, nous avons le plaisir de discuter avec Marc Defalque, directeur Marketing, Ventes et Communication des TPG.
+Preview: Dans cet épisode, nous vous proposons de découvrir les TPG, acteur incontournable de la mobilité à Genève, au cœur d'un réseau de partenaires favorisant la mobilité douce et bas carbone.
 
 ----
 
