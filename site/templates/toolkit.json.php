@@ -23,11 +23,13 @@ $children = $page->children()->listed()->sort()->sortBy('dateStart')->map(functi
   ];
 })->data();
 
+// Toolkit has no tags
 $json['options'] = [
   'showInNav'       => $page->showMenu()->toBool(),
   'headerTitle'     => $page->headerTitle()->value(),
   'headerImage'     => $page->headerImage()->toFile() ? Utils::getJsonEncodeImageData($page->headerImage()->toFile()) : null,
   'preview'               => $page->preview()->value(),
+  'availableTags'   => [],
 ];
 
 $json['children'] = $children;
