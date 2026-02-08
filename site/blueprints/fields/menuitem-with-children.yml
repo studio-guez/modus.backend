@@ -1,0 +1,167 @@
+# Menu item structure with children support (for main-menu 2-level)
+type: structure
+fields:
+  itemType:
+    label: Type d'élément
+    type: select
+    required: true
+    default: page
+    options:
+      page: Page interne
+      external: Lien externe
+
+  # For type: page - uses custom field that tracks template
+  linkedPage:
+    label: Page liée
+    type: pages
+    multiple: false
+    query: site.children.listed
+    when:
+      itemType: page
+
+  # Filter: project type (shown only for projects page)
+  projectTypeFilter:
+    label: Filtre type projet
+    type: select
+    default: ""
+    options:
+      "": Aucun filtre
+      project-modus: Modus
+      project-supported: Soutenu
+    when:
+      linkedPage: page://09kzagIZKt5k2f1O
+
+  # Filter: status (shown for projects and tags pages)
+  statusFilter:
+    label: Filtre statut
+    type: select
+    default: ""
+    options:
+      "": Aucun filtre
+      en-cours: En cours
+      termine: Terminé
+    when:
+      linkedPage:
+        - page://09kzagIZKt5k2f1O
+
+  # Filter: media type (shown only for medias page)
+  mediaTypeFilter:
+    label: Filtre type média
+    type: select
+    default: ""
+    options:
+      "": Aucun filtre
+      video: Vidéo
+      podcast: Podcast
+    when:
+      linkedPage: page://C4fjXSksTGZtWFrj
+
+  # For type: external
+  externalUrl:
+    label: URL externe
+    type: url
+    when:
+      itemType: external
+
+  # Optional title override
+  customTitle:
+    label: Titre personnalisé
+    type: text
+    help: "Laissez vide pour utiliser le titre de la page"
+
+  # Optional SVG icon
+  svgIcon:
+    label: Icône SVG
+    type: files
+    query: site.files.filterBy('extension', 'svg')
+    multiple: false
+
+  # Open in new tab
+  openInNewTab:
+    label: Ouvrir dans un nouvel onglet
+    type: toggle
+    text:
+      - non
+      - oui
+    default: false
+
+  # Children items (2nd level)
+  children:
+    label: Sous-éléments
+    type: structure
+    fields:
+      itemType:
+        label: Type d'élément
+        type: select
+        required: true
+        default: page
+        options:
+          page: Page interne
+          external: Lien externe
+
+      linkedPage:
+        label: Page liée
+        type: pages
+        multiple: false
+        query: site.children.listed
+        when:
+          itemType: page
+
+      projectTypeFilter:
+        label: Filtre type projet
+        type: select
+        default: ""
+        options:
+          "": Aucun
+          project-modus: Modus
+          project-supported: Soutenu
+        whenTemplate:
+          linkedPage: projects
+
+      statusFilter:
+        label: Filtre statut
+        type: select
+        default: ""
+        options:
+          "": Aucun
+          en-cours: En cours
+          termine: Terminé
+        whenTemplate:
+          linkedPage:
+            - projects
+            - tags
+
+      mediaTypeFilter:
+        label: Filtre type média
+        type: select
+        default: ""
+        options:
+          "": Aucun
+          video: Vidéo
+          podcast: Podcast
+        whenTemplate:
+          linkedPage: medias
+
+      externalUrl:
+        label: URL externe
+        type: url
+        when:
+          itemType: external
+
+      customTitle:
+        label: Titre personnalisé
+        type: text
+
+      svgIcon:
+        label: Icône SVG
+        type: files
+        query: site.files.filterBy('extension', 'svg')
+        multiple: false
+
+      openInNewTab:
+        label: Ouvrir dans un nouvel onglet
+        type: toggle
+        text:
+          - non
+          - oui
+        default: false

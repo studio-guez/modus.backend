@@ -132,6 +132,17 @@ return [
             }
         ],
         [
+            'pattern' => '/menus.json',
+            'method' => 'GET',
+            'action' => function () {
+                header("Access-Control-Allow-Origin: *");
+                return Page::factory([
+                    'template'  => 'menus.json',
+                    'slug'      => 'menus',
+                ]);
+            }
+        ],
+        [
             'pattern' => 'rapport/(:any)/pdf',
             'method' => 'GET',
             'action' => function ($slug) {
