@@ -19,7 +19,8 @@ columns:
           headerImage:
             required: true
           body: false
-          preview: false
+          preview:
+            label: Brève description
   - width: 1/1
     sections:
       pages:

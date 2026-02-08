@@ -2,7 +2,7 @@ Title: Boîte à outils
 
 ----
 
-Headerimage: 
+Headerimage: - file://GAXtPHHc9OAo4Wls
 
 ----
 
@@ -10,7 +10,11 @@ Showinnav: true
 
 ----
 
-Headertitle: Toolkit
+Headertitle: Boite à outils
+
+----
+
+Preview: Petite phrase d’accroche ou description
 
 ----
 

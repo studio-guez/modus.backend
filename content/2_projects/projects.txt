@@ -10,7 +10,11 @@ Showinnav: true
 
 ----
 
-Headertitle: Quels sont les projets soutenus par Modus ?
+Headertitle: Projets
+
+----
+
+Preview: Petite phrase d’accroche ou description
 
 ----
 

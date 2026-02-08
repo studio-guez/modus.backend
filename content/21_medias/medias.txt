@@ -2,7 +2,7 @@ Title: Médias modus
 
 ----
 
-Headerimage:
+Headerimage: - file://rIw0GSPaKv6WCE6j
 
 ----
 
@@ -10,7 +10,11 @@ Showinnav: true
 
 ----
 
-Headertitle: Médias
+Headertitle: Médias modus
+
+----
+
+Preview: Petite phrase d’accroche ou description
 
 ----
 
