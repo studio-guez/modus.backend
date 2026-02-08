@@ -17,7 +17,6 @@ sections:
         fields:
           headerImage:
             required: true
-          showInNav: false
           body:
             fieldsets:
               - mdheading

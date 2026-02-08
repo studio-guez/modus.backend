@@ -31,7 +31,6 @@ $children = $page->children()->listed()->sortBy('dateStart', 'desc')->map(functi
 })->data();
 
 $json['options'] = [
-  'showInNav'       => $page->showMenu()->toBool(),
   'headerTitle'     => $page->headerTitle()->value(),
   'headerImage'     => $page->headerImage()->toFile() ? Utils::getJsonEncodeImageData($page->headerImage()->toFile()) : null,
   'preview'               => $page->preview()->value(),

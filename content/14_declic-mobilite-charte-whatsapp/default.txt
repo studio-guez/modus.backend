@@ -6,10 +6,6 @@ Headerimage: - file://7wH3vZxutWYM3cAp
 
 ----
 
-Showinnav: false
-
-----
-
 Headertitle: 
 
 ----

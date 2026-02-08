@@ -6,10 +6,6 @@ Headerimage: - file://IJZwNPlzYEmxFZMV
 
 ----
 
-Showinnav: true
-
-----
-
 Headertitle: Bibliothèque
 
 ----

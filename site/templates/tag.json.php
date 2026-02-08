@@ -98,7 +98,6 @@ usort($allChildren, function($a, $b) {
 $headerImage = $page->headerImage()->toFile();
 
 $json['options'] = [
-    'showInNav'     => false,
     'headerTitle'   => $page->title()->value(),
     'headerImage'   => $headerImage ? Utils::getJsonEncodeImageData($headerImage) : null,
     'preview'       => $page->description()->value(),

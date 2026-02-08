@@ -6,10 +6,6 @@ Headerimage: - file://rxq6uhR7tYhp8SE9
 
 ----
 
-Showinnav: true
-
-----
-
 Headertitle: Vous avez un projet ?
 
 ----

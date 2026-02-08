@@ -6,10 +6,6 @@ Headerimage:
 
 ----
 
-Showinnav: true
-
-----
-
 Body: 
 
 ----

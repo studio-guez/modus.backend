@@ -6,10 +6,6 @@ Headerimage:
 
 ----
 
-Showinnav: false
-
-----
-
 Headertitle: Déclaration en matière de protection des données de la Fondation Modus
 
 ----

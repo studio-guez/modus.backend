@@ -6,10 +6,6 @@ Headerimage: - file://PF8uusdGQNi4ltfs
 
 ----
 
-Showinnav: true
-
-----
-
 Headertitle: Vous voulez en savoir plus sur Modus ?
 
 ----

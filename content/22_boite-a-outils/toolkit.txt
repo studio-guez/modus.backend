@@ -6,10 +6,6 @@ Headerimage: - file://GAXtPHHc9OAo4Wls
 
 ----
 
-Showinnav: true
-
-----
-
 Headertitle: Boite à outils
 
 ----

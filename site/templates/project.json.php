@@ -23,7 +23,6 @@ $body = $page->body()->toBlocks()->map(function ($item) {
 })->data();
 
 $json['options'] = [
-  'showInNav'             => $page->showMenu()->toBool(),
   'headerTitle'           => $page->headerTitle()->value(),
   'preview'               => $page->preview()->value(),
   'headerImage'           => $page->headerImage()->toFile() ? Utils::getJsonEncodeImageData($page->headerImage()->toFile()) : null,

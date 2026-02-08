@@ -6,10 +6,6 @@ Headerimage: - file://Z3JOWXPL1RQhkmPy
 
 ----
 
-Showinnav: true
-
-----
-
 Headertitle: Projets
 
 ----

@@ -6,10 +6,6 @@ Headerimage: - file://5o4FibuiyKBsPX45
 
 ----
 
-Showinnav: false
-
-----
-
 Headertitle: Modus. Pour une mobilité durable à Genève.
 
 ----

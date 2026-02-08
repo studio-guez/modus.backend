@@ -6,10 +6,6 @@ Headerimage:
 
 ----
 
-Showinnav: false
-
-----
-
 Headertitle: Domaine prévu pour le toolkit mobilité
 
 ----

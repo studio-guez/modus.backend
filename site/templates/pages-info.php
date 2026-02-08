@@ -15,7 +15,6 @@ echo json_encode(value: [
     'children' => $item->children()->listed()->sortBy('dateStart'),
     'title' => $item->title(),
     'headerimage' => $item->headerimage(),
-    'showinnav' => $item->showinnav(),
     'headertitle' => $item->headertitle(),
     'id' => $item->id(),
     'mediaUrl' => $item->mediaUrl(),

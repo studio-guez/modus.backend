@@ -38,8 +38,4 @@ Pdffile:
 
 ----
 
-Showinnav: false
-
-----
-
 Uuid: 0yIi7wVeY91h9G78

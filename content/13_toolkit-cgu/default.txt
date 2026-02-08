@@ -6,10 +6,6 @@ Headerimage:
 
 ----
 
-Showinnav: false
-
-----
-
 Headertitle: Conditions générales d'utilisation (CGU) du Toolkit Mobilité
 
 ----

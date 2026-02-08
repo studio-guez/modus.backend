@@ -34,8 +34,4 @@ Pdffile:
 
 ----
 
-Showinnav: false
-
-----
-
 Uuid: dXBldm5bUChprPvJ

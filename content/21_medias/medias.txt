@@ -6,10 +6,6 @@ Headerimage: - file://rIw0GSPaKv6WCE6j
 
 ----
 
-Showinnav: true
-
-----
-
 Headertitle: Médias modus
 
 ----

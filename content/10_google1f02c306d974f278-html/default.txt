@@ -6,10 +6,6 @@ Headerimage:
 
 ----
 
-Showinnav: false
-
-----
-
 Headertitle: google-site-verification: google1f02c306d974f278.html
 
 ----
