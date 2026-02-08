@@ -13,13 +13,24 @@ options:
   changeSlug: false
   changeTemplate: false
 
-columns:
-  - width: 2/3
-    fields:
-      description:
-        label: Description du tag
-        type: textarea
-        width: 1/1
-        placeholder: Information à remplir…
-        required: false
-        buttons: false
+
+fields:
+  headerImage:
+    required: false
+    width: 2/4
+    label: Image du header
+    type: files
+    query: model.images
+    multiple: false
+    image:
+      back: black
+    uploads:
+      template: blocks/image
+  description:
+    label: Description du tag
+    type: writer
+    inline: true
+    marks:
+      - bold
+      - italic
+      - underline
