@@ -29,6 +29,7 @@ $json['options'] = [
   'dateStart'          => $page->dateStart()->value(),
   'isExternalLink'     => $page->isExternalLink()->toBool(),
   'externalUrl'        => $page->externalUrl()->value(),
+  'subpages'              => array_values($page->children()->toArray()),
 ];
 
 $json['body'] = $body;

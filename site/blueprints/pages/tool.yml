@@ -68,3 +68,8 @@ sections:
         type: date
         display: YYYY-MM
         default: today
+  subpages:
+    type: pages
+    label: Power BI
+    templates: power-bi
+    max: 1
