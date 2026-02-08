@@ -37,7 +37,7 @@ class Utils
      * Collect unique tags from an array of resolved tags arrays
      * 
      * @param array $allTags Array of resolved tag arrays
-     * @return array Unique tags sorted by name
+     * @return array Unique tags sorted by name (accent-aware)
      */
     static function collectUniqueTags(array $allTags): array
     {
@@ -53,7 +53,11 @@ class Utils
             }
         }
 
-        usort($uniqueTags, fn($a, $b) => strcasecmp($a['name'], $b['name']));
+        // Sort with accent-aware comparison (normalize accents for sorting)
+        usort($uniqueTags, function ($a, $b) {
+            $normalize = fn($str) => iconv('UTF-8', 'ASCII//TRANSLIT//IGNORE', $str);
+            return strcasecmp($normalize($a['name']), $normalize($b['name']));
+        });
 
         return $uniqueTags;
     }
