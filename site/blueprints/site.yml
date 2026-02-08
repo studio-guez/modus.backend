@@ -50,197 +50,23 @@ tabs:
       - width: 1/2
         fields:
           topMenu:
-            label: Menu haut
-            type: structure
-            fields:
-              linkedPage:
-                label: Page liée
-                type: pages
-                multiple: false
-                query: site.children.listed
-                when:
-                  itemType: page
-              externalUrl:
-                label: URL externe
-                type: url
-                when:
-                  itemType: external
-              customTitle:
-                label: Titre personnalisé
-                type: text
-              openInNewTab:
-                label: Nouvel onglet
-                type: toggle
-                default: false
+            extends: fields/menuitem
+            label: Menu haut (1 niveau)
+            help: "Menu affiché en haut de page"
 
           mainMenu:
-            label: Menu principal
-            type: structure
-            fields:
-              linkedPage:
-                label: Page liée
-                type: pages
-                multiple: false
-                query: site.children.listed
-                when:
-                  itemType: page
-              projectTypeFilter:
-                label: Filtre type projet
-                type: select
-                default: ""
-                options:
-                  "": Aucun filtre
-                  project-modus: Modus
-                  project-supported: Soutenu
-                whenTemplate:
-                  linkedPage: projects
-              externalUrl:
-                label: URL externe
-                type: url
-                when:
-                  itemType: external
-              customTitle:
-                label: Titre personnalisé
-                type: text
-              openInNewTab:
-                label: Nouvel onglet
-                type: toggle
-                default: false
-              children:
-                label: Sous-éléments
-                type: structure
-                fields:
-                  itemType:
-                    label: Type
-                    type: select
-                    required: true
-                    default: page
-                    options:
-                      page: Page interne
-                      external: Lien externe
-                  linkedPage:
-                    label: Page liée
-                    type: pages
-                    multiple: false
-                    query: site.children.listed
-                    when:
-                      itemType: page
-                  projectTypeFilter:
-                    label: Filtre type projet
-                    type: select
-                    default: ""
-                    options:
-                      "": Aucun
-                      project-modus: Modus
-                      project-supported: Soutenu
-                    whenTemplate:
-                      linkedPage: projects
-                  statusFilter:
-                    label: Filtre statut
-                    type: select
-                    default: ""
-                    options:
-                      "": Aucun
-                      en-cours: En cours
-                      termine: Terminé
-                    whenTemplate:
-                      linkedPage:
-                        - projects
-                        - tags
-                  mediaTypeFilter:
-                    label: Filtre type média
-                    type: select
-                    default: ""
-                    options:
-                      "": Aucun
-                      video: Vidéo
-                      podcast: Podcast
-                    whenTemplate:
-                      linkedPage: medias
-                  externalUrl:
-                    label: URL externe
-                    type: url
-                    when:
-                      itemType: external
-                  customTitle:
-                    label: Titre personnalisé
-                    type: text
-                  svgIcon:
-                    label: Icône SVG
-                    type: files
-                    query: site.files.filterBy('extension', 'svg')
-                    multiple: false
-                  openInNewTab:
-                    label: Nouvel onglet
-                    type: toggle
-                    default: false
+            extends: fields/menuitem-with-children
+            label: Menu principal (2 niveaux)
+            help: "Menu principal avec sous-menus"
 
       - width: 1/2
         fields:
           bottomMenu:
-            label: Menu bas
-            type: structure
-            fields:
-              linkedPage:
-                label: Page liée
-                type: pages
-                multiple: false
-                query: site.children.listed
-                when:
-                  itemType: page
-              projectTypeFilter:
-                label: Filtre type projet
-                type: select
-                default: ""
-                options:
-                  "": Aucun filtre
-                  project-modus: Modus
-                  project-supported: Soutenu
-                whenTemplate:
-                  linkedPage: projects
-              externalUrl:
-                label: URL externe
-                type: url
-                when:
-                  itemType: external
-              customTitle:
-                label: Titre personnalisé
-                type: text
-              openInNewTab:
-                label: Nouvel onglet
-                type: toggle
-                default: false
+            extends: fields/menuitem
+            label: Menu bas (1 niveau)
+            help: "Menu affiché en bas de page"
 
           footerMenu:
-            label: Menu footer
-            type: structure
-            fields:
-              linkedPage:
-                label: Page liée
-                type: pages
-                multiple: false
-                query: site.children.listed
-                when:
-                  itemType: page
-              projectTypeFilter:
-                label: Filtre type projet
-                type: select
-                default: ""
-                options:
-                  "": Aucun filtre
-                  project-modus: Modus
-                  project-supported: Soutenu
-                whenTemplate:
-                  linkedPage: projects
-              externalUrl:
-                label: URL externe
-                type: url
-                when:
-                  itemType: external
-              customTitle:
-                label: Titre personnalisé
-                type: text
-              openInNewTab:
-                label: Nouvel onglet
-                type: toggle
-                default: false
+            extends: fields/menuitem
+            label: Menu footer (1 niveau)
+            help: "Menu du pied de page"
