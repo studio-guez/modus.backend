@@ -10,7 +10,7 @@ Headerimage: - file://KnvwVzWK26hfQGoT
 
 ----
 
-Projecttype: external
+Projecttype: soutenus
 
 ----
 

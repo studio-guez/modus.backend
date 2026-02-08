@@ -22,7 +22,7 @@ Datestart: 2024-10-01
 
 ----
 
-Mediatype: podcast
+Mediatype: podcasts
 
 ----
 

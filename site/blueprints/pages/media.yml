@@ -42,10 +42,10 @@ sections:
         type: radio
         columns: 2
         required: true
-        default: video
+        default: videos
         options:
-          podcast: Podcast
-          video: Vidéo
+          podcasts: Podcast
+          videos: Vidéo
 
       spotifyUrl:
         label: Lien du podcast Spotify
@@ -53,7 +53,7 @@ sections:
         placeholder: "https://open.spotify.com/episode/…"
         required: true
         when:
-          mediaType: podcast
+          Mediatype: podcasts
 
       youtubeUrl:
         label: Lien de la vidéo YouTube
@@ -61,4 +61,4 @@ sections:
         placeholder: "https://youtube.com/?v=…"
         required: true
         when:
-          mediaType: video
+          Mediatype: videos
