@@ -21,6 +21,7 @@ $children = $page->children()->listed()->sortBy('dateStart', 'desc', 'dateEnd', 
   // Resolve tags from UUIDs
   $resolvedTags = Utils::resolveTagsFromUuids($content->tags()->value(), $site);
   $contentArray['tags'] = $resolvedTags;
+  $contentArray['projecttype'] = $content->projecttype()->value() ?: 'modus'; // Default to 'modus' if not set
   $allTags[] = $resolvedTags;
 
   return [
