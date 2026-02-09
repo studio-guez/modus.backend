@@ -33,7 +33,7 @@ Mainmenu:
       itemtype: page
       linkedpage:
         - page://09kzagIZKt5k2f1O
-      urlparams: ""
+      urlparams: type=soutenus
       externalurl: ""
       customtitle: Projets soutenus
       svgicon: [ ]
@@ -42,7 +42,7 @@ Mainmenu:
       itemtype: page
       linkedpage:
         - page://09kzagIZKt5k2f1O
-      urlparams: ""
+      urlparams: type=modus
       externalurl: ""
       customtitle: Projets Modus
       svgicon: [ ]
