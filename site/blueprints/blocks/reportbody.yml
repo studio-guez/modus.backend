@@ -1,0 +1,20 @@
+title: Texte courant
+
+icon: text
+wysiwyg: true
+preview: fields
+fields:
+  text:
+    label: false
+    type: writer
+    marks:
+      - bold
+      - italic
+      - underline
+      - link
+      - highlight
+    nodes:
+      - paragraph
+      - bulletList
+      - orderedList
+    placeholder: field.blocks.text.placeholder

@@ -21,3 +21,5 @@ columns:
     fields:
       content:
         extends: fields/body
+        fields:
+          preview: false

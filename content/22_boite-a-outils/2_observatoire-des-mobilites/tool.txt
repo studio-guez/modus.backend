@@ -1,0 +1,25 @@
+Title: Observatoire des mobilités
+
+----
+
+Headerimage: - file://bZvSM3jTsAoJslQ5
+
+----
+
+Headertitle: Observatoire des mobilités
+
+----
+
+Preview: Ce portail interactif offre un accès simplifié aux statistiques de la mobilité du Canton de Genève à travers une interface intuitive composée de tableaux dynamiques.
+
+----
+
+Body: [{"content":{"text":"<p>Ces derniers facilitent la consultation des données, mettent en avant les chiffres clés et permettent ainsi de sensibiliser les principaux acteurs aux enjeux majeurs du secteur.</p><p>Conçu comme un véritable outil de recherche et d'analyse, il est accessible à toutes et tous gratuitement. Son contenu est mis à jour régulièrement (de manière annuelle à biannuelle) et sera enrichi au fil du temps avec de nouvelles thématiques afin de mieux répondre aux besoins des utilisateurs et utilisatrices, ainsi qu’aux évolutions du domaine de la mobilité.</p>"},"id":"8738a688-5ed3-4eaf-af60-64e61093cadc","isHidden":false,"type":"body"}]
+
+----
+
+Datestart: 2025-03-01
+
+----
+
+Uuid: rrLLEC3IHsGfaoIJ

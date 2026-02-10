@@ -1,0 +1,37 @@
+Title: La mobilité de loisirs au cœur de la transition : évaluation de la « Ligne des plages »
+
+----
+
+Headertitle: La mobilité de loisirs au cœur de la transition : évaluation de la « Ligne des plages »
+
+----
+
+Headerimage: - file://toD7ZfCG6OuPJDa7
+
+----
+
+Preview: L’été 2025 marque une étape importante pour Genève avec le lancement de la « ligne des plages », nouvelle desserte estivale mise en place par les tpg reliant le centre-ville et les plages genevoises entre les Creux de Genthod et Collonge-Bellerive.
+
+----
+
+Body: [{"content":{"text":"<p>Cette mise en service offre une opportunité unique d’étudier de manière approfondie la mobilité de loisirs, un domaine encore peu documenté mais essentiel pour réduire les émissions de CO₂ et adapter les politiques publiques aux besoins réels des habitants.<br><br>Le projet de monitoring de la « ligne des plages » vise à mieux comprendre les pratiques de déplacements de loisirs et à renforcer la pertinence des offres de transport public dans un contexte de transition écologique et climatique.</p><p>Grâce à une enquête in situ menée pendant l’été 2025, il s’agit d'enquêter le long de la ligne des plages et des plages concernées les usagers et non usagers, résidents et touristes, dans le but de collecter des données inédites sur les comportements, besoins et aspirations en termes de pratiques récréatives et de leur accès par les transports publics. Ces informations permettent de :</p><p>·       <strong>Documenter la mobilité de loisirs</strong> : recueillir des observations de terrain sur les usages des rives du Léman et les habitudes de déplacement estival.</p><p>·       <strong>Alimenter la planification</strong> : fournir aux acteurs publics des bases empiriques solides pour enrichir les modèles de planification, encore peu sensibles aux mobilités de loisirs.</p><p>·       <strong>Explorer les leviers de décarbonation</strong> : analyser les potentiels de report modal selon l’approche « avoid – shift – improve ».</p><p>·       <strong>Valoriser la ligne 29</strong> : évaluer son impact sur les déplacements estivaux et sur l’accessibilité des espaces de loisirs.</p><p>·       <strong>Adapter l’offre</strong> : identifier les besoins prioritaires en matière d’accessibilité, d’horaires et de destinations, pour proposer des ajustements à court et moyen termes.</p><p>Le projet est conduit en partenariat par :</p><p>·       <strong>Fondation Modus</strong>, soutien stratégique et financier,</p><p>·       <strong>Transports publics genevois (TPG)</strong>, opérateur de la ligne 29 et partenaire de mise en œuvre,</p><p>·       <strong>Bureau d’études 6t</strong>, responsable de la méthodologie, des enquêtes et de l’analyse.</p><p><strong>Calendrier</strong></p><p>·       Juin 2025 : préparation du protocole</p><p>·       Juillet à septembre 2025 : trois vagues de collecte in situ</p><p>·       Septembre – octobre 2025 : analyses, rapport et restitution publique des résultats</p><p> </p>"},"id":"a6a4792f-4460-429b-b083-06cf3ebd5c3a","isHidden":false,"type":"body"},{"content":{"title":"Partenaires du projet","links":[{"name":"TPG","url":"https://www.tpg.ch/fr"},{"name":"6t","url":"https://www.6-t.co/"}]},"id":"f958785c-502a-4ae0-bb79-6e334f250936","isHidden":false,"type":"linksSection"}]
+
+----
+
+Tags: 
+
+----
+
+Datestart: 2025-07-01
+
+----
+
+Isprojectwithduration: true
+
+----
+
+Dateend: 2025-10-01
+
+----
+
+Uuid: MI9f3BubbGs7ObGC

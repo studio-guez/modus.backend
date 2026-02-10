@@ -1,0 +1,36 @@
+title: Tag
+
+num: zero
+
+status:
+  listed: true
+
+options:
+  delete: true
+  changeStatus: true
+  changeTitle: true
+  sort: true
+  changeSlug: false
+  changeTemplate: false
+
+
+fields:
+  headerImage:
+    required: false
+    width: 2/4
+    label: Image du header
+    type: files
+    query: model.images
+    multiple: false
+    image:
+      back: black
+    uploads:
+      template: blocks/image
+  description:
+    label: Description du tag
+    type: writer
+    inline: true
+    marks:
+      - bold
+      - italic
+      - underline

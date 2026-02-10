@@ -1,0 +1,37 @@
+Title: La Verticale Mobilité
+
+----
+
+Headertitle: La Verticale Mobilité
+
+----
+
+Headerimage: - file://pDqLBY3TTqJqZCc0
+
+----
+
+Preview: Un soutien concret pour les start-ups de la mobilité durable, en collaboration avec le fonds d’innovation FONGIT (FIF)
+
+----
+
+Body: [{"content":{"text":"<p>Depuis octobre 2024, la Fondation Modus participe au soutien de start-ups en matière de mobilité durable, en collaboration avec le FIF.</p><p>La FONGIT est le premier incubateur de start-up en Suisse. Organisme affilié au DEE, il est soutenu financièrement par l’Etat de Genève, qui alimente notamment le FIF (fonds d'innovation FONGIT) lancé en 2021. </p><p>La Fondation Modus s'engage à renforcer l’accompagnement de la FONGIT pour des start-up qui concourent spécifiquement au développement de mobilités plus respectueuses de l’environnement et qui présentent une faible empreinte carbone. </p><p>Ce partenariat avec le fonds d'Innovation FONGIT permet à la Fondation MODUS de soutenir les start-up qui constituent une des réponses au défi de la mobilité durable, en accélérant le développement de solutions innovantes et ambitieuses. </p>"},"id":"2e1257ae-6f37-40c0-a02b-c6cf86ab0d06","isHidden":false,"type":"body"},{"content":{"text":"<p><strong>Comment bénéficier de cette aide?</strong></p><p>Les start-ups ayant leur siège à Genève et désireuses de postuler au FIF peuvent le faire directement en ligne sur le site suivant :</p>"},"id":"caf36ba2-f5b5-4c98-af6c-9103925ccc06","isHidden":false,"type":"body"},{"content":{"title":"","links":[{"name":"Postuler au FIF","url":"https://www.fongit.ch/fr/financing"}]},"id":"04ef438c-e716-4c0e-aae2-8f24810b5095","isHidden":false,"type":"linksSection"},{"content":{"title":"Partenaires du projet ","links":[{"name":"FONGIT","url":"https://www.fongit.ch/fr"},{"name":"Département de l'économie et de l'emploi (DEE) ","url":"https://www.ge.ch/organisation/departement-economie-emploi-dee"}]},"id":"6f733a35-7077-4987-b567-df5cb793860b","isHidden":false,"type":"linksSection"},{"content":{"title":"Communiqué de presse de l'Etat de Genève","links":[{"name":"Innovation à Genève: nouvel acteur pour soutenir la mobilité de demain","url":"https://www.ge.ch/document/innovation-geneve-nouvel-acteur-soutenir-mobilite-demain#:~:text=Plus%20de%2030%20ans%20d'innovation%20genevoise&text=Organisme%20affilié%20au%20DEE%2C%20il,acteurs%20privés%20à%20se%20mobiliser."}]},"id":"ff5e1c4f-e766-4e58-ad6f-b713ea9e2bdf","isHidden":false,"type":"linksSection"}]
+
+----
+
+Tags: 
+
+----
+
+Datestart: 2024-10-01
+
+----
+
+Isprojectwithduration: false
+
+----
+
+Dateend: 
+
+----
+
+Uuid: RxewN64nnWCzJG5P

@@ -1,0 +1,33 @@
+Title: Marche pour la santé
+
+----
+
+Headertitle: Marche pour la santé
+
+----
+
+Headerimage: 
+
+----
+
+Preview: Le projet vise à développer et tester une application sur smartphone pour encourager et inciter les jeunes à intégrer la marche dans leurs déplacements quotidiens et atteindre la recommandation nationale de marcher au moins une heure par jour.
+
+----
+
+Body: [{"content":{"text":"<p>Le projet rejoint les champs d’activité de la promotion de la santé, de la qualité de l'air, de la mobilité, de l'éducation et du sport. Il répond aux engagements de plusieurs services de l’état dans le cadre de trois plans cantonaux. Un groupe de pilotage interdépartemental accompagne la conception, la mise en œuvre et la diffusion plus large du projet. Ce groupe intègre également des chercheurs experts en mobilité et santé numérique et d’acteurs associatifs.</p><p>Il s’adresse principalement aux jeunes dans un contexte d’augmentation de la sédentarité, une évolution inquiétante des taux de surpoids et d’obésité ainsi qu’un climat d’éco-anxiété paralysante. Le projet adopte une approche participative dès la conception jusqu’à la réalisation, en impliquant deux classes pilotes de 1ère année dans deux écoles du secondaire II. Les élèves contribuent activement à l’étude des besoins, à l’identification des freins et des leviers et la recherche de solutions concrètes pour introduire un changement de comportement pérenne.</p><p>Le projet a démarré en juin 2022 et il a déjà réalisé une étude (questionnaire) auprès de tous les élèves du secondaire II sur leurs pratiques de mobilité quotidienne, leurs niveaux d’éco-anxiété et leurs perceptions de l’état personnel de santé avec presque 2’200 réponses. Quatre focus groupes auprès des classes pilotes ont été réalisés et l’analyse de ces rencontres a guidé le groupe de pilotage à la décision de développer une application sur smartphone avec des fonctionnalités intéressantes capables de promouvoir auprès de ce public cible. Cette application servira d’un outil de travail pour d’autres activités de promotion de la mobilité active auprès des jeunes et de toute la population adulte. Le projet bénéficie d’un co-financement de deux services de l’Etat de Genève, de la Fondation Promotion Santé Suisse et de l’Office fédéral de l’énergie.</p>"},"id":"52cc8c5c-8f69-4a3c-9771-341037302b4e","isHidden":false,"type":"body"}]
+
+----
+
+Datestart: 2024-04-01
+
+----
+
+Isprojectwithduration: false
+
+----
+
+Dateend: 
+
+----
+
+Uuid: F2n5AT7Lm3B9gSIO

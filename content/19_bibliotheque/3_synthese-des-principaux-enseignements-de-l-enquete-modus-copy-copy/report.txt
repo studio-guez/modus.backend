@@ -1,0 +1,80 @@
+Title: Synthèse des principaux enseignements de l’Enquête Modus Copy Copy
+
+----
+
+Headerimage: - file://lNmeyAFnWefNjvM2
+
+----
+
+Headertitle: Synthèse des principaux enseignements de l’Enquête Modus
+
+----
+
+Preview: L’enquête menée par la Fondation Modus au printemps 2024 a couvert le périmètre du Grand Genève
+
+----
+
+Body: [{"content":{"level":"h2","text":"Ambition de l’enquête"},"id":"9f010c02-78a4-47d0-8c70-5a9e013913a4","isHidden":false,"type":"mdheading"},{"content":{"text":"<p>L’enquête <em>menée</em> <strong>par</strong> la <u>Fondation</u> Modus au printemps 2024 a couvert le périmètre du Grand Genève <mark>(Carte 1)</mark></p>"},"id":"fc13a583-f263-452d-b309-7f4a6a635705","isHidden":false,"type":"reportbody"},{"content":{"image":["file://UrdMkKDYVhqkeScr"],"size":"full","alt":"Figure 1: Périmètre du Grand Genève avec découpage typologique  (source : partenaires du MMT, découpage typologique) ","caption":"Figure 1: Périmètre du Grand Genève avec découpage typologique <br>(source : partenaires du MMT, découpage typologique)"},"id":"82d2021c-be5d-4dc9-b0e3-3d7a14dbfaa1","isHidden":false,"type":"mdreportimage"},{"content":{"text":"<p>3105 habitants et habitantes du Grand Genève[ref:55qdb12x] ont répondu au questionnaire. L’échantillon est représentatif sur la base de critères de genre, d’âge et de localisation résidentielle. L’enquête menée par la Fondation Modus a permis de répondre à 4 objectifs : </p><ol><li><p>Comprendre les habitudes en matière de mobilité en fonction de différents motifs de la vie quotidienne (travail, achats, loisirs)[ref:k3lo7isd] ; </p></li><li><p>Mesurer la satisfaction afférente aux différents modes de transports ; </p></li><li><p>Analyser la propension au changement de la part des habitants du Grand Genève en matière de transfert modal ; </p></li><li><p>Évaluer la pertinence d’alternatives à la voiture[ref:upkh4pit] ; </p></li></ol><p></p>"},"id":"cf7f0f65-2b2e-49fe-8cba-1333d770ad38","isHidden":false,"type":"reportbody"},{"content":{"level":"h2","text":"Des équipements et des pratiques encore largement tournés vers l’automobile"},"id":"e75cda24-7b7a-4e21-8c20-7f5038280681","isHidden":false,"type":"mdheading"},{"content":{"level":"h3","text":"Équipement des ménages et permis de conduire "},"id":"eae6076e-c78c-4a12-93af-9cbd162c9d9d","isHidden":false,"type":"mdheading"},{"content":{"image":["file://UrdMkKDYVhqkeScr"],"size":"small","alt":"Figure 1: Périmètre du Grand Genève avec découpage typologique  (source : partenaires du MMT, découpage typologique) ","caption":"Figure 1: Périmètre du Grand Genève avec découpage typologique <br>(source : partenaires du MMT, découpage typologique) "},"id":"8771d9b1-4d98-417d-8361-da9b823a0476","isHidden":false,"type":"mdreportimage"},{"content":{"text":"<p>En moyenne, au sein du Grand Genève, 91% des résidents disposent d’un permis de conduire voiture et 23% d’un permis moto. Il faut noter que pour les résidents du Canton de Genève, la proportion de titulaires d’un permis voiture est plus basse (85%) alors qu’elle est plus élevée concernant la moto (28%). Ce chiffre est cohérent avec les données du microrecensement transports [1], qui montrent qu’en dépit d’une diminution de la motorisation depuis les années 2000 dans le Canton de Genève, la proportion de détenteurs de permis de conduire (auto ou moto) est restée stable entre 2000 et 2021 [2]. </p><p>Les résultats de l’enquête montrent aussi que le nombre de voitures par ménage reste globalement élevé à l’échelle du Grand Genève avec une moyenne de 1,4 véhicule (thermique, hybride ou électrique) par ménage. Seuls les habitants de la ville de Genève possèdent en moyenne moins d’une voiture par ménage (0,78). À noter que plus d’un tiers des 18-24 ans ne possèdent pas de permis de conduire, confortant ainsi une certaine dynamique de perte de popularité de la voiture chez les jeunes générations. </p>"},"id":"bf642b68-622f-4eb8-b7e5-e1a54741e44b","isHidden":false,"type":"reportbody"},{"content":{"image":["file://UrdMkKDYVhqkeScr"],"size":"large","alt":"Figure 3 : Part des actifs disposant d'une place de stationnement sur le lieu de travail ","caption":"Figure 3 : Part des actifs disposant d'une place de stationnement sur le lieu de travail "},"id":"e47b99b4-fc4c-4ff2-b9c4-686b9cc45156","isHidden":false,"type":"mdreportimage"},{"content":{"text":"<p>Concernant la possession de titres de transport public <mark>(Figure 4)</mark>, une différence significative est observée entre la Suisse et la France. En France, plus des deux tiers des résidents du Grand Genève ne possèdent aucun titre de transport, contre seulement 36% des résidents suisses. Par ailleurs et en comparaison aux éditions précédentes du MRMT, les abonnements à tarif réduit, tels que le demi-tarif et le demi-tarif Plus, semblent avoir connu une forte adoption depuis la pandémie de COVID-19, probablement en raison d’une plus grande flexibilité du temps de travail et des changements d’habitudes qui en ont découlent. </p>"},"id":"44c34c55-aa13-4792-b189-be0c216a1092","isHidden":false,"type":"reportbody"}]
+
+----
+
+Summary: hztjhtzujz
+
+----
+
+Bibliography:
+
+- 
+  id: '[ref:55qdb12x]'
+  text: >
+    6T (2018), Analyse du microrecensement
+    mobilite et transports 2015 et
+    comparaison avec les années 2000, 2005
+    et 2010.
+  url: >
+    https://www.ge.ch/document/14727/telecharger
+- 
+  id: '[ref:k3lo7isd]'
+  text: >
+    Statistique Genève (2023), La mobilité
+    des habitants du canton de Genève en
+    2021,
+  url: >
+    https://statistique.ge.ch/tel/publicationshttps://statistique.ge.ch/tel/publications/2023/analyses/communications/an-cs-2023-71.pdf
+- 
+  id: '[ref:3vfnuijx]'
+  text: >
+    Office Fédéral de l’Energie OFEN
+    (2023). Coûts totaux de possession des
+    voitures de tourisme. Consulté 11
+    février 2025, à l’adresse
+  url: >
+    https://www.newsd.admin.ch/newsd/message/attachments/76393.pdf
+- 
+  id: '[ref:upkh4pit]'
+  text: >
+    Touring Club Suisse TCS (2025). Combien
+    me coûte ma voiture au km ?. Consulté
+    11 février 2025, à l’adresse
+  url: >
+    https://www.tcs.ch/fr/tests-conseils/conseils/controle-entretien/frais-kilometriques.php
+
+----
+
+Tags: page://s2Z4kLWkr8oDAG7w, page://GvvkGbkIppkHyL38
+
+----
+
+Datestart: 2026-01-01
+
+----
+
+Isprojectwithduration: false
+
+----
+
+Dateend: 
+
+----
+
+Uuid: Y9PjACUbewa5qrrA

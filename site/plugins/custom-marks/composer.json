@@ -1,0 +1,12 @@
+{
+  "name": "oplus/custom-marks",
+  "description": "Custom writer marks (highlight) for Kirby",
+  "type": "kirby-plugin",
+  "version": "1.0.0",
+  "license": "proprietary",
+  "authors": [
+    {
+      "name": "Octoplus Solutions"
+    }
+  ]
+}

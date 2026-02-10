@@ -1,0 +1,55 @@
+Title: Portail de données
+
+----
+
+Power-bi-link: https://app.powerbi.com/view?r=eyJrIjoiMjEwNGEzMDMtZDg5Yy00OGQ5LTk1NDEtM2ExZWRmZDZjMmFkIiwidCI6IjU1NjY4Nzc3LTYwZTYtNDlkZC1iODY1LTYyZjg0YjZlNGRkYiJ9
+
+----
+
+Power-bi-pages:
+
+- 
+  image:
+    - file://R8Qn3hPvdWRchQGc
+  power_bi_pages_number: '14.3%'
+  power_bi_pages_title: ""
+  power_bi_pages_description: >
+    La part de la distance faite à pied et
+    à vélo en 2021 en Ville de Genève (la
+    plus élevée de toutes les grandes
+    villes CH)
+  power_bi_pages_link: 'https://app.powerbi.com/view?r=eyJrIjoiMjEwNGEzMDMtZDg5Yy00OGQ5LTk1NDEtM2ExZWRmZDZjMmFkIiwidCI6IjU1NjY4Nzc3LTYwZTYtNDlkZC1iODY1LTYyZjg0YjZlNGRkYiJ9&pageName=93b58fa797cde03b440e'
+- 
+  image:
+    - file://R8Qn3hPvdWRchQGc
+  power_bi_pages_number: '47%'
+  power_bi_pages_title: ""
+  power_bi_pages_description: >
+    La part des actifs disposant d’une
+    place de stationnement sur le lieu de
+    travail (enquête modus, à l’échelle
+    du GG)
+  power_bi_pages_link: 'https://app.powerbi.com/view?r=eyJrIjoiMjEwNGEzMDMtZDg5Yy00OGQ5LTk1NDEtM2ExZWRmZDZjMmFkIiwidCI6IjU1NjY4Nzc3LTYwZTYtNDlkZC1iODY1LTYyZjg0YjZlNGRkYiJ9&pageName=017366208b0a48a97cb9'
+- 
+  image:
+    - file://R8Qn3hPvdWRchQGc
+  power_bi_pages_number: "11 403'000"
+  power_bi_pages_title: ""
+  power_bi_pages_description: >
+    Le nombre de véhicules entrant ou
+    sortant tous les jours du Canton de
+    Genève
+  power_bi_pages_link: 'https://app.powerbi.com/view?r=eyJrIjoiMjEwNGEzMDMtZDg5Yy00OGQ5LTk1NDEtM2ExZWRmZDZjMmFkIiwidCI6IjU1NjY4Nzc3LTYwZTYtNDlkZC1iODY1LTYyZjg0YjZlNGRkYiJ9&pageName=22795ccfe9d6ad305d7e'
+- 
+  image:
+    - file://R8Qn3hPvdWRchQGc
+  power_bi_pages_number: '11.4%'
+  power_bi_pages_title: ""
+  power_bi_pages_description: >
+    L’évolution du taux de motorisation
+    sur le canton entre 2014 et 2024
+  power_bi_pages_link: 'https://app.powerbi.com/view?r=eyJrIjoiMjEwNGEzMDMtZDg5Yy00OGQ5LTk1NDEtM2ExZWRmZDZjMmFkIiwidCI6IjU1NjY4Nzc3LTYwZTYtNDlkZC1iODY1LTYyZjg0YjZlNGRkYiJ9&pageName=e9ddd31c9c7ab0964271'
+
+----
+
+Uuid: saPW4J2qHIDlhUIh

@@ -1,0 +1,37 @@
+Title: Toolkit Mobilité
+
+----
+
+Headertitle: Toolkit Mobilité
+
+----
+
+Headerimage: - file://Q85WKwFPPznvoExM
+
+----
+
+Preview: Un outil gratuit pour vous accompagner dans votre stratégie mobilité
+
+----
+
+Body: [{"content":{"text":"<p><strong>Pourquoi le Toolkit mobilité ?</strong></p><ul><li><p>encourager les entreprises et leurs employé.e.s dans la transition de la mobilité</p></li><li><p>donner un outil gratuit pour accompagner les plans de mobilité d'entreprise</p></li><li><p>diminuer la part modale des TIM, les frais et les nuisances associées</p></li><li><p>améliorer le bien-être au travail et l’attractivité de l’employeur</p></li></ul>"},"id":"a2ca7493-560a-4e7b-83ab-bbf59eb9b0f2","isHidden":false,"type":"body"},{"content":{"text":"<p><strong>Envie de tester ?</strong></p><p>Si vous souhaitez entamer la démarche au niveau de votre institution pour profiter pleinement des avantages de cet outil, n'hésitez pas à nous contacter à <a href=\"mailto:info@modus-ge.ch\" title=\"info@modus-ge.ch\">info@modus-ge.ch</a> !</p><p>Vous pouvez aussi directement tester le questionnaire et obtenir des recommandations personnalisées pour vos déplacements domicile-travail et professionnels ! Vous bénéficiez ainsi des retours du toolkit dans sa \"version collaborateur·trice\".</p><p>Il suffit de cliquer ici :</p>"},"id":"57eced31-15b9-479b-8dbd-bdc7ca69766a","isHidden":false,"type":"body"},{"content":{"title":"","links":[{"name":"Lien vers le questionnaire du toolkit mobilité","url":"https://toolkit.modus-ge.ch/go/site-web-web0625-gvs2"}]},"id":"b604a289-81aa-4eea-aebd-f55613f77752","isHidden":false,"type":"linksSection"},{"content":{"text":"<p><strong>L'histoire du Toolkit mobilité</strong></p><p>L'objectif est de construire un outil simple d’utilisation permettant aux TPE/PME de réaliser une analyse de mobilité en vue d'établir ou de réviser leur plan de mobilité. L’analyse s’intéresse tant aux pratiques de mobilité des collaboratrices et collaborateurs, qu'à leur désir de mobilité tout en prenant en compte les contraintes personnelles et professionnelles.</p><p>Le Toolkit mobilité s'appuie sur trente années de recherches menées par le Prof. Vincent Kaufmann et les chercheurs du Laboratoire de Sociologie Urbaine de l'EPFL. En se basant sur ces travaux, sur l'accessibilité au lieu de travail et de domicile (desserte en transport publics, distance au lieu de travail) ou encore sur les contraintes de chacun, le Toolkit effectue des recommandations personnalisées aux employés.e.s et aux employeurs.</p><p>C'est également un moyen pour les entreprises de cibler les aides les plus pertinentes à mettre en oeuvre pour leurs collaborateur.trice.s et d'évaluer, périodiquement, l'alignement de ces aides avec les besoins réels de ceux-ci.</p><p>L'utilisation simple de l'outil et le faible coût d'entrée en font un outil particulièrement adapté pour les PME, bien qu'il puisse venir également en complément de plans de mobilités déjà en action.</p>"},"id":"ad27cb46-1f66-4d43-bd79-17e9883daf34","isHidden":false,"type":"body"},{"content":{"image":["file://SBywUYhTRoLkVO7T"],"alt":"Insertion du Toolkit mobilité au sein de la démarche d'un plan de déplacement d'entreprise","caption":""},"id":"7e766fa7-fbb9-4d5f-8891-25032833510e","isHidden":false,"type":"mdimage"},{"content":{"title":"Partenaires du projet","links":[{"name":"EPFL (Laboratoire de sociologie urbaine)","url":"https://www.epfl.ch/labs/lasur/fr/index-fr-html/"}]},"id":"096c1cbe-7a39-48b1-8d86-fcb7fdf1eca0","isHidden":false,"type":"linksSection"}]
+
+----
+
+Tags: 
+
+----
+
+Datestart: 2024-10-01
+
+----
+
+Isprojectwithduration: true
+
+----
+
+Dateend: 2025-10-01
+
+----
+
+Uuid: F5q7NoC1NZNvbQ5N

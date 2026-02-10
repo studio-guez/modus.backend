@@ -15,6 +15,8 @@ columns:
     fields:
       content:
         extends: fields/body
+        fields:
+          preview: false
       info:
         type: info
         label: info

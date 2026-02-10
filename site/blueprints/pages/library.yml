@@ -1,0 +1,36 @@
+title: Library
+
+status:
+  listed: true
+
+options:
+  changeSlug: false
+  delete: false
+  changeTitle: true
+  changeStatus: false
+  preview: "https://modus-ge.ch/{{ page.slug }}"
+
+columns:
+  - width: 1/1
+    fields:
+      content:
+        extends: fields/body
+        fields:
+          headerImage:
+            required: true
+          body: false
+          preview:
+            label: Brève description
+  - width: 1/1
+    sections:
+      pages:
+        layout: cards
+        cover: true
+        sortBy: dateStart desc
+        sortable: false
+        type: pages
+        create: report
+        search: true
+        limit: 500
+        templates:
+          - report

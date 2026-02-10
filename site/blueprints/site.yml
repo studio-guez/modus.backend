@@ -3,36 +3,70 @@ title: modus
 options:
   preview: https://modus-ge.ch.ch/
 
-columns:
-  - width: 1/3
-    fields:
-      files:
-        label:
-          fr: Fichiers
-        type: files
-        layout: small
-        uploads:
-          template: pdf
+tabs:
+  # Content tab (existing structure)
+  content:
+    label: Contenu
+    columns:
+      - width: 1/3
+        fields:
+          files:
+            label:
+              fr: Fichiers
+            type: files
+            layout: small
+            uploads:
+              template: pdf
 
-  - width: 2/3
-    sections:
-      tagList:
-        width: 1/2
-        label: "Tags / Catégories"
-        type: pages
-        status: listed
-        image: false
-        templates: seasons
-        layout: cards
-        size: medium
+      - width: 2/3
+        sections:
+          tags:
+            label: "Tags"
+            type: pages
+            status: listed
+            image: false
+            templates: tags
+            layout: cards
+            size: medium
 
-      pages:
-        image: false
-        type: pages
-        create: default
-        templates:
-          - home
-          - default
-          - default-admin
-          - projects
-          - outils-modus
+          pages:
+            image: false
+            type: pages
+            create: default
+            templates:
+              - home
+              - default
+              - default-admin
+              - projects
+              - outils-modus
+              - library
+              - medias
+              - toolkit
+
+  # Navigation tab (new)
+  navigation:
+    label: Navigation
+    columns:
+      - width: 1/2
+        fields:
+          topMenu:
+            extends: fields/menuitem
+            label: Menu haut (1 niveau)
+            help: "Menu affiché en haut de page"
+
+          mainMenu:
+            extends: fields/menuitem-with-children
+            label: Menu principal (2 niveaux)
+            help: "Menu principal avec sous-menus"
+
+      - width: 1/2
+        fields:
+          bottomMenu:
+            extends: fields/menuitem
+            label: Menu bas (1 niveau)
+            help: "Menu affiché en bas de page"
+
+          footerMenu:
+            extends: fields/menuitem
+            label: Menu footer (1 niveau)
+            help: "Menu du pied de page"

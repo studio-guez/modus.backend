@@ -1,0 +1,34 @@
+name: field.blocks.image.name
+icon: image
+preview: fields
+wysiwyg: true
+fields:
+  image:
+    label: field.blocks.image.name
+    type: files
+    query: site.images
+    multiple: false
+    required: true
+    image:
+      back: black
+    uploads:
+      template: blocks/image
+  size:
+    label: Taille
+    type: select
+    width: 1/2
+    default: large
+    required: true
+    options:
+      full: Pleine largeur
+      large: Grande
+      small: Petite
+  alt:
+    label: field.blocks.image.alt
+    type: text
+    icon: title
+  caption:
+    label: field.blocks.image.caption
+    type: writer
+    icon: text
+    inline: true

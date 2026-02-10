@@ -1,0 +1,26 @@
+blueprint: page
+
+title: Tags
+
+icon: ticket
+
+options:
+  changeSlug: false
+  delete: false
+  changeTitle: false
+  sort: false
+  changeStatus: false
+  duplicate: false
+
+sections:
+  tags:
+    type: pages
+    templates: tag
+    create: tag
+    headline: Liste des étiquettes
+    image: false
+    layout: table
+    columns:
+      description:
+        label: Description
+        value: "{{ page.description }}"

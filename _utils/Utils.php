@@ -2,6 +2,66 @@
 
 class Utils
 {
+    /**
+     * Resolve tag UUIDs to objects with slug and name
+     * Tags are stored as "page://UUID, page://UUID" format
+     * 
+     * @param string|null $tagsValue The raw tags value from content
+     * @param \Kirby\Cms\Site $site The Kirby site instance
+     * @return array Array of resolved tags with 'slug' and 'name' keys
+     */
+    static function resolveTagsFromUuids(?string $tagsValue, \Kirby\Cms\Site $site): array
+    {
+        if (!$tagsValue) return [];
+
+        $tagUuids = array_filter(array_map('trim', explode(',', $tagsValue)));
+        $tagsPage = $site->find('tags');
+        $resolvedTags = [];
+
+        if ($tagsPage) {
+            foreach ($tagUuids as $tagUuid) {
+                $tagPage = $tagsPage->children()->listed()->findBy('uuid', $tagUuid);
+                if ($tagPage) {
+                    $resolvedTags[] = [
+                        'slug' => $tagPage->slug(),
+                        'name' => $tagPage->title()->value(),
+                    ];
+                }
+            }
+        }
+
+        return $resolvedTags;
+    }
+
+    /**
+     * Collect unique tags from an array of resolved tags arrays
+     * 
+     * @param array $allTags Array of resolved tag arrays
+     * @return array Unique tags sorted by name (accent-aware)
+     */
+    static function collectUniqueTags(array $allTags): array
+    {
+        $uniqueTags = [];
+        $seenSlugs = [];
+
+        foreach ($allTags as $tags) {
+            foreach ($tags as $tag) {
+                if (!isset($seenSlugs[$tag['slug']])) {
+                    $seenSlugs[$tag['slug']] = true;
+                    $uniqueTags[] = $tag;
+                }
+            }
+        }
+
+        // Sort with accent-aware comparison (normalize accents for sorting)
+        usort($uniqueTags, function ($a, $b) {
+            $normalize = fn($str) => iconv('UTF-8', 'ASCII//TRANSLIT//IGNORE', $str);
+            return strcasecmp($normalize($a['name']), $normalize($b['name']));
+        });
+
+        return $uniqueTags;
+    }
+
     static function getImageArrayDataInPage(\Kirby\Cms\Files $files): array|null
     {
         return $files->map(function (\Kirby\Cms\File $item): array {

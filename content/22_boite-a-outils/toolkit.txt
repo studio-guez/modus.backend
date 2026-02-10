@@ -1,0 +1,17 @@
+Title: Boîte à outils
+
+----
+
+Headerimage: - file://GAXtPHHc9OAo4Wls
+
+----
+
+Headertitle: Boite à outils
+
+----
+
+Preview: Petite phrase d’accroche ou description
+
+----
+
+Uuid: Tk7xL2mQp9vNw4Yd
