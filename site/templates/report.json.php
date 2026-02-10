@@ -32,14 +32,15 @@ foreach ($bibliographyRaw as $ref) {
 }
 
 /**
- * Replace bibliography shortcodes [ref:xxx] with <b>[number]</b>
+ * Replace bibliography shortcodes [ref:xxx] with <b class="bib-ref" data-ref="number">[number]</b>
  */
 function replaceBibliographyRefs(string $text, array $refMap): string
 {
   return preg_replace_callback('/\[ref:([a-zA-Z0-9]+)\]/', function ($matches) use ($refMap) {
     $id = $matches[1];
     if (isset($refMap[$id])) {
-      return '<b>[' . $refMap[$id] . ']</b>';
+      $num = $refMap[$id];
+      return '<b class="bib-ref" data-ref="' . $num . '">[' . $num . ']</b>';
     }
     return $matches[0]; // Keep original if not found
   }, $text);
