@@ -17,7 +17,7 @@ RUN apt-get update && apt-get install -y \
     libfreetype6-dev \
     libwebp-dev \
     && docker-php-ext-configure gd --with-freetype --with-jpeg --with-webp \
-    && docker-php-ext-install zip gd
+    && docker-php-ext-install zip gd mbstring
 
 # Installe Composer
 COPY --from=composer:2 /usr/bin/composer /usr/bin/composer
