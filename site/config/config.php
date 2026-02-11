@@ -23,6 +23,7 @@ V::$validators['youtubeUrl'] = function ($value, $mediaType) {
  * All config options: https://getkirby.com/docs/reference/system/options
  */
 return [
+    'url' => getenv('CMS_URL') ?: 'http://localhost:8080',
     'debug' => true,
     'hooks' => [
         'page.render:before' => function ($event) {
