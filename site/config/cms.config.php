@@ -1,4 +1,4 @@
 <?php
 return [
-    'url' => 'https://cms.modus-ge.ch',
+    'url' => getenv('CMS_URL') ?: 'http://localhost:8080',
 ];
