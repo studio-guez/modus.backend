@@ -24,6 +24,7 @@ V::$validators['youtubeUrl'] = function ($value, $mediaType) {
  */
 return [
     'url' => getenv('CMS_URL') ?: 'http://localhost:8080',
+    'install' => true,
     'debug' => true,
     'hooks' => [
         'page.render:before' => function ($event) {
