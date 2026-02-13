@@ -28,6 +28,7 @@ fields:
     fieldsets:
       - body
       - internalLink
+      - internalLinks
       - listPoints
       - mdheading
       - mdimage
@@ -36,5 +37,5 @@ fields:
       - video
       - actuality
       - dropdown
+      - highlights
       - navigateProjectsByTags
-      - internalLinks
