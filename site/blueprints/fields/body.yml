@@ -36,3 +36,4 @@ fields:
       - video
       - actuality
       - dropdown
+      - navigateProjectsByTags

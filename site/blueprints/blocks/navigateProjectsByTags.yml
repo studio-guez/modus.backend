@@ -1,0 +1,14 @@
+title: Naviguer les projets par tags
+icon: anchor
+preview: fields
+wysiwyg: true
+
+fields:
+
+  title:
+    label: Titre
+    type: text
+
+  buttontext:
+    label: Texte du bouton
+    type: text
