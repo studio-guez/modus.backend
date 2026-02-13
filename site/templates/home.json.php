@@ -12,14 +12,21 @@ use Kirby\Cms\Site;
 
 $json = [];
 
-$body = $page->body()->toBlocks()->map(function ($item) {
+$body = $page->body()->toBlocks()->map(function ($item) use ($site) {
 
   $content = $item->toArray();
 
-  return [
+  $result = [
     'image'     => array_values(Utils::getImageArrayDataInPage($item->image()->toFiles())),
     'content'   => $content,
   ];
+
+  // Resolve highlights items from page:// UUIDs
+  if ($content['type'] === 'highlights' && !empty($content['content']['highlightsitems'])) {
+    $result['highlightsItems'] = Utils::resolveHighlightsItems($content['content']['highlightsitems'], $site);
+  }
+
+  return $result;
 })->data();
 
 $json['options'] = [

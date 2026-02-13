@@ -108,4 +108,55 @@ class Utils
             ]
         ];
     }
+
+    /**
+     * Resolve highlights items from page:// UUIDs stored in a pages field.
+     * Returns an array of resolved page data suitable for card rendering.
+     *
+     * @param string|array|null $pagesValue  Array of page:// UUIDs or comma-separated string
+     * @param \Kirby\Cms\Site $site
+     * @return array
+     */
+    static function resolveHighlightsItems(string|array|null $pagesValue, \Kirby\Cms\Site $site): array
+    {
+        if (!$pagesValue) return [];
+
+        if (is_array($pagesValue)) {
+            $uuids = array_filter(array_map('trim', $pagesValue));
+        } else {
+            $uuids = array_filter(array_map('trim', explode(',', $pagesValue)));
+        }
+        $resolved = [];
+
+        foreach ($uuids as $uuid) {
+            $linkedPage = $site->index()->listed()->findBy('uuid', $uuid);
+            if (!$linkedPage) continue;
+
+            $content = $linkedPage->content();
+            $contentArray = $content->toArray();
+
+            // Determine page type from template
+            $template = $linkedPage->intendedTemplate()->name();
+            $pageType = match ($template) {
+                'media'   => 'media',
+                'report'  => 'report',
+                'tool'    => 'tool',
+                default   => 'project',
+            };
+            $contentArray['pageType'] = $pageType;
+
+            // Resolve tags if present
+            if ($content->tags()->value()) {
+                $contentArray['tags'] = self::resolveTagsFromUuids($content->tags()->value(), $site);
+            }
+
+            $resolved[] = [
+                'headerImage' => array_values(self::getImageArrayDataInPage($content->headerimage()->toFiles())),
+                'slug'        => $linkedPage->slug(),
+                'content'     => $contentArray,
+            ];
+        }
+
+        return $resolved;
+    }
 }
