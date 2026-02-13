@@ -37,13 +37,14 @@ sections:
             prefix: ref
             width: 1
           text:
-            type: textarea
+            type: writer
             label: Référence
             width: 1
-          url:
-            type: url
-            label: URL
-            width: 1
+            inline: true
+            marks:
+              - bold
+              - italic
+              - link
       tags:
         extends: fields/tags
       dateStart:

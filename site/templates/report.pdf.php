@@ -317,13 +317,18 @@ if (!empty($bibliography)) {
     $bibHtml .= '<p class="bibliography-item">';
     $bibHtml .= '<span class="bibliography-number">[' . $index . ']</span>';
     if (!empty($ref['text'])) {
-      $bibHtml .= ' ' . htmlspecialchars($ref['text']) . '';
-    }
-    if (!empty($ref['url'])) {
-      // Insert <wbr> (word break opportunity) after each character to allow mPDF to break anywhere
-      $urlDisplay = htmlspecialchars($ref['url']);
-      $urlBreakable = preg_replace('/(.)/u', '$1<wbr>', $urlDisplay);
-      $bibHtml .= ' <a href="' . htmlspecialchars($ref['url']) . '" class="bibliography-url">' . $urlBreakable . '</a>';
+      // Text contains HTML with <a> tags from the writer field
+      // Add <wbr> tags to URLs within anchor tags for line breaking in mPDF
+      $text = preg_replace_callback(
+        '/(<a[^>]*>)([^<]*)(<\/a>)/i',
+        function ($matches) {
+          // Insert <wbr> after each character in the URL text to allow mPDF to break anywhere
+          $urlBreakable = preg_replace('/(.)/u', '$1<wbr>', $matches[2]);
+          return $matches[1] . $urlBreakable . $matches[3];
+        },
+        $ref['text']
+      );
+      $bibHtml .= ' ' . $text;
     }
     $bibHtml .= '</p>';
     $index++;

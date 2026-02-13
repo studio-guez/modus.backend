@@ -26,38 +26,16 @@ Bibliography:
 
 - 
   id: '[ref:55qdb12x]'
-  text: >
-    6T (2018), Analyse du microrecensement
-    mobilite et transports 2015 et
-    comparaison avec les années 2000, 2005
-    et 2010.
-  url: >
-    https://www.ge.ch/document/14727/telecharger
+  text: '6T (2018), Analyse du microrecensement mobilite et transports 2015 et comparaison avec les années 2000, 2005 et 2010. <a href=">https://www.ge.ch/document/14727/telecharger" target="_blank">https://www.ge.ch/document/14727/telecharger</a>'
 - 
   id: '[ref:k3lo7isd]'
-  text: >
-    Statistique Genève (2023), La mobilité
-    des habitants du canton de Genève en
-    2021,
-  url: >
-    https://statistique.ge.ch/tel/publicationshttps://statistique.ge.ch/tel/publications/2023/analyses/communications/an-cs-2023-71.pdf
+  text: 'Statistique Genève (2023), La mobilité des habitants du canton de Genève en 2021, <a href="https://statistique.ge.ch/tel/publicationshttps://statistique.ge.ch/tel/publications/2023/analyses/communications/an-cs-2023-71.pdf target="_blank">https://statistique.ge.ch/tel/publicationshttps://statistique.ge.ch/tel/publications/2023/analyses/communications/an-cs-2023-71.pdf</a>'
 - 
   id: '[ref:3vfnuijx]'
-  text: >
-    Office Fédéral de l’Energie OFEN
-    (2023). Coûts totaux de possession des
-    voitures de tourisme. Consulté 11
-    février 2025, à l’adresse
-  url: >
-    https://www.newsd.admin.ch/newsd/message/attachments/76393.pdf
+  text: 'Office Fédéral de l’Energie OFEN (2023). Coûts totaux de possession des voitures de tourisme. Consulté 11 février 2025, à l’adresse <a href="https://www.newsd.admin.ch/newsd/message/attachments/76393.pdf text: https://www.newsd.admin.ch/newsd/message/attachments/76393.pdf</a>'
 - 
   id: '[ref:upkh4pit]'
-  text: >
-    Touring Club Suisse TCS (2025). Combien
-    me coûte ma voiture au km ?. Consulté
-    11 février 2025, à l’adresse
-  url: >
-    https://www.tcs.ch/fr/tests-conseils/conseils/controle-entretien/frais-kilometriques.php
+  text: 'Touring Club Suisse TCS (2025). Combien me coûte ma voiture au km ?. Consulté 11 février 2025, à l’adresse <a href="https://www.tcs.ch/fr/tests-conseils/conseils/controle-entretien/frais-kilometriques.php target="_blank">https://www.tcs.ch/fr/tests-conseils/conseils/controle-entretien/frais-kilometriques.php</a>'
 
 ----
 
