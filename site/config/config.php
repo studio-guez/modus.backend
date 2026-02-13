@@ -144,6 +144,17 @@ return [
             }
         ],
         [
+            'pattern' => '/project-tags.json',
+            'method' => 'GET',
+            'action' => function () {
+                header("Access-Control-Allow-Origin: *");
+                return Page::factory([
+                    'template'  => 'project-tags.json',
+                    'slug'      => 'project-tags',
+                ]);
+            }
+        ],
+        [
             'pattern' => 'rapport/(:any)/pdf',
             'method' => 'GET',
             'action' => function ($slug) {
