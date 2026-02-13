@@ -37,3 +37,4 @@ fields:
       - actuality
       - dropdown
       - navigateProjectsByTags
+      - internalLinks

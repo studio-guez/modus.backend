@@ -1,0 +1,65 @@
+title: Section Liens Internes
+
+icon: grid-bottom
+
+preview: fields
+wysiwyg: true
+
+fields:
+  image:
+    required: true
+    width: 2/4
+    label: Image de fond
+    type: files
+    query: model.images
+    multiple: false
+    image:
+      back: black
+    uploads:
+      template: blocks/image
+
+  sectionTitle:
+    label: Titre de la section
+    type: text
+    required: true
+
+  sectionSubtitle:
+    label: Sous-titre de la section
+    type: text
+    required: true
+
+  cards:
+    label: Cartes
+    type: structure
+    columns:
+      title:
+        width: 1/3
+      subtitle:
+        width: 1/3
+      slug:
+        width: 1/3
+    fields:
+      title:
+        label: Titre
+        type: text
+        required: true
+      subtitle:
+        label: Sous-titre
+        type: text
+        required: true
+      slug:
+        label: Slug de la page
+        help: |
+          exemple:
+          projets/exemple
+        type: text
+        required: true
+      color:
+        label: Couleur
+        type: select
+        default: green-light
+        required: true
+        options:
+          green-light: Vert clair
+          green-medium: Vert moyen
+          green-dark: Vert foncé
