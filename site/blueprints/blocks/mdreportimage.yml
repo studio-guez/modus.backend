@@ -32,3 +32,6 @@ fields:
     type: writer
     icon: text
     inline: true
+    buttons:
+      - bold
+      - italic
