@@ -6,7 +6,7 @@ Headerimage: - file://GAXtPHHc9OAo4Wls
 
 ----
 
-Headertitle: Boite à outils
+Headertitle: Boîte à outils
 
 ----
 
