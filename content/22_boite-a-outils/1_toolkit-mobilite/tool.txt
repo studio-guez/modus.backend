@@ -18,19 +18,7 @@ Body: [{"content":{"text":"<p><strong>Pourquoi le Toolkit mobilité ?</strong></
 
 ----
 
-Tags: 
-
-----
-
 Datestart: 2024-10-01
-
-----
-
-Isprojectwithduration: true
-
-----
-
-Dateend: 2025-10-01
 
 ----
 
