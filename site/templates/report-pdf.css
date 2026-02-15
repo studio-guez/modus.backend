@@ -13,6 +13,12 @@ body {
   color: #000;
 }
 
+/* ── Global page-break & orphan / widow control ── */
+p, li {
+  orphans: 3;
+  widows: 4;
+}
+
 /* Cover page */
 .cover-page {
   position: relative;
@@ -61,6 +67,7 @@ body {
   font-size: 22pt;
   line-height: 1.11;
   margin: 0 0 20px 0;
+  page-break-after: avoid;
 }
 
 .toc-table {
@@ -72,6 +79,7 @@ body {
   border-width: 0;
   padding: 0;
   background: transparent;
+  page-break-inside: avoid;
 }
 
 .toc-table td {
@@ -100,6 +108,7 @@ body {
   margin: 0 0 20px 0;
   page-break-after: avoid;
   page-break-inside: avoid;
+  page-break-before: auto;
 }
 
 .section-subheading {
@@ -107,6 +116,7 @@ body {
   margin: 0 0 20px 0;
   page-break-after: avoid;
   page-break-inside: avoid;
+  page-break-before: auto;
 }
 
 .body-text {
@@ -129,6 +139,10 @@ body {
   padding-left: 35px;
 }
 
+.body-text li {
+  page-break-inside: avoid;
+}
+
 .body-text a {
   color: #01983b;
   text-decoration: underline;
@@ -148,6 +162,8 @@ body {
 .report-image {
   margin: 0 0 15px 0;
   page-break-inside: avoid;
+  page-break-before: auto;
+  page-break-after: auto;
 }
 
 .image-caption {
@@ -155,11 +171,13 @@ body {
   line-height: 1.08;
   color: #01983b;
   margin: 10px 0 10px 0;
+  page-break-before: avoid;
 }
 
 /* Bibliography */
 .bibliography-item {
   margin: 0 0 15px 0;
+  page-break-inside: avoid;
 }
 
 .bibliography-number {
