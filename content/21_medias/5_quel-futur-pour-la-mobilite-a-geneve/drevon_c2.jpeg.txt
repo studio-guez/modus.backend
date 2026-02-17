@@ -26,4 +26,4 @@ Template: blocks/image
 
 ----
 
-Focus: 93.8% 28.6%
+Focus: 49.3% 27.2%

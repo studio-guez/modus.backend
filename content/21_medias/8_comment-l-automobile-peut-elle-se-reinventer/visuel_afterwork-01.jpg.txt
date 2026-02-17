@@ -2,8 +2,28 @@ Caption:
 
 ----
 
+Alt: 
+
+----
+
+Photographer: 
+
+----
+
+License: 
+
+----
+
+Link: 
+
+----
+
 Uuid: RDGd94PCYG5bYIbb
 
 ----
 
 Template: blocks/image
+
+----
+
+Focus: 48.6% 45.1%
