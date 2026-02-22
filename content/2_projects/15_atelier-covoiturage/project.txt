@@ -1,0 +1,33 @@
+Title: ATELIER covoiturage
+
+----
+
+Headertitle: ATELIER covoiturage
+
+----
+
+Headerimage: - file://YrOR8kp0PC1noE2j
+
+----
+
+Preview: Le covoiturage représente une solution intéressante dans le Grand Genève pour baisser les émissions de CO2. Bien qu'il soit déjà pratiqué par certaines personnes, il existe encore de nombreux freins pour développer pleinement le potentiel de ce moyen de transport.
+
+----
+
+Body: [{"content":{"text":"<p>L'atelier organisé par la Fondation MODUS le 17 septembre 2024 réunit une quinzaine d'acteurs impliqués dans des projets de covoiturage aussi bien à Genève, qu'en France voisine. À travers cette initiative, la Fondation Modus souhaite créer une communauté d’échanges et de pratiques. L'objectif principal de cette réflexion collective autour du covoiturage porte sur la question: <em>Comment rendre le covoiturage attractif: quels sont les freins et que faut-il mettre en place pour les surmonter?</em> </p>"},"id":"6f967659-3065-4de3-828a-94f649023fe3","isHidden":false,"type":"body"},{"content":{"image":["file://5uGJVTfrf866oGDC"],"alt":"","caption":""},"id":"b608dbd9-01af-40ae-bdbb-25cf97893954","isHidden":false,"type":"mdimage"},{"content":{"text":"<p>Les attentes des participant·e·s portent essnentiellement sur les points suivants: </p><p>·       Réaliser un état des lieux sur le canton, connaître les différentes actions menées au niveau cantonal et local, et mieux connaître les propositions des différents partenaires en matière de covoiturage,</p><p>·       Développer les mesures cantonales sur le covoiturage,</p><p>·       Améliorer le partenariat entre public et privé, et développer des synergies, et</p><p>·       Identifier les leviers d’actions et facteurs de succès des projets</p><p>Les partenaires souhaitent également, à travers l’atelier, mieux se connaître pour: </p><p>·       Identifier les moyens de mutualiser les ressources entre les professionnels de la mobilité</p><p>·       Identifier comment les collectivités publiques peuvent servir d’appui pour les entreprises</p>"},"id":"30481ac3-edba-4eb1-970c-2eee07070114","isHidden":false,"type":"body"},{"content":{"image":["file://UE6mgrtzNOs0HkT6"],"alt":"","caption":""},"id":"067bfc4b-4348-4757-a3d0-d500d8948789","isHidden":false,"type":"mdimage"},{"content":{"text":"<p>Une grande partie des freins au covoiturage identifiés par les participant-e-s, lors de la partie de brainstorming de l'atelier, sont liés au manque de flexibilité (supposé) du covoiturage et à la difficulté de changer ses habitudes. Les leviers relevés, parmi d'autres, portent quant à eux sur les possibles installations et infrastructures pour faciliter les zones rencontres et des voies dédiées au covoiturage, la gestion du covoiturage au sein des entreprises, ou encore les avantages économiques des covoitureurs (forfait mobilité durable et éventuelles subventions par l'Etat ou les communes). </p>"},"id":"18879875-f103-47e3-90f2-8ed077a6d1b5","isHidden":false,"type":"body"},{"content":{"image":["file://UAyFBHM45WrTizKm"],"alt":"","caption":""},"id":"3b3b01a3-4246-4e6a-8b80-a69cfeb3edc6","isHidden":false,"type":"mdimage"},{"content":{"text":"<p>On relève que la plupart des freins identifiés sont liés aux craintes des usager·es: </p><p>-        Au fait de partager son véhicule (qui est une extension du chez-soi ; caractère intime)</p><p>-        Au fait de devoir dépendre de quelqu’un d’autre</p><p>-        Au risque de perdre sa liberté d’horaire (peur de ne pas rentrer chez soi)</p><p>-        Voire de devoir remettre en question son organisation personnelle du temps</p><p>Le groupe semble s’accorder sur le fait que ce type de contraintes organisationnelles ne sont pas à négliger pour les projets (au-delà des aspects technique).</p>"},"id":"3a8e9bc8-80e6-4ea5-a4b4-6dca09da7f72","isHidden":false,"type":"body"},{"content":{"image":["file://7mHnPJWd85zGn4QB"],"alt":"","caption":""},"id":"fc3e1fc9-beff-4607-a49a-1d5ca43100c9","isHidden":false,"type":"mdimage"}]
+
+----
+
+Datestart: 2024-09-01
+
+----
+
+Isprojectwithduration: false
+
+----
+
+Dateend: 
+
+----
+
+Uuid: VX7UYxL6Of03uAc4

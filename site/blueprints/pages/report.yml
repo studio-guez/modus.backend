@@ -1,0 +1,56 @@
+title: Report
+status:
+  listed: true
+  draft: true
+options:
+  changeSlug: true
+  delete: true
+  changeTitle: true
+  changeStatus: true
+  preview: "https://modus-ge.ch/report/{{ page.slug }}"
+sections:
+  fields:
+    type: fields
+    fields:
+      content:
+        extends: fields/body
+        fields:
+          headerImage:
+            required: true
+          body:
+            fieldsets:
+              - mdheading
+              - reportbody
+              - mdreportimage
+      summary:
+        label: Résumé du projet
+        type: textarea
+        buttons: false
+        required: true
+      bibliography:
+        type: structure
+        label: Bibliographie
+        fields:
+          id:
+            type: unique-shortcode
+            label: Shortcode
+            prefix: ref
+            width: 1
+          text:
+            type: writer
+            label: Référence
+            width: 1
+            inline: true
+            marks:
+              - bold
+              - italic
+              - link
+      tags:
+        extends: fields/tags
+      dateStart:
+        required: true
+        width: 1/2
+        label: Date
+        type: date
+        display: YYYY-MM
+        default: today

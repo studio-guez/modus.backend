@@ -1,0 +1,17 @@
+Title: Déclic mobilité privacy notice
+
+----
+
+Headerimage: - file://rHv9Xu2wDX8eQq2f
+
+----
+
+Headertitle: 
+
+----
+
+Body: [{"content":{"level":"h2","text":"Mettre ici la politique de confidentialité globale (en PDF)"},"id":"dac3c619-53cf-4464-a8eb-9688fcd43008","isHidden":false,"type":"mdheading"}]
+
+----
+
+Uuid: oUkBe2DEHWCwvhCq

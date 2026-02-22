@@ -12,6 +12,30 @@ options:
 
 columns:
   - width: 1/1
-    fields:
+    sections:
       content:
-        extends: fields/body
+        type: fields
+        fields:
+          content:
+            extends: fields/body
+            fields:
+              preview: false
+      actualites:
+        type: fields
+        fields:
+          actualite1title:
+            label: Actualité 1 - Titre
+            type: text
+            width: 1/2
+          actualite1link:
+            label: Actualité 1 - Lien (optionnel)
+            type: url
+            width: 1/2
+          actualite2title:
+            label: Actualité 2 - Titre
+            type: text
+            width: 1/2
+          actualite2link:
+            label: Actualité 2 - Lien (optionnel)
+            type: url
+            width: 1/2

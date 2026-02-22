@@ -1,0 +1,66 @@
+# Menu item structure - reusable field for all menus
+type: structure
+columns:
+  linkedPage:
+    width: 1/4
+  externalUrl:
+    width: 1/4
+  customTitle:
+    width: 1/4
+  openInNewTab:
+    width: 1/4
+fields:
+  itemType:
+    label: Type d'élément
+    type: select
+    required: true
+    default: page
+    options:
+      page: Page interne
+      external: Lien externe
+
+  # For type: page
+  linkedPage:
+    label: Page liée
+    type: pages
+    multiple: false
+    query: site.children.listed
+    when:
+      itemType: page
+
+  # URL parameters (e.g. ?type=video&status=en-cours)
+  urlParams:
+    label: Paramètres URL
+    type: text
+    help: "Ex: type=video&status=en-cours"
+    when:
+      itemType: page
+
+  # For type: external
+  externalUrl:
+    label: URL externe
+    type: url
+    when:
+      itemType: external
+
+  # Optional title override
+  customTitle:
+    label: Titre personnalisé
+    type: text
+    help: "Laissez vide pour utiliser le titre de la page"
+
+  # Optional SVG icon
+  svgIcon:
+    label: Icône SVG
+    type: files
+    query: site.files.filterBy('extension', 'svg')
+    multiple: false
+
+  # Open in new tab
+  openInNewTab:
+    label: Ouvrir dans un nouvel onglet
+    type: toggle
+    text:
+      - non
+      - oui
+    default: false

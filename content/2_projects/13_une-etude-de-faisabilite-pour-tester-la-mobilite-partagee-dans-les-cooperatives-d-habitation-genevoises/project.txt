@@ -1,0 +1,37 @@
+Title: Une étude de faisabilité pour tester la mobilité partagée dans les coopératives d'habitation genevoises
+
+----
+
+Headertitle: Une étude de faisabilité pour tester la mobilité partagée dans les coopératives d'habitation genevoises
+
+----
+
+Headerimage: - file://qnKSa5y57DVkvR3j
+
+----
+
+Preview: La question du partage constitue un élément clé de la transition de la mobilité quotidienne, notamment le covoiturage, l’autopartage, la copropriété ou les coopératives de véhicules.
+
+----
+
+Body: [{"content":{"text":"<p>Le projet CoMob, en partenariat avec <a href=\"https://www.apres-ge.ch/\">APRES-GE</a> et <a href=\"https://www.idlab.ch/\">idlab</a>, apporte une solution concrète à la mise en place d'un dispositif de partage dédié à la mobilité afin de permettre aux Genevois·es de se passer de voiture individuelle, responsable d'une grande part des émissions de gaz à effet de serre liées aux transports.  </p><p>L’idée est de proposer un accès à des véhicules partagés (vélos, vélos-cargos, voitures) dans des coopératives d'habitation à Genève grâce à une plateforme numérique, en gérant les aspects de disponibilité, d’accès aux véhicules, d’assurance, de comptage, d’entretien-réparations, de facturation et de suivi. Le dispositif s’appuie sur une plateforme dédiée dont l’objectif est d’un côté la centralisation de la gestion de la flotte et de l'autre côté la mise en relation des particuliers selon le principe du pair-à-pair. </p><p>À ce stade, le projet est en cours de préfiguration. Il s’agit en effet de finaliser l’étude de faisabilité, puis de lancer des projets pilotes dans une seconde phase.</p>"},"id":"c626a536-fe06-46c4-b7af-6178aab63f9e","isHidden":false,"type":"body"}]
+
+----
+
+Datestart: 2024-08-01
+
+----
+
+Isprojectwithduration: true
+
+----
+
+Dateend: 2024-11-01
+
+----
+
+Pdffile: 
+
+----
+
+Uuid: JpWRgpFtUnjqy0qf

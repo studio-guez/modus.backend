@@ -1,0 +1,33 @@
+Title: Plan de mobilité à vélo pour les employé·e·s du Comité international de la Croix Rouge (CICR)
+
+----
+
+Headertitle: Plan de mobilité à vélo pour les employé·e·s du Comité international de la Croix Rouge (CICR)
+
+----
+
+Headerimage: - file://4U4o645h2w92ZWtt
+
+----
+
+Preview: Le soutien de la Fondation Modus permet la mise à disposition d'une flotte de 10 vélos électriques au sein du CICR.
+
+----
+
+Body: [{"content":{"text":"<p>La mise en œuvre de cette nouvelle flotte est monitorée par CITEC solutions en mobilité pour optimiser son utilisation et pouvoir répliquer cette solution agile et flexible pour des institutions telles que le CICR. Genèvroule assure quant à elle la maintenance des vélos.</p><p><strong>Objectifs clés</strong></p><ul><li><p>Renforcer l’efficience des prestations de Genèveroule pour la mobilité en entreprises</p></li><li><p>Créer un modèle replicable et standardisé</p></li><li><p>Mesurer les effets concrets du déploiement de la flotte au sein du CICR et valider son dimensionnement par la mise en place d'un programme de monitoring</p></li><li><p>Réaliser un kit de communication permettant de promouvoir ce service en interne</p></li></ul>"},"id":"c012d6cc-4630-4ce5-8212-4b5b555b183c","isHidden":false,"type":"body"},{"content":{"title":"Partenaires ","links":[{"name":"Genèveroule","url":"https://www.geneveroule.ch/fr/"},{"name":"CICR","url":"https://www.icrc.org/fr"},{"name":"CITEC","url":"https://www.citec.ch"}]},"id":"d9d29d56-422d-4079-97c6-97104a18ece1","isHidden":false,"type":"linksSection"}]
+
+----
+
+Datestart: 2024-06-01
+
+----
+
+Isprojectwithduration: true
+
+----
+
+Dateend: 2025-06-01
+
+----
+
+Uuid: aTTUBhbYtXURnvw5

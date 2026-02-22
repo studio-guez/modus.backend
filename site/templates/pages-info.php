@@ -1,4 +1,5 @@
 <?php
+
 use Kirby\Cms;
 
 /** @var Cms\App $kirby */
@@ -10,12 +11,10 @@ use Kirby\Cms;
 echo json_encode(value: [
   'title' => $site->title(),
   'children' => array_values($site->children()->map(callback: fn($item) => [
-//      'global' => $item->toArray(),
+    //      'global' => $item->toArray(),
     'children' => $item->children()->listed()->sortBy('dateStart'),
     'title' => $item->title(),
     'headerimage' => $item->headerimage(),
-    'showinnav' => $item->showinnav(),
-    'shownewsletter' => $item->shownewsletter(),
     'headertitle' => $item->headertitle(),
     'id' => $item->id(),
     'mediaUrl' => $item->mediaUrl(),

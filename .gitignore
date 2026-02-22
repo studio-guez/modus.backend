@@ -52,7 +52,7 @@ Icon
 # Content
 # ---------------
 
-/content
+/content_bckp_*
 
 # Composer
 # ---------------

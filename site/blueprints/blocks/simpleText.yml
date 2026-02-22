@@ -12,6 +12,8 @@ fields:
       - italic
       - underline
       - link
+      - sup
+      - sub
     nodes:
       - paragraph
     placeholder: field.blocks.text.placeholder

@@ -1,0 +1,37 @@
+Title: DÉCLIC MOBILITÉ
+
+----
+
+Headertitle: DÉCLIC MOBILITÉ
+
+----
+
+Headerimage: - file://uonvyFw9Kh44luIc
+
+----
+
+Preview: Un mois pour changer ses habitudes, tester et repenser sa mobilité, telle est la proposition de cette initiative inédite à Genève.
+
+----
+
+Body: [{"content":{"image":["file://R8jijKP6RkiROcwJ"],"alt":"","caption":""},"id":"28514cc9-a97b-4c6c-95ac-e9f67828765a","isHidden":false,"type":"mdimage"},{"content":{"text":"<p>En partenariat avec le Département de la santé et des mobilités (DSM), la Ville de Carouge, la Ville de Genève et le Bureau Mobil'Homme (BMH), la Fondation Modus initie pour la première fois à Genève une expérimentation dans les communes de Genève et de Carouge invitant des ménages à laisser leur véhicule individuel motorisé (voiture, moto, scooter) durant un mois. <br>Les participant·e·s se verront proposer de laisser du <strong>3 mai au 2 juin 2025</strong> leur véhicule sur un parking mis à disposition par la Fondation des Parkings, et recevront en échange un kit de mobilités alternatives pouvant comprendre selon les besoins: </p><p><br>-<strong>Un abonnement général CFF découverte ou un abonnement UNIRESO<br>-Un vélo simple ou cargo / conventionnel ou électrique<br>-Des cours de remise en selle <br>-Un abonnement au vélo partage<br>-L’accès à un espace de coworking<br>-Un abonnement d’autopartage<br>-Des bons de livraisons à domicile</strong></p>"},"id":"b9c92798-fd5d-49dd-9f73-dbe9271753b1","isHidden":false,"type":"body"},{"content":{"title":"S'inscrire à Déclic Mobilité: ","links":[{"name":"Formulaire d'inscription","url":"https://declic-mobilite.ch"}]},"id":"8bb97957-8489-4447-8e53-c962a1e97b4b","isHidden":false,"type":"linksSection"},{"content":{"text":"<p>Les participant·es bénéficieront de l’accompagnement d’expert·es et de l’expérience d’autres participant·es durant toute la période d’expérimentation.</p><p>𝗗𝗘́𝗖𝗟𝗜𝗖 𝗠𝗢𝗕𝗜𝗟𝗜𝗧𝗘́ sera reconduit au printemps 2026 et élargi à 400 participant·e·s dans tout le canton.</p>"},"id":"6f70acca-da95-45b1-8ec7-19f693cef3a5","isHidden":false,"type":"body"},{"content":{"title":"Partenaires du projet ","links":[{"name":"BMH ","url":"https://b-mh.ch/"},{"name":"Ville de Carouge","url":"https://www.carouge.ch/"},{"name":"VIlle de Genève ","url":"https://www.geneve.ch/"}]},"id":"45b18f38-e172-48ed-ba83-f99a84af521c","isHidden":false,"type":"linksSection"},{"content":{"title":"Partenaire du kit de mobilités alternatives","links":[{"name":"CFF SBB","url":"https://www.sbb.ch/fr"},{"name":"TPG","url":"https://www.tpg.ch/"},{"name":"Mobility carsharing","url":"https://www.mobility.ch/fr/clients-prives/offres-et-tarifs/mobilityeasy?utm_source=google&utm_medium=cpc&utm_campaign=10090141637&utm_content=100826518029&utm_term=mobility&gad_source=1&gclid=CjwKCAjwp8--BhBREiwAj7og19eOFyBzPvZ8eWmaHQr1rYDFnrMs2wRiqeF3jAt3eSSIipPvYvcKDBoCV7sQAvD_BwE"},{"name":"Bicy.ch","url":"https://bicy.ch/"},{"name":"Genèveroule","url":"https://www.geneveroule.ch/fr/"},{"name":"Pro Vélo Genève","url":"https://www.pro-velo-geneve.ch/"},{"name":"Donkey Republic","url":"https://www.donkey.bike/fr/villes/location-velo-geneve/"},{"name":"Voisins","url":"https://www.voisins.ch/"},{"name":"Caddie Service","url":"https://www.geneveroule.ch/fr/livraisons-caddie-service/"}]},"id":"6bf9bcf7-f262-4b49-8b5e-537236773670","isHidden":false,"type":"linksSection"}]
+
+----
+
+Tags: 
+
+----
+
+Datestart: 2025-03-01
+
+----
+
+Isprojectwithduration: true
+
+----
+
+Dateend: 
+
+----
+
+Uuid: 6gQhX5xw9xH0wPA8

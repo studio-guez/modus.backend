@@ -1,0 +1,26 @@
+title: En avant
+
+icon: star
+
+preview: fields
+wysiwyg: true
+
+fields:
+  highlightsTitle:
+    label: Titre
+    type: text
+    required: true
+
+  highlightsSubtitle:
+    label: Sous-titre
+    type: text
+    required: true
+
+  highlightsItems:
+    label: Pages mises en avant
+    type: pages
+    query: site.find('projects', 'medias', 'bibliotheque', 'boite-a-outils').children.listed
+    multiple: true
+    info: "{{ page.parent.title }} / {{ page.title }}"
+    image:
+      back: black

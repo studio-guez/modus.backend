@@ -1,0 +1,33 @@
+Title: Organisation d'un congrès de la Commission Transport and Urban Life de l’UITP
+
+----
+
+Headertitle: Organisation d'un congrès de la Commission Transport and Urban Life de l’UITP
+
+----
+
+Headerimage: - file://Hla1KlDuCMNtXLIh
+
+----
+
+Preview: L'Union Internationale des Transports Publics (UITP) est une association internationale de plus de 135 ans réunissant les acteurs des transports publics et de la mobilité durable du monde entier.
+
+----
+
+Body: [{"content":{"text":"<p>Pour la 131ème rencontre UITP, la Fondation Modus a organisé et soutenu financièrement cet événement permettant à des acteurs internationaux du domaine de faire connaissance et de rencontrer les acteurs locaux de la mobilité durable ainsi que les infrastructures et solutions existantes à Genève. </p><p></p>"},"id":"027eb114-0dcc-47ec-bb2a-4aeb77c43992","isHidden":false,"type":"body"},{"content":{"image":["file://OWKgE5AGGtO2UzMj"],"alt":"","caption":""},"id":"337688f3-aef8-4d8c-8055-60a98cbb8f31","isHidden":false,"type":"mdimage"},{"content":{"image":["file://putXEZuMkR7M5b0n"],"alt":"","caption":""},"id":"0d44c662-f9f8-4520-8aa3-496419368a67","isHidden":false,"type":"mdimage"},{"content":{"image":["file://FpWQjycPs5KSli4t"],"alt":"","caption":""},"id":"1274c024-c07f-4bbf-aa5f-ab132a591ce9","isHidden":false,"type":"mdimage"},{"content":{"image":["file://FEc2BU40T8w5l6jd"],"alt":"","caption":""},"id":"3431c947-87ea-42c4-9924-762799fd3281","isHidden":false,"type":"mdimage"},{"content":{"title":"Partenaires pour l'organisation du congrès","links":[{"name":"UITP","url":"https://www.uitp.org/"}]},"id":"6a4353e4-0be1-4f90-bf2d-682ec46e1328","isHidden":false,"type":"linksSection"}]
+
+----
+
+Datestart: 2024-10-01
+
+----
+
+Isprojectwithduration: true
+
+----
+
+Dateend: 2024-10-01
+
+----
+
+Uuid: l1Pp069JFsPNmnC9

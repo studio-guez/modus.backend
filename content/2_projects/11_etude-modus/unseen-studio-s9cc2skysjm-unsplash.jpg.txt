@@ -1,0 +1,9 @@
+Caption: 
+
+----
+
+Uuid: boZ994saMeqDexNG
+
+----
+
+Template: blocks/image

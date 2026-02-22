@@ -3,17 +3,20 @@ FROM php:8.1-apache
 # Activer mod_rewrite pour Kirby
 RUN a2enmod rewrite
 
-# Installer dépendances système
-RUN apt-get update && apt-get install -y \
+# Installer dépendances système + extensions PHP
+RUN apt-get update && apt-get install -y --no-install-recommends \
     unzip \
     git \
     libzip-dev \
-    libjpeg-dev \
+    zlib1g-dev \
     libpng-dev \
+    libjpeg62-turbo-dev \
     libfreetype6-dev \
     libwebp-dev \
+    libonig-dev \
     && docker-php-ext-configure gd --with-freetype --with-jpeg --with-webp \
-    && docker-php-ext-install zip gd
+    && docker-php-ext-install -j"$(nproc)" zip gd mbstring \
+    && rm -rf /var/lib/apt/lists/*
 
 # Installe Composer
 COPY --from=composer:2 /usr/bin/composer /usr/bin/composer
@@ -34,4 +37,3 @@ RUN composer install --no-dev --optimize-autoloader || true
 
 # Fixer les permissions
 RUN chown -R www-data:www-data /var/www/html
-

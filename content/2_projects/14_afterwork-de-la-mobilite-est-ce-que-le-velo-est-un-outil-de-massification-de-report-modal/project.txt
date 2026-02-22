@@ -1,0 +1,33 @@
+Title: AFTERWORK de la mobilité #3: Est-ce que le vélo est un outil de massification de report modal ?
+
+----
+
+Headertitle: AFTERWORK de la mobilité #3: Est-ce que le vélo est un outil de massification de report modal ?
+
+----
+
+Headerimage: - file://FJc8XzmOa7nhIp6N
+
+----
+
+Preview: Le vélo semble être un levier clé pour la décarbonation des mobilités. Mais peut-il transformer radicalement les habitudes de déplacement à Genève ? L’afterwork du 18 septembre 2024 a réuni trois spécialistes qui ont esquissé les pistes offertes par le vélo dans le cadre idéal du Musée Rath.
+
+----
+
+Body: [{"content":{"text":"<p>La décarbonation de la mobilité peut-elle vraiment reposer sur le vélo ? Si les attentes sont élevées, dans les faits, celui-ci ne représente que 9 % des déplacements domicile-travail dans le canton de Genève, et encore moins pour d’autres motifs. Cependant, le nombre de cyclistes augmente de 10 % chaque année. Le vélo possède donc un potentiel significatif comme outil de massification du report modal, mais celui-ci est conditionné à plusieurs facteurs clés, passés en revue lors de l’afterwork de la mobilité du 18 septembre, tenu en marge de l’exposition <em>Vélo, équilibres en mouvement</em> au Musée Rath.</p><p>Dimitri Marincek, docteur en géographie et adjoint scientifique à l’Observatoire universitaire du vélo et des mobilités actives (OUVEMA) de l’Université de Lausanne, a mis en avant le vélo à assistance électrique (VAE). Celui-ci ouvre la pratique du vélo à des populations, comme les personnes âgées ou celles vivant dans des zones difficiles, qui ne l'envisageraient pas autrement. Cette diversification est cruciale dans le processus de massification de l’usage du vélo, car elle permet d'élargir la base d'utilisateur·ices bien au-delà des cyclistes traditionnel·les. De plus, le VAE aide à surmonter des barrières telles que la distance, les pentes et l'effort physique, rendant ainsi le vélo accessible à un public plus large, y compris pour des trajets qui autrement auraient été réalisés en voiture.</p><p>Le chercheur a également souligné l'importance d'intégrer le vélo dans un portefeuille de mobilité plus large pour favoriser un report modal efficace. S'il ne peut pas remplacer tous les trajets en voiture, il complète d'autres modes, tels que les transports publics et la marche. Cette complémentarité permet d’intégrer le vélo dans une chaîne de déplacements plus complexes et d'en faire une alternative crédible.</p><p>Sabrina Jaquet, responsable de projets chez Swiss Cycling, notamment de \"Bike Control\", qui vise à transmettre aux élèves des aptitudes de conduite pour améliorer leur sentiment de sécurité, a insisté sur l'importance de l'éducation et de la sensibilisation dès le plus jeune âge. En initiant les enfants au vélo et en développant leur confiance, le programme vise à ancrer sa pratique comme une habitude. Cette approche est fondamentale pour le report modal à long terme, car elle façonne les comportements et pourrait favoriser le vélo comme mode de transport principal.</p><p>Selon Yann Grand, directeur de Genève Roule, une association qui promeut l’insertion professionnelle, le vélo en libre-service (VLS) favorise son accessibilité à un plus grand nombre de personnes, notamment pour le dernier kilomètre. Il offre une solution flexible pour celles et ceux qui n'ont pas de vélo personnel ou qui souhaitent combiner plusieurs modes de transport dans un même trajet. L'expansion du VLS, avec une couverture adéquate et une densité suffisante de stations, pourrait encourager davantage de personnes à changer de mode pour leurs déplacements quotidiens.</p><p>Les trois intervenant·es se sont accordés sur le fait que la sécurité et les infrastructures cyclables sont des éléments essentiels pour encourager un report modal massif. La perception du danger sur la route est un frein majeur, en particulier pour les cyclistes qui ne sont pas aguerri·es. Le développement d'infrastructures sécurisées, telles que des pistes cyclables séparées, est donc crucial pour attirer un public plus large sur les vélos.</p><p>Sa promotion à Genève nécessite une volonté politique forte et des investissements à long terme. Que ce soit par le biais d'infrastructures sécurisées, de programmes éducatifs pour les jeunes ou d'une sensibilisation culturelle, le vélo a et va jouer un rôle central dans l'avenir de la mobilité genevoise.</p>"},"id":"ea88d189-883f-4919-b0a0-c14f0a4bddcb","isHidden":false,"type":"body"}]
+
+----
+
+Datestart: 2024-09-12
+
+----
+
+Isprojectwithduration: false
+
+----
+
+Dateend: 
+
+----
+
+Uuid: pRcb9tXYRq32LS0X

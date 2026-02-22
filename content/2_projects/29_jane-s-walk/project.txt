@@ -1,0 +1,37 @@
+Title: Jane's Walk
+
+----
+
+Headertitle: Jane's Walk
+
+----
+
+Headerimage: - file://yRfkAn4XKOiuWs2l
+
+----
+
+Preview: Organisées par Mobilité Piétonne Suisse, chaque année au mois de mai, les Jane’s Walk sont des promenades de quartier ouvertes à toutes et tous.
+
+----
+
+Body: [{"content":{"text":"<p>Inspirées par l'activiste Jane Jacobs, ces marches encouragent un regard renouvelé sur les quartiers, promeuvent la marche comme mode de déplacement convivial et renforcent les liens sociaux à travers des échanges spontanés en marchant. Lancé en Suisse romande en 2021 par Mobilité piétonne, l’événement s’est étendu aux trois régions linguistiques suisses avec une participation croissante (400 participant·es en 2024). À Genève, des marches ont été organisées dans plusieurs quartiers grâce au soutien de la Ville et du Canton, accompagnées d’initiatives comme un podcast promotionnel. Face à cet essor, la Fondation Modus soutient l’édition 2025, afin de pérenniser et développer davantage les Jane's Walk à Genève. </p>"},"id":"598c8e3e-546b-4bc3-b8d9-cfee194a704a","isHidden":false,"type":"body"},{"content":{"text":"<p>Les objectifs principaux des Promenades de Jane sont de promouvoir la marche comme mode de déplacement convivial et accessible, de redécouvrir les quartiers urbains à travers le partage d’expériences vécues, et de renforcer les liens sociaux grâce à une dynamique participative. En mettant en valeur le dialogue et l’interaction, ces promenades visent à créer un lien fort entre les participant·es et leur environnement, tout en valorisant un imaginaire riche autour de la marche.</p>"},"id":"b1b02cfe-d732-47f5-bdc5-f8d7f6f73bc7","isHidden":false,"type":"body"},{"content":{"image":["file://k71enOYqSKmRW2DM"],"alt":"","caption":""},"id":"66c38efc-10dc-47ab-8d7a-3150f8a86f86","isHidden":false,"type":"mdimage"},{"content":{"title":"Proposer ou s'inscire à une Jane's Walk","links":[{"name":"Jane's walk","url":"https://mobilitepietonne.ch/janes-walk/"}]},"id":"4b566258-4a1a-4559-bdc7-871e5b43ba10","isHidden":false,"type":"linksSection"}]
+
+----
+
+Tags: page://9uPy2r9BfjnpBvhg
+
+----
+
+Datestart: 2024-11-01
+
+----
+
+Isprojectwithduration: true
+
+----
+
+Dateend: 2025-05-01
+
+----
+
+Uuid: 3TozC0IM6RglSm0d

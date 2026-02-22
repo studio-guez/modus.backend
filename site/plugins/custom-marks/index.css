@@ -1,0 +1,6 @@
+/* Custom styles for highlight mark in writer field */
+.k-writer mark {
+  background-color:transparent;
+  color: #01983b;
+  padding: 0;
+}

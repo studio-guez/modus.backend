@@ -11,32 +11,24 @@ fields:
       back: black
     uploads:
       template: blocks/image
-  showInNav:
-    width: 1/4
-    label: Afficher dans la navigation
-    type: toggle
-    text:
-      - "non"
-      - "oui"
-    default: true
-  showNewsletter:
-    width: 1/4
-    label: Afficher la newsletter
-    type: toggle
-    text:
-      - "non"
-      - "oui"
-    default: true
   headerTitle:
     label: Titre dans le header
     type: text
-
+  preview:
+    type: writer
+    label: Aperçu
+    inline: true
+    marks:
+      - bold
+      - italic
+      - underline
   body:
     label: Contenu de la page
     type: blocks
     fieldsets:
       - body
       - internalLink
+      - internalLinks
       - listPoints
       - mdheading
       - mdimage
@@ -45,3 +37,5 @@ fields:
       - video
       - actuality
       - dropdown
+      - highlights
+      - navigateProjectsByTags

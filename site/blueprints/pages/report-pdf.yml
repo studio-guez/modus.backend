@@ -1,0 +1,8 @@
+title: Report PDF
+options:
+  access: false
+  changeSlug: false
+  delete: false
+  changeTitle: false
+  changeStatus: false
+  preview: false

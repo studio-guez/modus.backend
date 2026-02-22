@@ -1,0 +1,8 @@
+label: Tags
+type: multiselect
+width: 1/2
+options: query
+query:
+  fetch: site.find('tags').children.listed
+  text: "{{ page.title }}"
+  value: "{{ page.uuid }}"

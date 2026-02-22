@@ -1,0 +1,11 @@
+title: Naviguer par tag
+icon: anchor
+preview: fields
+wysiwyg: true
+
+fields:
+
+  title:
+    label: Titre
+    type: text
+    required: true

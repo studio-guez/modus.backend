@@ -1,0 +1,37 @@
+Title: Stop au tout voiture
+
+----
+
+Headerimage: - file://24XwTZIwjOTu6oVs
+
+----
+
+Headertitle: Stop au tout voiture
+
+----
+
+Preview: Dans cet épisode du podcast, nous vous proposons de découvrir l'ATE, l'Association Transport Environnement.
+
+----
+
+Tags: page://s2Z4kLWkr8oDAG7w, page://DFjrpH2GUiiG1iMu, page://btfMxpBTCdFVqkUY, page://9uPy2r9BfjnpBvhg
+
+----
+
+Datestart: 2024-10-01
+
+----
+
+Mediatype: podcasts
+
+----
+
+Spotifyurl: https://open.spotify.com/episode/5LhbllIJTAxhtku6lhnvaJ?si=ab42efdd23e74883
+
+----
+
+Youtubeurl: 
+
+----
+
+Uuid: mawg2TWmvsK6GbfK

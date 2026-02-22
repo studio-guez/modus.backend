@@ -1,0 +1,21 @@
+Title: Accueil
+
+----
+
+Headerimage: - file://5o4FibuiyKBsPX45
+
+----
+
+Headertitle: Modus. Pour une mobilité durable à Genève.
+
+----
+
+Body: [{"content":{"titlecontent":"Quels sont nos objectifs ?","text":"<ul><li>Soutenir les acteurs de la transition des mobilités du Grand Genève</li><li>Constituer et documenter des connaissances au sujet de la mobilité à Genève</li><li>Développer une interface d’innovation à destination des autorités publiques et des partenaires locaux</li><li>Créer une communication originale qui contribue au changement des imaginaires de la&nbsp;mobilité</li><li>Promouvoir un avenir où la mobilité est en phase avec la cohésion, la santé et le bien-être des citoyen·ne·s</li></ul>"},"id":"6b92e308-7e48-4911-9eca-94710cc4af06","isHidden":false,"type":"listPoints"},{"content":{"text":"<p>Le changement climatique est un défi central pour le 21<sup>e</sup> siècle. Les transports représentent 33% des émissions de gaz à effet de serre en Suisse. </p><p>La mobilité constitue donc environ 30% du problème, mais aussi 30% de la solution ! </p><p>La Fondation Modus soutient des projets, met en réseau des acteurs, expérimente des solutions concrètes pour favoriser la transition vers une décarbonation de la mobilité.</p><p>Elle agit également comme un laboratoire dynamique qui impulse des idées originales, crée de nouvelles connaissances, centralise les ressources et développe des services innovants.</p>"},"id":"982dd683-165a-40a2-893e-2dae7029d83b","isHidden":false,"type":"simpleText"},{"content":{"image":["file://iNQnnSAvOhh8TqmF"],"style":"default","width":"true","linktitle":"Vous avez un projet ?","text":"<p>N'hésitez pas à prendre contact avec l'équipe Modus en remplissant le formulaire en ligne. \u2028Votre proposition sera étudiée avec attention.</p>","link":"proposer-un-projet"},"id":"7e2dcc44-5cd6-4782-af59-6b4fa851728e","isHidden":false,"type":"internalLink"},{"content":{"title":"Découvrir le contenu par thématique"},"id":"61e7228e-61f1-4baf-b1a1-93359612bc95","isHidden":false,"type":"navigateProjectsByTags"},{"content":{"image":["file://k2Ewz1CLdgvznK8m"],"sectiontitle":"Modus développe et soutient","sectionsubtitle":"des solutions, des initiatives et des ressources en faveur de la mobilité durable à Genève.","cards":[{"title":"Projets Modus","subtitle":"Petite phrase de description","slug":"projets?type=modus","color":"green-dark","buttontext":"Découvrir"},{"title":"Projets soutenus","subtitle":"Petite phrase de description","slug":"projets?tpye=soutenus","color":"green-medium","buttontext":"Consulter"},{"title":"Boîte à outils","subtitle":"Petite phrase de description","slug":"boite-a-outils","color":"green-light","buttontext":"Tester"}]},"id":"c53baacd-8e4e-4ef9-a715-10270874ee3b","isHidden":false,"type":"internalLinks"},{"content":{"highlightstitle":"À la une","highlightssubtitle":"Explorez les dernières actualités et ressources Modus","highlightsitems":["page://6gQhX5xw9xH0wPA8","page://lGRYBPSXdCadnI8v","page://xxNUjsOuYOGRYxVA","page://FN0hPyEfCFFmk4Ha"]},"id":"ad092d1d-4cfd-47eb-a845-4c05fbf9c8dc","isHidden":false,"type":"highlights"}]
+
+----
+
+Uuid: QGPetXptcRmCRp2D
+
+----
+
+Content: 
