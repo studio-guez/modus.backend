@@ -1,9 +1,0 @@
-Caption: 
-
-----
-
-Uuid: 0WOHlIq0B2eH5Egk
-
-----
-
-Template: image
