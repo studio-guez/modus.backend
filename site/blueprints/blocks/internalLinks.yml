@@ -63,3 +63,7 @@ fields:
           green-light: Vert clair
           green-medium: Vert moyen
           green-dark: Vert foncé
+      buttonText:
+        label: Texte du bouton
+        type: text
+        required: true
