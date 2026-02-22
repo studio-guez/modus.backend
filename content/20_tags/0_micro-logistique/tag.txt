@@ -6,7 +6,7 @@ Headerimage: - file://zvqVKEsKXaqco1ap
 
 ----
 
-Description: Description de Micro-logistique
+Description:
 
 ----
 

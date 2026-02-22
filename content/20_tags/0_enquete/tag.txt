@@ -6,7 +6,7 @@ Headerimage: - file://MZTpz7ofhwyj9Uet
 
 ----
 
-Description: Description de Enquête
+Description:
 
 ----
 

@@ -6,7 +6,7 @@ Headerimage: - file://Lv72FYXJCMqCsqsA
 
 ----
 
-Description: Description de Logistique urbaine
+Description:
 
 ----
 

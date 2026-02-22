@@ -6,7 +6,7 @@ Headerimage: - file://YLjGVHfM9zwn5QzM
 
 ----
 
-Description: Description de Formation
+Description:
 
 ----
 

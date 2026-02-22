@@ -6,7 +6,7 @@ Headerimage: - file://rkUqgc0qPYeKLfE6
 
 ----
 
-Description: Description de Vidéo
+Description:
 
 ----
 

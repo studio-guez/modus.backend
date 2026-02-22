@@ -6,7 +6,7 @@ Headerimage: - file://zksrVxf4PBrEafCk
 
 ----
 
-Description: Description de Covoiturage
+Description:
 
 ----
 

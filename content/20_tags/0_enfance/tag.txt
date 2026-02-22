@@ -6,7 +6,7 @@ Headerimage: - file://Bu6MfRrUh9bzQMq7
 
 ----
 
-Description: Description de Enfance
+Description:
 
 ----
 

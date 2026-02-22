@@ -6,7 +6,7 @@ Headerimage: - file://WCYa6eaHBJgPo9Zx
 
 ----
 
-Description: Description de Vélo
+Description:
 
 ----
 

@@ -6,7 +6,7 @@ Headerimage: - file://60nqUbPTEe9mBuBM
 
 ----
 
-Description: Description de Recherche
+Description:
 
 ----
 

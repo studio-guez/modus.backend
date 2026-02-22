@@ -6,7 +6,7 @@ Headerimage: - file://BHjPBRme5YzkZ9Aq
 
 ----
 
-Description: Description de Seniors
+Description:
 
 ----
 
