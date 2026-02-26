@@ -28,12 +28,9 @@ RUN echo "ServerName localhost" >> /etc/apache2/apache2.conf
 COPY apache.conf /etc/apache2/conf-available/custom.conf
 RUN a2enconf custom || true
 
-# Copier les fichiers
-COPY . /var/www/html
+# Copier les fichiers avec les bonnes permissions
+COPY --chown=www-data:www-data . /var/www/html
 WORKDIR /var/www/html
 
 # Installer les dépendances PHP (Kirby)
 RUN composer install --no-dev --optimize-autoloader || true
-
-# Fixer les permissions
-RUN chown -R www-data:www-data /var/www/html
