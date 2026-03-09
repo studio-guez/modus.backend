@@ -70,3 +70,48 @@ tabs:
             extends: fields/menuitem
             label: Menu footer (1 niveau)
             help: "Menu du pied de page"
+
+  # Actualités tab
+  actualites:
+    label: Bandeaux actualité
+    columns:
+      - width: 1/1
+        fields:
+          actualite1title:
+            label: Actualité 1 - Titre
+            type: text
+            width: 1/3
+          actualite1link:
+            label: Actualité 1 - Lien (optionnel)
+            type: url
+            width: 1/3
+          actualite1color:
+            label: Actualité 1 - Couleur
+            type: select
+            width: 1/3
+            empty: false
+            default: teal
+            options:
+              main-dark: Vert foncé
+              main: Vert
+              sage: Sauge
+              teal: Sarcelle
+          actualite2title:
+            label: Actualité 2 - Titre
+            type: text
+            width: 1/3
+          actualite2link:
+            label: Actualité 2 - Lien (optionnel)
+            type: url
+            width: 1/3
+          actualite2color:
+            label: Actualité 2 - Couleur
+            type: select
+            width: 1/3
+            empty: false
+            default: sage
+            options:
+              main-dark: Vert foncé
+              main: Vert
+              sage: Sauge
+              teal: Sarcelle

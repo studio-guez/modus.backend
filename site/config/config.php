@@ -144,6 +144,17 @@ return [
             }
         ],
         [
+            'pattern' => '/news.json',
+            'method' => 'GET',
+            'action' => function () {
+                header("Access-Control-Allow-Origin: *");
+                return Page::factory([
+                    'template'  => 'news.json',
+                    'slug'      => 'news',
+                ]);
+            }
+        ],
+        [
             'pattern' => '/project-tags.json',
             'method' => 'GET',
             'action' => function () {
