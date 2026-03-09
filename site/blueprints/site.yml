@@ -93,9 +93,9 @@ tabs:
             default: teal
             options:
               main-dark: Vert foncé
-              main: Vert
-              sage: Sauge
-              teal: Sarcelle
+              main: Vert clair
+              sage: Vert sauge
+              teal: Vert sarcelle
           actualite2title:
             label: Actualité 2 - Titre
             type: text
@@ -112,6 +112,6 @@ tabs:
             default: sage
             options:
               main-dark: Vert foncé
-              main: Vert
-              sage: Sauge
-              teal: Sarcelle
+              main: Vert clair
+              sage: Vert sauge
+              teal: Vert sarcelle
