@@ -60,8 +60,8 @@ fields:
         default: green-light
         required: true
         options:
-          green-light: Vert clair
-          green-medium: Vert moyen
+          green-light: Vert sarcelle
+          green-medium: Vert clair
           green-dark: Vert foncé
       buttonText:
         label: Texte du bouton
