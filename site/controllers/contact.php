@@ -40,9 +40,8 @@ return function($kirby, $pages, $page) {
                 $description    = $data['description'];
 
                 $kirby->email([
-                    'from'     => 'webmaster@modus-admin.sdrvl.ch',
+                    'from'     => 'webmaster@cms.modus-ge.ch',
                     'to'       => [
-                        'azertypow@icloud.com',
                         'info@modus-ge.ch',
                     ],
                     'body'     =>
