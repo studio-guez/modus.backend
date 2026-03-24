@@ -25,6 +25,10 @@ V::$validators['youtubeUrl'] = function ($value, $mediaType) {
 return [
     'url' => getenv('CMS_URL') ?: 'http://localhost:8080',
     'debug' => true,
+    'emailFrom' => [
+        'name'    => getenv('EMAIL_FROM_NAME') ?: 'Modus',
+        'address' => getenv('EMAIL_FROM_ADDRESS') ?: 'webmaster@cms.modus-ge.ch',
+    ],
     'email' => [
         'transport' => [
             'type'     => 'smtp',
