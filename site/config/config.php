@@ -25,6 +25,17 @@ V::$validators['youtubeUrl'] = function ($value, $mediaType) {
 return [
     'url' => getenv('CMS_URL') ?: 'http://localhost:8080',
     'debug' => true,
+    'email' => [
+        'transport' => [
+            'type'     => 'smtp',
+            'host'     => getenv('SMTP_HOST') ?: 'smtp.example.com',
+            'port'     => (int)(getenv('SMTP_PORT') ?: 587),
+            'security' => getenv('SMTP_SECURITY') ?: 'tls',
+            'auth'     => true,
+            'username' => getenv('SMTP_USERNAME') ?: '',
+            'password' => getenv('SMTP_PASSWORD') ?: '',
+        ]
+    ],
     'hooks' => [
         'page.render:before' => function ($event) {
             header("Access-Control-Allow-Origin: *");
