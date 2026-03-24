@@ -46,7 +46,6 @@ return function ($kirby, $pages, $page) {
                 $kirby->email([
                     'from'     => [$fromAddress => $fromName],
                     'to'       => [
-                        'yann@octoplus.solutions',
                         'info@modus-ge.ch',
                     ],
                     'body'     =>
