@@ -40,8 +40,11 @@ return function ($kirby, $pages, $page) {
                 $description    = $data['description'];
 
                 $emailFrom = option('emailFrom');
+                $fromAddress = $emailFrom['address'] ?: 'webmaster@cms.modus-ge.ch';
+                $fromName = $emailFrom['name'] ?: 'Modus';
+
                 $kirby->email([
-                    'from'     => $emailFrom['name'] . ' <' . $emailFrom['address'] . '>',
+                    'from'     => [$fromAddress => $fromName],
                     'to'       => [
                         'yann@octoplus.solutions',
                         'info@modus-ge.ch',
