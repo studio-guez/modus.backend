@@ -35,3 +35,6 @@ fields:
     buttons:
       - bold
       - italic
+      - underline
+      - strike
+      - link

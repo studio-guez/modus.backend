@@ -44,6 +44,8 @@ sections:
             marks:
               - bold
               - italic
+              - underline
+              - strike
               - link
       tags:
         extends: fields/tags

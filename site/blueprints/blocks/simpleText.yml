@@ -11,6 +11,7 @@ fields:
       - bold
       - italic
       - underline
+      - strike
       - link
       - sup
       - sub

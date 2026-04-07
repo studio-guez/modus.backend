@@ -34,3 +34,4 @@ fields:
       - bold
       - italic
       - underline
+      - strike

@@ -50,6 +50,8 @@ sections:
             marks:
               - bold
               - italic
+              - underline
+              - strike
 
           power_bi_pages_link:
             label: Lien vers une page
