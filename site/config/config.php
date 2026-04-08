@@ -44,7 +44,44 @@ return [
         'page.render:before' => function ($event) {
             header("Access-Control-Allow-Origin: *");
         },
+        // Store the creator on new project/report pages
+        'page.create:after' => function ($page) {
+            $user = kirby()->user();
+            if ($user && $user->role()->name() === 'contributeur') {
+                $template = $page->intendedTemplate()->name();
+                if (in_array($template, ['project', 'report'])) {
+                    kirby()->impersonate('kirby', function () use ($page, $user) {
+                        $page->update(['createdBy' => $user->email()]);
+                    });
+                }
+            }
+        },
+        // Restrict contributeur: only create project/report pages
+        'page.create:before' => function ($page, $input) {
+            $user = kirby()->user();
+            if ($user && $user->role()->name() === 'contributeur') {
+                $template = $page->intendedTemplate()->name();
+                if (!in_array($template, ['project', 'report'])) {
+                    throw new Exception('Vous n\'êtes pas autorisé·e à créer ce type de page.');
+                }
+            }
+        },
         'page.update:before' => function ($page, $values, $strings) {
+            $user = kirby()->user();
+            // Contributeur: can only edit own draft project/report pages
+            if ($user && $user->role()->name() === 'contributeur') {
+                $template = $page->intendedTemplate()->name();
+                if (in_array($template, ['project', 'report'])) {
+                    if ($page->status() !== 'draft') {
+                        throw new Exception('Vous ne pouvez modifier que les brouillons.');
+                    }
+                    $createdBy = $page->content()->get('createdBy')->value();
+                    if (!empty($createdBy) && $createdBy !== $user->email()) {
+                        throw new Exception('Vous ne pouvez modifier que vos propres pages.');
+                    }
+                }
+            }
+
             // Validate media URLs conditionally (only when page is listed)
             if ($page->status() === 'listed' && $page->intendedTemplate()->name() === 'media') {
                 $mediaType = $values['mediaType'] ?? $page->mediaType()->value();
@@ -65,6 +102,12 @@ return [
             }
         },
         'page.changeStatus:before' => function ($page, $status) {
+            // Contributeur: cannot change status at all
+            $user = kirby()->user();
+            if ($user && $user->role()->name() === 'contributeur') {
+                throw new Exception('Vous n\'êtes pas autorisé·e à publier ou modifier le statut des pages.');
+            }
+
             // Validate before publishing
             if ($status === 'listed' && $page->intendedTemplate()->name() === 'media') {
                 $mediaType = $page->mediaType()->value();
@@ -85,6 +128,22 @@ return [
             }
         },
         'page.delete:before' => function ($page) {
+            // Contributeur: can only delete own draft project/report pages
+            $user = kirby()->user();
+            if ($user && $user->role()->name() === 'contributeur') {
+                $template = $page->intendedTemplate()->name();
+                if (!in_array($template, ['project', 'report'])) {
+                    throw new Exception('Vous n\'êtes pas autorisé·e à supprimer cette page.');
+                }
+                if ($page->status() !== 'draft') {
+                    throw new Exception('Vous ne pouvez supprimer que les brouillons.');
+                }
+                $createdBy = $page->content()->get('createdBy')->value();
+                if (!empty($createdBy) && $createdBy !== $user->email()) {
+                    throw new Exception('Vous ne pouvez supprimer que vos propres pages.');
+                }
+            }
+
             // When a tag is deleted, remove its reference from all pages
             if ($page->intendedTemplate()->name() === 'tag') {
                 $tagUuid = 'page://' . $page->uuid()->id();
