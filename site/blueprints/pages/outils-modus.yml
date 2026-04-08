@@ -4,11 +4,21 @@ status:
   listed: true
 
 options:
+  access:
+    contributeur: false
   changeSlug: false
   delete: false
-  changeTitle: true
+  changeTitle:
+    "*": true
+    contributeur: false
   changeStatus: false
   preview: "https://modus-ge.ch"
+  update:
+    contributeur: false
+  duplicate:
+    contributeur: false
+  move:
+    contributeur: false
 
 columns:
   - width: 1/1

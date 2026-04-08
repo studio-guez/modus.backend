@@ -5,12 +5,18 @@ title: Tags
 icon: ticket
 
 options:
+  access:
+    contributeur: false
   changeSlug: false
   delete: false
   changeTitle: false
   sort: false
   changeStatus: false
   duplicate: false
+  update:
+    contributeur: false
+  move:
+    contributeur: false
 
 sections:
   tags:

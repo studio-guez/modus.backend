@@ -6,10 +6,20 @@ status:
   listed: true
 
 options:
+  access:
+    contributeur: false
   changeSlug: false
   delete: false
-  changeTitle: true
+  changeTitle:
+    "*": true
+    contributeur: false
   preview: "https://modus-ge.ch/{{ page.slug }}"
+  update:
+    contributeur: false
+  duplicate:
+    contributeur: false
+  move:
+    contributeur: false
 
 create:
   redirect: false

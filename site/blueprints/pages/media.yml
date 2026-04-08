@@ -5,11 +5,29 @@ status:
   draft: true
 
 options:
-  changeSlug: true
-  delete: true
-  changeTitle: true
-  changeStatus: true
+  access:
+    contributeur: false
+  changeSlug:
+    "*": true
+    contributeur: false
+  delete:
+    "*": true
+    contributeur: false
+  changeTitle:
+    "*": true
+    contributeur: false
+  changeStatus:
+    "*": true
+    contributeur: false
   preview: "https://modus-ge.ch/medias"
+  update:
+    contributeur: false
+  create:
+    contributeur: false
+  duplicate:
+    contributeur: false
+  move:
+    contributeur: false
 
 
 

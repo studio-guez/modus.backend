@@ -6,9 +6,17 @@ status:
 options:
   changeSlug: false
   delete: false
-  changeTitle: true
+  changeTitle:
+    "*": true
+    contributeur: false
   changeStatus: false
   preview: "https://modus-ge.ch/{{ page.slug }}"
+  update:
+    contributeur: false
+  duplicate:
+    contributeur: false
+  move:
+    contributeur: false
 
 columns:
   - width: 1/1
