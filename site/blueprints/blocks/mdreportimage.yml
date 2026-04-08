@@ -22,7 +22,18 @@ fields:
     options:
       full: Pleine largeur
       large: Grande
+      medium: Moyenne
       small: Petite
+  alignment:
+    label: Alignement
+    type: select
+    width: 1/2
+    default: left
+    required: true
+    options:
+      left: Gauche
+      center: Centre
+      right: Droite
   alt:
     label: field.blocks.image.alt
     type: text
