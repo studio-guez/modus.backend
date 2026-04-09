@@ -46,18 +46,66 @@ function replaceBibliographyRefs(string $text, array $refMap): string
   }, $text);
 }
 
-$body = $page->body()->toBlocks()->map(function ($item) use ($refMap) {
+/**
+ * Replace figure shortcodes [figure:xxx] with <mark class="figure-ref" data-figure="number">(Figure number)</mark>
+ */
+function replaceFigureRefs(string $text, array $figureMap): string
+{
+  return preg_replace_callback('/\[figure:([a-zA-Z0-9]+)\]/', function ($matches) use ($figureMap) {
+    $id = $matches[1];
+    if (isset($figureMap[$id])) {
+      $num = $figureMap[$id];
+      return '<mark class="figure-ref" data-figure="' . $num . '">(Figure ' . $num . ')</mark>';
+    }
+    return $matches[0];
+  }, $text);
+}
+
+// Build figure reference map by scanning body blocks for mdreportimage with id shortcodes
+$blocks = $page->body()->toBlocks();
+$figureMap = [];
+$figureIndex = 1;
+foreach ($blocks as $block) {
+  if ($block->type() === 'mdreportimage') {
+    $blockContent = $block->toArray();
+    $figId = $blockContent['content']['id'] ?? '';
+    if (!empty($figId)) {
+      if (preg_match('/^\[figure:([a-zA-Z0-9]+)\]$/', $figId, $matches)) {
+        $figId = $matches[1];
+      }
+      $figureMap[$figId] = $figureIndex;
+    }
+    $figureIndex++;
+  }
+}
+
+$body = $page->body()->toBlocks()->map(function ($item) use ($refMap, $figureMap) {
 
   $content = $item->toArray();
 
-  // Replace bibliography shortcodes in text content
+  // Replace bibliography and figure shortcodes in text content
   if (isset($content['content']['text'])) {
     $content['content']['text'] = replaceBibliographyRefs($content['content']['text'], $refMap);
+    $content['content']['text'] = replaceFigureRefs($content['content']['text'], $figureMap);
+  }
+
+  // Add figure number to mdreportimage blocks
+  $figureNumber = null;
+  if ($item->type() === 'mdreportimage') {
+    $figId = $content['content']['id'] ?? '';
+    if (!empty($figId)) {
+      $normalizedId = $figId;
+      if (preg_match('/^\[figure:([a-zA-Z0-9]+)\]$/', $figId, $matches)) {
+        $normalizedId = $matches[1];
+      }
+      $figureNumber = $figureMap[$normalizedId] ?? null;
+    }
   }
 
   return [
     'image'     => array_values(Utils::getImageArrayDataInPage($item->image()->toFiles())),
     'content'   => $content,
+    'figureNumber' => $figureNumber,
   ];
 })->data();
 

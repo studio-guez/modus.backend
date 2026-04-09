@@ -3,6 +3,11 @@ icon: image
 preview: fields
 wysiwyg: true
 fields:
+  id:
+    type: unique-shortcode
+    label: Shortcode
+    prefix: figure
+    width: 1
   image:
     label: field.blocks.image.name
     type: files
