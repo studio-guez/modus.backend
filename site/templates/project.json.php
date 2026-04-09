@@ -34,6 +34,39 @@ $json['options'] = [
   'projectType'           => $page->projectType()->value(),
 ];
 
+// Reverse lookup: find reports that link to this project via their linkedProjects field
+$library = $site->find('bibliotheque');
+$linkedReports = [];
+if ($library) {
+  $currentId = $page->id();
+  foreach ($library->children()->listed() as $report) {
+    foreach ($report->linkedProjects()->toPages() as $linkedPage) {
+      if ($linkedPage->id() === $currentId) {
+        $linkedReports[] = [
+          'name' => $report->title()->value(),
+          'url' => '/rapport/' . $report->slug(),
+        ];
+        break;
+      }
+    }
+  }
+}
+
+// Convert body to a plain indexed array and append linked reports at the end
+$body = array_values($body);
+if (count($linkedReports) > 0) {
+  $body[] = [
+    'image' => [],
+    'content' => [
+      'type' => 'linksSection',
+      'content' => [
+        'title' => 'Rapports en lien',
+        'links' => $linkedReports,
+      ],
+    ],
+  ];
+}
+
 $json['body'] = $body;
 $json['title'] = $page->title();
 
