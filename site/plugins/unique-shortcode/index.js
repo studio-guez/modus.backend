@@ -74,3 +74,61 @@ panel.plugin('oplus/unique-shortcode', {
     }
   }
 });
+
+// Highlight shortcodes in writer fields using CSS Custom Highlight API
+// This is purely visual and does not modify the DOM
+(function () {
+  if (typeof CSS === 'undefined' || !CSS.highlights) return;
+
+  const SHORTCODE_RE = /\[(ref|figure):[a-zA-Z0-9]+\]/g;
+  let rafId = null;
+
+  function updateHighlights() {
+    const ranges = [];
+    document.querySelectorAll('.k-writer').forEach(function (writer) {
+      const walker = document.createTreeWalker(writer, NodeFilter.SHOW_TEXT);
+      while (walker.nextNode()) {
+        const node = walker.currentNode;
+        const text = node.textContent || '';
+        SHORTCODE_RE.lastIndex = 0;
+        let match;
+        while ((match = SHORTCODE_RE.exec(text)) !== null) {
+          const range = new Range();
+          range.setStart(node, match.index);
+          range.setEnd(node, match.index + match[0].length);
+          ranges.push(range);
+        }
+      }
+    });
+    if (ranges.length > 0) {
+      CSS.highlights.set('shortcode-hl', new Highlight(...ranges));
+    } else {
+      CSS.highlights.delete('shortcode-hl');
+    }
+  }
+
+  function scheduleUpdate() {
+    if (rafId) return;
+    rafId = requestAnimationFrame(function () {
+      rafId = null;
+      updateHighlights();
+    });
+  }
+
+  var observer = new MutationObserver(scheduleUpdate);
+
+  function start() {
+    observer.observe(document.body, {
+      childList: true,
+      subtree: true,
+      characterData: true
+    });
+    updateHighlights();
+  }
+
+  if (document.readyState === 'complete') {
+    start();
+  } else {
+    window.addEventListener('load', start);
+  }
+})();
