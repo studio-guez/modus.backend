@@ -47,6 +47,12 @@ sections:
               - underline
               - strike
               - link
+      linkedProjects:
+        label: Projets en lien
+        type: pages
+        multiple: true
+        query: site.find('projects').children.listed
+        info: "{{ page.dateStart }}"
       tags:
         extends: fields/tags
       dateStart:

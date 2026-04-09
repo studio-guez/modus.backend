@@ -168,4 +168,15 @@ if ($library && count($currentTags) > 0) {
 
 $json['relatedReports'] = array_values($relatedReports);
 
+// Resolve linked projects from the pages field
+$linkedProjects = [];
+foreach ($page->linkedProjects()->toPages() as $projectPage) {
+  $linkedProjects[] = [
+    'slug' => $projectPage->slug(),
+    'title' => $projectPage->title()->value(),
+    'dateStart' => $projectPage->dateStart()->value(),
+  ];
+}
+$json['linkedProjects'] = $linkedProjects;
+
 echo json_encode($json);
