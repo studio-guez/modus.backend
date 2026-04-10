@@ -29,8 +29,12 @@ fields:
         label: Nom
         type: text
       description:
-        label: Description
+        label: Rôle
         type: text
+      profileDescription:
+        label: Description
+        type: textarea
+        buttons: false
       link:
         label: Lien linkedin
         type: url
