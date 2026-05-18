@@ -6,12 +6,30 @@ status:
   listed: true
 
 options:
-  delete: true
-  changeStatus: true
-  changeTitle: true
-  sort: true
+  access:
+    contributeur: false
+  delete:
+    "*": true
+    contributeur: false
+  changeStatus:
+    "*": true
+    contributeur: false
+  changeTitle:
+    "*": true
+    contributeur: false
+  sort:
+    "*": true
+    contributeur: false
   changeSlug: false
   changeTemplate: false
+  update:
+    contributeur: false
+  create:
+    contributeur: false
+  duplicate:
+    contributeur: false
+  move:
+    contributeur: false
 
 
 fields:
@@ -34,3 +52,4 @@ fields:
       - bold
       - italic
       - underline
+      - strike

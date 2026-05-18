@@ -46,6 +46,7 @@ fields:
       - bold
       - italic
       - underline
+      - strike
       - link
     nodes:
       - paragraph

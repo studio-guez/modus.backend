@@ -22,6 +22,7 @@ fields:
       - bold
       - italic
       - underline
+      - strike
   body:
     label: Contenu de la page
     type: blocks

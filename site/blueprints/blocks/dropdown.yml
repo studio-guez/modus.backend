@@ -18,6 +18,7 @@ fields:
       - bold
       - italic
       - underline
+      - strike
       - link
     nodes:
       - paragraph
@@ -45,6 +46,7 @@ fields:
               - bold
               - italic
               - underline
+              - strike
               - link
       content_table:
         title: Tableau
@@ -81,6 +83,7 @@ fields:
                           - bold
                           - italic
                           - underline
+                          - strike
                           - link
 
   #          content_table:

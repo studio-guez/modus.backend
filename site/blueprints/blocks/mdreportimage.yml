@@ -3,6 +3,11 @@ icon: image
 preview: fields
 wysiwyg: true
 fields:
+  id:
+    type: unique-shortcode
+    label: Shortcode
+    prefix: figure
+    width: 1
   image:
     label: field.blocks.image.name
     type: files
@@ -22,7 +27,18 @@ fields:
     options:
       full: Pleine largeur
       large: Grande
+      medium: Moyenne
       small: Petite
+  alignment:
+    label: Alignement
+    type: select
+    width: 1/2
+    default: left
+    required: true
+    options:
+      left: Gauche
+      center: Centre
+      right: Droite
   alt:
     label: field.blocks.image.alt
     type: text
@@ -35,3 +51,6 @@ fields:
     buttons:
       - bold
       - italic
+      - underline
+      - strike
+      - link

@@ -28,6 +28,7 @@ fields:
       - bold
       - italic
       - underline
+      - strike
       - link
     inline: true
     placeholder: field.blocks.text.placeholder

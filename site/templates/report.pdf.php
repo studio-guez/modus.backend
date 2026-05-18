@@ -125,19 +125,28 @@ function renderBlockToHtml($block): string
         $caption = $content->caption()->value();
         $alt = $content->alt()->value() ?: 'Image';
         $size = $content->size()->value() ?: 'large';
+        $alignment = $content->alignment()->value() ?: 'center';
 
         // mPDF doesn't handle compound CSS selectors well, so use inline styles
         $widthMap = [
           'full' => '100%',
           'large' => '80%',
+          'medium' => '70%',
           'small' => '60%',
         ];
         $imgWidth = $widthMap[$size] ?? '100%';
 
-        $html = '<div class="report-image">';
+        $alignMap = [
+          'left' => 'left',
+          'center' => 'center',
+          'right' => 'right',
+        ];
+        $textAlign = $alignMap[$alignment] ?? 'center';
+
+        $html = '<div class="report-image" style="text-align: ' . $textAlign . ';">';
         $html .= '<img src="' . $imagePath . '" alt="' . htmlspecialchars($alt) . '" style="width: ' . $imgWidth . '; max-width: ' . $imgWidth . ';" />';
         if ($caption) {
-          $html .= '<div class="image-caption">' . $caption . '</div>';
+          $html .= '<div class="image-caption" style="text-align: ' . $textAlign . ';">' . $caption . '</div>';
         }
         $html .= '</div>';
       }
