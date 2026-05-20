@@ -35,6 +35,7 @@ fields:
         label: Description
         type: textarea
         buttons: false
+        maxlength: 500
       link:
         label: Lien linkedin
         type: url
