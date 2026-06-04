@@ -65,6 +65,18 @@ sections:
         display: YYYY-MM
         when:
           isProjectWithDuration: true
+
+      projectStatus:
+        required: true
+        type: select
+        width: 1/2
+        label: Statut du projet
+        default: termine
+        options:
+          termine: Terminé
+          en-cours: En cours
+        when:
+          isProjectWithDuration: false
   subpages:
     type: pages
     label: Power BI

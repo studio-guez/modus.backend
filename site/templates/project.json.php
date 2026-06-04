@@ -29,6 +29,7 @@ $json['options'] = [
   'dateStart'             => $page->dateStart()->value(),
   'isProjectWithDuration' => $page->isProjectWithDuration()->value(),
   'dateEnd'               => $page->dateEnd()->value(),
+  'projectStatus'         => $page->projectStatus()->value(),
   'tags'                  => $page->tags()->value(),
   'subpages'              => array_values($page->children()->toArray()),
   'projectType'           => $page->projectType()->value(),
