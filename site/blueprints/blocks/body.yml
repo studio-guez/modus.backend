@@ -25,3 +25,12 @@ fields:
       - orderedList
       - heading
     placeholder: field.blocks.text.placeholder
+  alignment:
+    label: Alignement du texte
+    type: select
+    default: left
+    options:
+      left: Gauche
+      center: Centre
+      right: Droite
+      justify: Justifié
