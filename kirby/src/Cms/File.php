@@ -8,6 +8,7 @@ use Kirby\Exception\InvalidArgumentException;
 use Kirby\Filesystem\F;
 use Kirby\Filesystem\IsFile;
 use Kirby\Panel\File as Panel;
+use Kirby\Toolkit\BlockCollectionAccess;
 use Kirby\Toolkit\Str;
 
 /**
@@ -134,6 +135,7 @@ class File extends ModelWithContent
 	 * Returns the url to api endpoint
 	 * @internal
 	 */
+	#[BlockCollectionAccess]
 	public function apiUrl(bool $relative = false): string
 	{
 		return $this->parent()->apiUrl($relative) . '/files/' . $this->filename();
@@ -155,7 +157,7 @@ class File extends ModelWithContent
 	 * Returns an array with all blueprints that are available for the file
 	 * by comparing files sections and files fields of the parent model
 	 */
-	public function blueprints(string $inSection = null): array
+	public function blueprints(string|null $inSection = null): array
 	{
 		// get cached results for the current file model
 		// (except when collecting for a specific section)
@@ -227,7 +229,7 @@ class File extends ModelWithContent
 	 */
 	public function contentFileData(
 		array $data,
-		string $languageCode = null
+		string|null $languageCode = null
 	): array {
 		// only add the template in, if the $data array
 		// doesn't explicitly unsets it
@@ -327,6 +329,10 @@ class File extends ModelWithContent
 		return $this->id() === $file->id();
 	}
 
+	public static array $accessibleCache = [];
+	public static array $listableCache   = [];
+	public static array $readableCache   = [];
+
 	/**
 	 * Checks if the files is accessible.
 	 * This permission depends on the `read` option until v5
@@ -338,13 +344,11 @@ class File extends ModelWithContent
 			return false;
 		}
 
-		static $accessible = [];
+		$role     = $this->kirby()->user()?->role()->id() ?? '__none__';
+		$template = $this->template() ?? '__none__';
+		static::$accessibleCache[$role] ??= [];
 
-		if ($template = $this->template()) {
-			return $accessible[$template] ??= $this->permissions()->can('access');
-		}
-
-		return $accessible['__none__'] ??= $this->permissions()->can('access');
+		return static::$accessibleCache[$role][$template] ??= $this->permissions()->can('access');
 	}
 
 	/**
@@ -363,13 +367,11 @@ class File extends ModelWithContent
 			return false;
 		}
 
-		static $listable = [];
+		$role     = $this->kirby()->user()?->role()->id() ?? '__none__';
+		$template = $this->template() ?? '__none__';
+		static::$listableCache[$role] ??= [];
 
-		if ($template = $this->template()) {
-			return $listable[$template] ??= $this->permissions()->can('list');
-		}
-
-		return $listable['__none__'] ??= $this->permissions()->can('list');
+		return static::$listableCache[$role][$template] ??= $this->permissions()->can('list');
 	}
 
 	/**
@@ -379,19 +381,18 @@ class File extends ModelWithContent
 	 */
 	public function isReadable(): bool
 	{
-		static $readable = [];
+		$role     = $this->kirby()->user()?->role()->id() ?? '__none__';
+		$template = $this->template() ?? '__none__';
+		static::$readableCache[$role] ??= [];
 
-		if ($template = $this->template()) {
-			return $readable[$template] ??= $this->permissions()->can('read');
-		}
-
-		return $readable['__none__'] ??= $this->permissions()->can('read');
+		return static::$readableCache[$role][$template] ??= $this->permissions()->can('read');
 	}
 
 	/**
 	 * Creates a unique media hash
 	 * @internal
 	 */
+	#[BlockCollectionAccess]
 	public function mediaHash(): string
 	{
 		return $this->mediaToken() . '-' . $this->modifiedFile();
@@ -401,6 +402,7 @@ class File extends ModelWithContent
 	 * Returns the absolute path to the file in the public media folder
 	 * @internal
 	 */
+	#[BlockCollectionAccess]
 	public function mediaRoot(): string
 	{
 		return $this->parent()->mediaRoot() . '/' . $this->mediaHash() . '/' . $this->filename();
@@ -410,6 +412,7 @@ class File extends ModelWithContent
 	 * Creates a non-guessable token string for this file
 	 * @internal
 	 */
+	#[BlockCollectionAccess]
 	public function mediaToken(): string
 	{
 		$token = $this->kirby()->contentToken($this, $this->id());
@@ -446,7 +449,7 @@ class File extends ModelWithContent
 	 * Timestamp of the last modification
 	 * of the content file
 	 */
-	protected function modifiedContent(string $languageCode = null): int
+	protected function modifiedContent(string|null $languageCode = null): int
 	{
 		return $this->storage()->modified('published', $languageCode) ?? 0;
 	}
@@ -532,6 +535,7 @@ class File extends ModelWithContent
 	/**
 	 * Returns the absolute root to the file
 	 */
+	#[BlockCollectionAccess]
 	public function root(): string|null
 	{
 		return $this->root ??= $this->parent()->root() . '/' . $this->filename();
@@ -551,7 +555,7 @@ class File extends ModelWithContent
 	 *
 	 * @return $this
 	 */
-	protected function setBlueprint(array $blueprint = null): static
+	protected function setBlueprint(array|null $blueprint = null): static
 	{
 		if ($blueprint !== null) {
 			$blueprint['model'] = $this;
@@ -587,7 +591,7 @@ class File extends ModelWithContent
 	 */
 	public function template(): string|null
 	{
-		return $this->template ??= $this->content()->get('template')->value();
+		return $this->template ??= $this->content('default')->get('template')->value();
 	}
 
 	/**
@@ -603,6 +607,7 @@ class File extends ModelWithContent
 	 * by injecting the information from
 	 * the asset.
 	 */
+	#[BlockCollectionAccess]
 	public function toArray(): array
 	{
 		return array_merge(parent::toArray(), $this->asset()->toArray(), [
@@ -620,12 +625,21 @@ class File extends ModelWithContent
 	}
 
 	/**
-	 * Simplified File URL that uses the parent
-	 * Page URL and the filename as a more stable
-	 * alternative for the media URLs.
+	 * Clean file URL that uses the parent page URL
+	 * and the filename as a more stable alternative
+	 * for the media URLs if available. The `content.fileRedirects`
+	 * option is used to disable this behavior or enable it
+	 * on a per-file basis.
 	 */
-	public function previewUrl(): string
+	#[BlockCollectionAccess]
+	public function previewUrl(): string|null
 	{
+		// check if the clean file URL is accessible,
+		// otherwise we need to fall back to the media URL
+		if ($this->kirby()->resolveFile($this) === null) {
+			return $this->url();
+		}
+
 		$parent = $this->parent();
 		$url    = Url::to($this->id());
 
@@ -654,6 +668,7 @@ class File extends ModelWithContent
 
 				return $url;
 			case 'user':
+				// there are no clean URL routes for user files
 				return $this->url();
 			default:
 				return $url;

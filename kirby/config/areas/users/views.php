@@ -10,7 +10,7 @@ return [
 		'action'  => function () {
 			$kirby = App::instance();
 			$role  = $kirby->request()->get('role');
-			$roles = $kirby->roles()->toArray(fn ($role) => [
+			$roles = Find::roles()->toArray(fn ($role) => [
 				'id'    => $role->id(),
 				'title' => $role->title(),
 			]);
@@ -18,14 +18,15 @@ return [
 			return [
 				'component' => 'k-users-view',
 				'props'     => [
-					'role' => function () use ($kirby, $roles, $role) {
+					'canCreate' => $kirby->roles()->canBeCreated()->count() > 0,
+					'role' => function () use ($roles, $role) {
 						if ($role) {
 							return $roles[$role] ?? null;
 						}
 					},
 					'roles' => array_values($roles),
 					'users' => function () use ($kirby, $role) {
-						$users = $kirby->users();
+						$users = $kirby->users()->filter('isListable', true);
 
 						if (empty($role) === false) {
 							$users = $users->role($role);

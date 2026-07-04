@@ -7,6 +7,7 @@ use Kirby\Exception\InvalidArgumentException;
 use Kirby\Exception\LogicException;
 use Kirby\Filesystem\F;
 use Kirby\Form\Form;
+use Kirby\Toolkit\BlockCollectionAccess;
 use Kirby\Uuid\Uuid;
 use Kirby\Uuid\Uuids;
 
@@ -41,6 +42,7 @@ trait FileActions
 	 *
 	 * @throws \Kirby\Exception\LogicException
 	 */
+	#[BlockCollectionAccess]
 	public function changeName(
 		string $name,
 		bool $sanitize = true,
@@ -100,6 +102,7 @@ trait FileActions
 	/**
 	 * Changes the file's sorting number in the meta file
 	 */
+	#[BlockCollectionAccess]
 	public function changeSort(int $sort): static
 	{
 		// skip if the sort number stays the same
@@ -117,6 +120,7 @@ trait FileActions
 	/**
 	 * @return $this|static
 	 */
+	#[BlockCollectionAccess]
 	public function changeTemplate(string|null $template): static
 	{
 		if ($template === $this->template()) {
@@ -137,12 +141,14 @@ trait FileActions
 				$template = null;
 			}
 
-			$file = $file->update(['template' => $template]);
+			$file = $file->update(
+				['template' => $template],
+				'default'
+			);
 
-			// rename and/or resize the file if configured by new blueprint
+			// resize the file if configured by new blueprint
 			$create = $file->blueprint()->create();
-			$file = $file->manipulate($create);
-			$file = $file->changeExtension($file, $create['format'] ?? null);
+			$file   = $file->manipulate($create);
 
 			return $file;
 		});
@@ -185,7 +191,9 @@ trait FileActions
 
 	/**
 	 * Copy the file to the given page
+	 * @internal
 	 */
+	#[BlockCollectionAccess]
 	public function copy(Page $page): static
 	{
 		F::copy($this->root(), $page->root() . '/' . $this->filename());
@@ -218,8 +226,14 @@ trait FileActions
 	 * @throws \Kirby\Exception\InvalidArgumentException
 	 * @throws \Kirby\Exception\LogicException
 	 */
+	#[BlockCollectionAccess]
 	public static function create(array $props, bool $move = false): File
 	{
+		// Prevent injecting blueprint as this always must be derived from
+		// the template/model name and blueprint object in the app,
+		// never directly be supplied by the caller
+		unset($props['blueprint']);
+
 		if (isset($props['source'], $props['parent']) === false) {
 			throw new InvalidArgumentException('Please provide the "source" and "parent" props for the File');
 		}
@@ -285,7 +299,6 @@ trait FileActions
 
 			// resize the file on upload if configured
 			$file = $file->manipulate($create);
-			$file = $file->changeExtension($file, $create['format'] ?? null);
 
 			// store the content if necessary
 			// (always create files in the default language)
@@ -306,6 +319,7 @@ trait FileActions
 	 * Deletes the file. The store is used to
 	 * manipulate the filesystem or whatever you prefer.
 	 */
+	#[BlockCollectionAccess]
 	public function delete(): bool
 	{
 		return $this->commit('delete', ['file' => $this], function ($file) {
@@ -328,6 +342,7 @@ trait FileActions
 	/**
 	 * Resizes/crops the original file with Kirby's thumb handler
 	 */
+	#[BlockCollectionAccess]
 	public function manipulate(array|null $options = []): static
 	{
 		// nothing to process
@@ -338,7 +353,14 @@ trait FileActions
 		// generate image file and overwrite it in place
 		$this->kirby()->thumb($this->root(), $this->root(), $options);
 
-		return $this->clone([]);
+		$file = $this->clone();
+
+		// change the file extension if format option configured
+		if ($format = $options['format'] ?? null) {
+			$file = $file->changeExtension($file, $format);
+		}
+
+		return $file;
 	}
 
 	/**
@@ -347,6 +369,7 @@ trait FileActions
 	 *
 	 * @return $this
 	 */
+	#[BlockCollectionAccess]
 	public function publish(): static
 	{
 		Media::publish($this, $this->mediaRoot());
@@ -363,6 +386,7 @@ trait FileActions
 	 * @param bool $move If set to `true`, the source will be deleted
 	 * @throws \Kirby\Exception\LogicException
 	 */
+	#[BlockCollectionAccess]
 	public function replace(string $source, bool $move = false): static
 	{
 		$file = $this->clone();
@@ -387,7 +411,6 @@ trait FileActions
 			// apply the resizing/crop options from the blueprint
 			$create = $file->blueprint()->create();
 			$file   = $file->manipulate($create);
-			$file   = $file->changeExtension($file, $create['format'] ?? null);
 
 			// return a fresh clone
 			return $file->clone();
@@ -399,8 +422,8 @@ trait FileActions
 	 * @internal
 	 */
 	public function save(
-		array $data = null,
-		string $languageCode = null,
+		array|null $data = null,
+		string|null $languageCode = null,
 		bool $overwrite = false
 	): static {
 		$file = parent::save($data, $languageCode, $overwrite);
@@ -416,6 +439,7 @@ trait FileActions
 	 *
 	 * @return $this
 	 */
+	#[BlockCollectionAccess]
 	public function unpublish(bool $onlyMedia = false): static
 	{
 		// unpublish media files
@@ -438,9 +462,10 @@ trait FileActions
 	 *
 	 * @throws \Kirby\Exception\InvalidArgumentException If the input array contains invalid values
 	 */
+	#[BlockCollectionAccess]
 	public function update(
-		array $input = null,
-		string $languageCode = null,
+		array|null $input = null,
+		string|null $languageCode = null,
 		bool $validate = false
 	): static {
 		// delete all public media versions when focus field gets changed

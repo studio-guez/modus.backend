@@ -8,9 +8,10 @@ return [
 	'users' => [
 		'label' => I18n::translate('users'),
 		'icon'  => 'users',
-		'query' => function (string $query = null, int $limit, int $page) {
+		'query' => function (string|null $query, int $limit, int $page) {
 			$kirby = App::instance();
 			$users = $kirby->users()
+				->filter('isListable', true)
 				->search($query)
 				->paginate($limit, $page);
 

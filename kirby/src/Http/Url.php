@@ -94,17 +94,41 @@ class Url
 	}
 
 	/**
+	 * Checks if a URL starts with a dangerous URI scheme
+	 * (e.g. javascript:) that must never appear in rendered href
+	 * or src attributes.
+	 * @since 4.9.1
+	 */
+	public static function hasDangerousScheme(string|null $url = null): bool
+	{
+		if ($url === null) {
+			return false;
+		}
+
+		// strip any weird characters to prevent bypass attempts,
+		// keeping only the characters we test for below
+		// (especially removes any whitespace that the browser would ignore
+		// when the resulting URL is evaluated)
+		$url = preg_replace('/[^a-z:]/i', '', $url);
+
+		// try to find a match from the blocklist case-insensitively
+		return preg_match('!^(?:javascript|vbscript|livescript|mocha|jar|data):!i', $url) === 1;
+	}
+
+	/**
 	 * Checks if an URL is absolute
 	 */
 	public static function isAbsolute(string|null $url = null): bool
 	{
+		if ($url === null || static::hasDangerousScheme($url) === true) {
+			return false;
+		}
+
 		// matches the following groups of URLs:
 		//  //example.com/uri
 		//  http://example.com/uri, https://example.com/uri, ftp://example.com/uri
 		//  mailto:example@example.com, geo:49.0158,8.3239?z=11
-		return
-			$url !== null &&
-			preg_match('!^(//|[a-z0-9+-.]+://|mailto:|tel:|geo:)!i', $url) === 1;
+		return preg_match('!^(//|[a-z0-9+-.]+://|mailto:|tel:|geo:)!i', $url) === 1;
 	}
 
 	/**
@@ -220,7 +244,7 @@ class Url
 	 */
 	public static function to(
 		string|null $path = null,
-		array $options = null
+		array|null $options = null
 	): string {
 		// make sure $path is string
 		$path ??= '';

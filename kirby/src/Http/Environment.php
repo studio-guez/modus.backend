@@ -153,8 +153,8 @@ class Environment
 	 * @param array|null $info Optional override for `$_SERVER`
 	 */
 	public function detect(
-		array $options = null,
-		array $info = null
+		array|null $options = null,
+		array|null $info = null
 	): array {
 		$defaults = [
 			'cli'     => null,
@@ -178,11 +178,11 @@ class Environment
 		if ($options['allowed'] === '*' || $options['allowed'] === ['*']) {
 			$this->detectAuto(true);
 
-		// fixed environments
+			// fixed environments
 		} elseif (empty($options['allowed']) === false) {
 			$this->detectAllowed($options['allowed']);
 
-		// secure auto-detection
+			// secure auto-detection
 		} else {
 			$this->detectAuto();
 		}
@@ -356,8 +356,9 @@ class Environment
 
 		// prefer the standardized `Forwarded` header if defined
 		if ($forwarded = $this->get('HTTP_FORWARDED')) {
-			// only use the first (outermost) proxy by using the first set of values
-			// before the first comma (but only a comma outside of quotes)
+			// only use the first (outermost) proxy by using
+			// the first set of values before the first comma
+			// (but only a comma outside of quotes)
 			if (Str::contains($forwarded, ',') === true) {
 				$forwarded = preg_split('/"[^"]*"(*SKIP)(*F)|,/', $forwarded)[0];
 			}
@@ -368,6 +369,7 @@ class Environment
 
 			// split key and value into an associative array
 			$fields = [];
+
 			foreach ($rawFields as $field) {
 				$key   = Str::lower(Str::before($field, '='));
 				$value = Str::after($field, '=');
@@ -395,7 +397,7 @@ class Environment
 				$data['port'] ??= 443;
 			}
 
-			$data['for'] = $parts['for'] ?? null;
+			$data['for'] = $fields['for'] ?? null;
 
 			return $data;
 		}
@@ -602,13 +604,7 @@ class Environment
 	 */
 	protected function detectRequestUri(string|null $requestUri = null): Uri
 	{
-		// make sure the URL parser works properly when there's a
-		// colon in the request URI but the URI is relative
-		if (Url::isAbsolute($requestUri) === false) {
-			$requestUri = 'https://getkirby.com' . $requestUri;
-		}
-
-		$uri = new Uri($requestUri);
+		$uri = new Uri($requestUri ?? '');
 
 		// create the URI object as a combination of base uri parts
 		// and the parts from REQUEST_URI
@@ -766,7 +762,9 @@ class Environment
 		$ips = [
 			$this->get('REMOTE_ADDR'),
 			$this->get('HTTP_X_FORWARDED_FOR'),
-			$this->get('HTTP_CLIENT_IP')
+			$this->get('HTTP_CLIENT_IP'),
+			$this->get('HTTP_X_CLIENT_IP'),
+			$this->get('HTTP_X_REAL_IP'),
 		];
 
 		if ($this->get('HTTP_FORWARDED')) {
@@ -816,18 +814,24 @@ class Environment
 		}
 
 		// load the config for the host
-		if (empty($host) === false) {
+		if (
+			empty($host) === false &&
+			F::exists($path = $root . '/config.' . $host . '.php', $root) === true
+		) {
 			$configHost = F::load(
-				file: $root . '/config.' . $host . '.php',
+				file: $path,
 				fallback: [],
 				allowOutput: false
 			);
 		}
 
 		// load the config for the server IP
-		if (empty($addr) === false) {
+		if (
+			empty($addr) === false &&
+			F::exists($path = $root . '/config.' . $addr . '.php', $root) === true
+		) {
 			$configAddr = F::load(
-				file: $root . '/config.' . $addr . '.php',
+				file: $path,
 				fallback: [],
 				allowOutput: false
 			);

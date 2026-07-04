@@ -14,20 +14,27 @@ return [
 		'auth'    => false,
 		'action'  => function () {
 			$system = $this->kirby()->system();
+			$model  = $this->resolve($system);
 
 			if ($this->kirby()->user()) {
-				return $system;
+				return $model->view('panel');
 			}
 
-			$info = match ($system->isOk()) {
-				true  => $this->resolve($system)->view('login')->toArray(),
-				false => $this->resolve($system)->view('troubleshooting')->toArray()
+			return match ($system->isOk()) {
+				true  => $model->view('login'),
+				false => $model->view('troubleshooting')
 			};
-
+		}
+	],
+	[
+		'pattern' => 'system/method-test',
+		'method'  => 'PATCH',
+		'action'  => function () {
 			return [
-				'status' => 'ok',
-				'data'   => $info,
-				'type'   => 'model'
+				'status' => match ($this->kirby()->request()->method()) {
+					'PATCH' => 'ok',
+					default => 'fail'
+				}
 			];
 		}
 	],

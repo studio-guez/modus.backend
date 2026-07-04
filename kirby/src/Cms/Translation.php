@@ -4,6 +4,7 @@ namespace Kirby\Cms;
 
 use Exception;
 use Kirby\Data\Data;
+use Kirby\Toolkit\BlockCollectionAccess;
 use Kirby\Toolkit\Str;
 
 /**
@@ -87,7 +88,7 @@ class Translation
 	 * Returns a single translation
 	 * string by key
 	 */
-	public function get(string $key, string $default = null): string|null
+	public function get(string $key, string|null $default = null): string|null
 	{
 		return $this->data[$key] ?? $default;
 	}
@@ -105,6 +106,7 @@ class Translation
 	 * Loads the translation from the
 	 * json file in Kirby's translations folder
 	 */
+	#[BlockCollectionAccess]
 	public static function load(
 		string $code,
 		string $root,

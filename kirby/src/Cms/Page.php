@@ -13,6 +13,7 @@ use Kirby\Http\Uri;
 use Kirby\Panel\Page as Panel;
 use Kirby\Template\Template;
 use Kirby\Toolkit\A;
+use Kirby\Toolkit\BlockCollectionAccess;
 use Kirby\Toolkit\LazyValue;
 use Kirby\Toolkit\Str;
 use Throwable;
@@ -186,6 +187,7 @@ class Page extends ModelWithContent
 	 * Returns the url to the api endpoint
 	 * @internal
 	 */
+	#[BlockCollectionAccess]
 	public function apiUrl(bool $relative = false): string
 	{
 		if ($relative === true) {
@@ -302,6 +304,7 @@ class Page extends ModelWithContent
 	 *
 	 * @throws \Kirby\Exception\InvalidArgumentException If the controller returns invalid objects for `kirby`, `site`, `pages` or `page`
 	 */
+	#[BlockCollectionAccess]
 	public function controller(
 		array $data = [],
 		string $contentType = 'html'
@@ -361,7 +364,7 @@ class Page extends ModelWithContent
 	}
 
 	/**
-	 * Sorting number + Slug
+	 * Returns the directory name (UID with optional sorting number)
 	 */
 	public function dirname(): string
 	{
@@ -377,7 +380,8 @@ class Page extends ModelWithContent
 	}
 
 	/**
-	 * Sorting number + Slug
+	 * Returns the directory path relative to the `content` root
+	 * (including optional sorting numbers and draft directories)
 	 */
 	public function diruri(): string
 	{
@@ -425,6 +429,7 @@ class Page extends ModelWithContent
 	 * @param array $options Options for `Kirby\Http\Uri` to create URL parts
 	 * @param int $code HTTP status code
 	 */
+	#[BlockCollectionAccess]
 	public function go(array $options = [], int $code = 302): void
 	{
 		Response::go($this->url($options), $code);
@@ -474,6 +479,7 @@ class Page extends ModelWithContent
 	 * children and content files
 	 * @internal
 	 */
+	#[BlockCollectionAccess]
 	public function inventory(): array
 	{
 		if ($this->inventory !== null) {
@@ -512,6 +518,10 @@ class Page extends ModelWithContent
 		return $this->id() === $page->id();
 	}
 
+	public static array $accessibleCache = [];
+	public static array $listableCache   = [];
+	public static array $readableCache   = [];
+
 	/**
 	 * Checks if the page is accessible that accessible and listable.
 	 * This permission depends on the `read` option until v5
@@ -523,11 +533,11 @@ class Page extends ModelWithContent
 			return false;
 		}
 
-		static $accessible = [];
-
+		$role     = $this->kirby()->user()?->role()->id() ?? '__none__';
 		$template = $this->intendedTemplate()->name();
+		static::$accessibleCache[$role] ??= [];
 
-		return $accessible[$template] ??= $this->permissions()->can('access');
+		return static::$accessibleCache[$role][$template] ??= $this->permissions()->can('access');
 	}
 
 	/**
@@ -689,11 +699,11 @@ class Page extends ModelWithContent
 			return false;
 		}
 
-		static $listable = [];
-
+		$role     = $this->kirby()->user()?->role()->id() ?? '__none__';
 		$template = $this->intendedTemplate()->name();
+		static::$listableCache[$role] ??= [];
 
-		return $listable[$template] ??= $this->permissions()->can('list');
+		return static::$listableCache[$role][$template] ??= $this->permissions()->can('list');
 	}
 
 	/**
@@ -745,11 +755,11 @@ class Page extends ModelWithContent
 	 */
 	public function isReadable(): bool
 	{
-		static $readable = [];
-
+		$role     = $this->kirby()->user()?->role()->id() ?? '__none__';
 		$template = $this->intendedTemplate()->name();
+		static::$readableCache[$role] ??= [];
 
-		return $readable[$template] ??= $this->permissions()->can('read');
+		return static::$readableCache[$role][$template] ??= $this->permissions()->can('read');
 	}
 
 	/**
@@ -773,7 +783,7 @@ class Page extends ModelWithContent
 	 * This is only used for drafts so far.
 	 * @internal
 	 */
-	public function isVerified(string $token = null): bool
+	public function isVerified(string|null $token = null): bool
 	{
 		if (
 			$this->isPublished() === true &&
@@ -793,6 +803,7 @@ class Page extends ModelWithContent
 	 * Returns the root to the media folder for the page
 	 * @internal
 	 */
+	#[BlockCollectionAccess]
 	public function mediaRoot(): string
 	{
 		return $this->kirby()->root('media') . '/pages/' . $this->id();
@@ -930,6 +941,7 @@ class Page extends ModelWithContent
 	 * Draft preview Url
 	 * @internal
 	 */
+	#[BlockCollectionAccess]
 	public function previewUrl(): string|null
 	{
 		$preview = $this->blueprint()->preview();
@@ -963,6 +975,7 @@ class Page extends ModelWithContent
 	 * @param string $contentType
 	 * @throws \Kirby\Exception\NotFoundException If the default template cannot be found
 	 */
+	#[BlockCollectionAccess]
 	public function render(array $data = [], $contentType = 'html'): string
 	{
 		$kirby = $this->kirby();
@@ -1043,6 +1056,7 @@ class Page extends ModelWithContent
 	 * @internal
 	 * @throws \Kirby\Exception\NotFoundException If the content representation cannot be found
 	 */
+	#[BlockCollectionAccess]
 	public function representation(mixed $type): Template
 	{
 		$kirby          = $this->kirby();
@@ -1060,6 +1074,7 @@ class Page extends ModelWithContent
 	 * Returns the absolute root to the page directory
 	 * No matter if it exists or not.
 	 */
+	#[BlockCollectionAccess]
 	public function root(): string
 	{
 		return $this->root ??= $this->kirby()->root('content') . '/' . $this->diruri();
@@ -1078,6 +1093,7 @@ class Page extends ModelWithContent
 	/**
 	 * Search all pages within the current page
 	 */
+	#[BlockCollectionAccess]
 	public function search(string|null $query = null, string|array $params = []): Pages
 	{
 		return $this->index()->search($query, $params);
@@ -1088,7 +1104,7 @@ class Page extends ModelWithContent
 	 *
 	 * @return $this
 	 */
-	protected function setBlueprint(array $blueprint = null): static
+	protected function setBlueprint(array|null $blueprint = null): static
 	{
 		if ($blueprint !== null) {
 			$blueprint['model'] = $this;
@@ -1103,7 +1119,7 @@ class Page extends ModelWithContent
 	 *
 	 * @return $this
 	 */
-	protected function setTemplate(string $template = null): static
+	protected function setTemplate(string|null $template = null): static
 	{
 		if ($template !== null) {
 			$this->intendedTemplate = $this->kirby()->template($template);
@@ -1117,7 +1133,7 @@ class Page extends ModelWithContent
 	 *
 	 * @return $this
 	 */
-	protected function setUrl(string $url = null): static
+	protected function setUrl(string|null $url = null): static
 	{
 		if (is_string($url) === true) {
 			$url = rtrim($url, '/');
@@ -1130,7 +1146,7 @@ class Page extends ModelWithContent
 	/**
 	 * Returns the slug of the page
 	 */
-	public function slug(string $languageCode = null): string
+	public function slug(string|null $languageCode = null): string
 	{
 		if ($this->kirby()->multilang() === true) {
 			$languageCode      ??= $this->kirby()->languageCode();
@@ -1194,6 +1210,7 @@ class Page extends ModelWithContent
 	 * Converts the most important
 	 * properties to array
 	 */
+	#[BlockCollectionAccess]
 	public function toArray(): array
 	{
 		return array_merge(parent::toArray(), [
@@ -1242,7 +1259,7 @@ class Page extends ModelWithContent
 	 * The uri is the same as the id, except
 	 * that it will be translated in multi-language setups
 	 */
-	public function uri(string $languageCode = null): string
+	public function uri(string|null $languageCode = null): string
 	{
 		// set the id, depending on the parent
 		if ($parent = $this->parent()) {
@@ -1298,7 +1315,7 @@ class Page extends ModelWithContent
 	 */
 	public function urlForLanguage(
 		$language = null,
-		array $options = null
+		array|null $options = null
 	): string {
 		if ($options !== null) {
 			return Url::to($this->urlForLanguage($language), $options);

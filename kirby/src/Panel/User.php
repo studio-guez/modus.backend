@@ -70,7 +70,7 @@ class User extends Model
 			'dialog'   => $url . '/changeRole',
 			'icon'     => 'bolt',
 			'text'     => I18n::translate('user.changeRole'),
-			'disabled' => $this->isDisabledDropdownOption('changeRole', $options, $permissions)
+			'disabled' => $this->isDisabledDropdownOption('changeRole', $options, $permissions) || $this->model->roles()->count() < 2
 		];
 
 		$result[] = [
@@ -202,11 +202,12 @@ class User extends Model
 	 */
 	public function prevNext(): array
 	{
-		$user = $this->model;
+		$user     = $this->model;
+		$siblings = $user->siblings()->filter('isListable', true);
 
 		return [
-			'next' => fn () => $this->toPrevNextLink($user->next(), 'username'),
-			'prev' => fn () => $this->toPrevNextLink($user->prev(), 'username')
+			'next' => fn () => $this->toPrevNextLink($user->next($siblings), 'username'),
+			'prev' => fn () => $this->toPrevNextLink($user->prev($siblings), 'username')
 		];
 	}
 
@@ -218,14 +219,19 @@ class User extends Model
 	 */
 	public function props(): array
 	{
-		$user    = $this->model;
-		$account = $user->isLoggedIn();
+		$user        = $this->model;
+		$account     = $user->isLoggedIn();
+		$permissions = $this->options();
 
 		return array_merge(
 			parent::props(),
-			$account ? [] : $this->prevNext(),
+			$this->prevNext(),
 			[
-				'blueprint' => $this->model->role()->name(),
+				'blueprint'         => $this->model->role()->name(),
+				'canChangeEmail'    => $permissions['changeEmail'],
+				'canChangeLanguage' => $permissions['changeLanguage'],
+				'canChangeName'     => $permissions['changeName'],
+				'canChangeRole'     => $this->model->roles()->count() > 1,
 				'model' => [
 					'account'  => $account,
 					'avatar'   => $user->avatar()?->url(),
@@ -237,6 +243,7 @@ class User extends Model
 					'name'     => $user->name()->toString(),
 					'role'     => $user->role()->title(),
 					'username' => $user->username(),
+					'uuid'     => fn () => $user->uuid()?->toString()
 				]
 			]
 		);

@@ -5,6 +5,10 @@ namespace Kirby\Toolkit;
 use Closure;
 use Countable;
 use Exception;
+use InvalidArgumentException;
+use Kirby\Cms\App;
+use ReflectionFunction;
+use ReflectionMethod;
 
 /**
  * The collection class provides a nicer
@@ -96,8 +100,6 @@ class Collection extends Iterator implements Countable
 	 * Low-level setter for elements
 	 *
 	 * @param string $key string or array
-	 * @param mixed $value
-	 * @return void
 	 */
 	public function __set(string $key, $value): void
 	{
@@ -200,7 +202,7 @@ class Collection extends Iterator implements Countable
 	 * @param array|null $data
 	 * @return array|$this
 	 */
-	public function data(array $data = null)
+	public function data(array|null $data = null)
 	{
 		if ($data === null) {
 			return $this->data;
@@ -510,12 +512,53 @@ class Collection extends Iterator implements Countable
 	}
 
 	/**
-	 * @param object $object
-	 * @param string $attribute
-	 * @return mixed
+	 * Blocks access to methods that are marked with the
+	 * #[BlockCollectionAccess] attribute to prevent sensitive data
+	 * exposure (e.g. password hashes) or unintended write actions
+	 * through collection operations driven by user input.
+	 *
+	 * This applies to both explicit PHP methods and closures registered
+	 * via HasMethods::$methods. Attributes resolved via __call() that
+	 * have no matching PHP method or registered closure (i.e. content
+	 * fields) are always allowed through.
 	 */
 	protected function getAttributeFromObject($object, string $attribute)
 	{
+		static $cache = [];
+		$key = $object::class . '::' . strtolower($attribute);
+
+		if (isset($cache[$key]) === false) {
+			if (method_exists($object, $attribute) === true) {
+				// explicit PHP method: check for #[BlockCollectionAccess] via reflection
+				$cache[$key] = (new ReflectionMethod($object, $attribute))
+					->getAttributes(BlockCollectionAccess::class) === [];
+			} elseif (method_exists($object, 'hasMethod') === true && $object->hasMethod($attribute) === true) {
+				// closure registered via HasMethods::$methods: check the closure's attributes
+				$closure = $object->getMethod($attribute);
+				$cache[$key] = $closure === null ||
+					(new ReflectionFunction($closure))
+						->getAttributes(BlockCollectionAccess::class) === [];
+			} else {
+				// no PHP method and no registered closure (e.g. a CMS content field
+				// resolved via __call()): always allow through
+				$cache[$key] = true;
+			}
+		}
+
+		if ($cache[$key] === false) {
+			// throw in debug mode so developers get a clear signal instead of a silent null
+			if (
+				class_exists('Kirby\Cms\App', false) === true &&
+				App::instance(lazy: true)?->option('debug') === true
+			) {
+				throw new InvalidArgumentException(
+					'The "' . $attribute . '" method is not accessible in collection operations.'
+				);
+			}
+
+			return null;
+		}
+
 		return $object->{$attribute}();
 	}
 
@@ -777,7 +820,7 @@ class Collection extends Iterator implements Countable
 	 * @param bool $unique
 	 * @return array
 	 */
-	public function pluck(string $field, string $split = null, bool $unique = false): array
+	public function pluck(string $field, string|null $split = null, bool $unique = false): array
 	{
 		$result = [];
 
@@ -958,7 +1001,7 @@ class Collection extends Iterator implements Countable
 	 * @param int|null $limit The optional number of elements to return
 	 * @return $this|static
 	 */
-	public function slice(int $offset = 0, int $limit = null)
+	public function slice(int $offset = 0, int|null $limit = null)
 	{
 		if ($offset === 0 && $limit === null) {
 			return $this;
@@ -1029,7 +1072,7 @@ class Collection extends Iterator implements Countable
 			} elseif ($arg === SORT_DESC || $argLower === 'desc') {
 				$fields[$currentField]['direction'] = SORT_DESC;
 
-			// other string: the field name
+				// other string: the field name
 			} elseif (is_string($arg) === true) {
 				$values = [];
 
@@ -1043,7 +1086,7 @@ class Collection extends Iterator implements Countable
 
 				$fields[] = ['field' => $arg, 'values' => $values];
 
-			// callable: custom field values
+				// callable: custom field values
 			} elseif (is_callable($arg) === true) {
 				$values = [];
 
@@ -1057,7 +1100,7 @@ class Collection extends Iterator implements Countable
 
 				$fields[] = ['field' => null, 'values' => $values];
 
-			// flags
+				// flags
 			} else {
 				$fields[$currentField]['flags'] = $arg;
 			}
@@ -1128,7 +1171,7 @@ class Collection extends Iterator implements Countable
 	 * @param \Closure|null $map
 	 * @return array
 	 */
-	public function toArray(Closure $map = null): array
+	public function toArray(Closure|null $map = null): array
 	{
 		if ($map !== null) {
 			return array_map($map, $this->data);
@@ -1165,7 +1208,7 @@ class Collection extends Iterator implements Countable
 	 * @param Closure|null $map
 	 * @return array
 	 */
-	public function values(Closure $map = null): array
+	public function values(Closure|null $map = null): array
 	{
 		$data = $map === null ? $this->data : array_map($map, $this->data);
 		return array_values($data);
@@ -1183,7 +1226,7 @@ class Collection extends Iterator implements Countable
 	 * @param \Closure|null $fallback
 	 * @return mixed
 	 */
-	public function when($condition, Closure $callback, Closure $fallback = null)
+	public function when($condition, Closure $callback, Closure|null $fallback = null)
 	{
 		if ($condition) {
 			return $callback->call($this, $condition);
@@ -1273,7 +1316,7 @@ Collection::$filters['not in'] = [
  * Contains Filter
  */
 Collection::$filters['*='] = [
-	'validator' => fn ($value, $test) => strpos($value, $test) !== false,
+	'validator' => fn ($value, $test) => $value !== null && str_contains($value, $test) === true,
 	'strict'    => false
 ];
 
@@ -1281,7 +1324,7 @@ Collection::$filters['*='] = [
  * Not Contains Filter
  */
 Collection::$filters['!*='] = [
-	'validator' => fn ($value, $test) => strpos($value, $test) === false
+	'validator' => fn ($value, $test) => $value === null || str_contains($value, $test) === false
 ];
 
 /**

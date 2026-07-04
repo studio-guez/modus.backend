@@ -350,6 +350,10 @@ class Html extends Xml
 		string|array|null $text = null,
 		array $attr = []
 	): string {
+		if (Url::hasDangerousScheme($href) === true) {
+			$href = '';
+		}
+
 		$attr = array_merge(['href' => $href], $attr);
 
 		if (empty($text) === true) {
@@ -405,7 +409,7 @@ class Html extends Xml
 		string $name,
 		array|string|null $content = '',
 		array $attr = [],
-		string $indent = null,
+		string|null $indent = null,
 		int $level = 0
 	): string {
 		// treat an explicit `null` value as an empty tag

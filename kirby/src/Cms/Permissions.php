@@ -41,7 +41,8 @@ class Permissions
 		],
 		'languages' => [
 			'create' => true,
-			'delete' => true
+			'delete' => true,
+			'update' => true
 		],
 		'pages' => [
 			'access'     	 => true,
@@ -60,10 +61,12 @@ class Permissions
 			'update'         => true
 		],
 		'site' => [
+			'access'      => true,
 			'changeTitle' => true,
 			'update'      => true
 		],
 		'users' => [
+			'access'         => true,
 			'changeEmail'    => true,
 			'changeLanguage' => true,
 			'changeName'     => true,
@@ -71,15 +74,18 @@ class Permissions
 			'changeRole'     => true,
 			'create'         => true,
 			'delete'         => true,
+			'list'           => true,
 			'update'         => true
 		],
 		'user' => [
+			'access'         => true,
 			'changeEmail'    => true,
 			'changeLanguage' => true,
 			'changeName'     => true,
 			'changePassword' => true,
 			'changeRole'     => true,
 			'delete'         => true,
+			'list'           => true,
 			'update'         => true
 		]
 	];
@@ -109,18 +115,21 @@ class Permissions
 		}
 	}
 
-	public function for(string $category = null, string $action = null): bool
-	{
+	public function for(
+		string|null $category = null,
+		string|null $action = null,
+		bool $default = false
+	): bool {
 		if ($action === null) {
 			if ($this->hasCategory($category) === false) {
-				return false;
+				return $default;
 			}
 
 			return $this->actions[$category];
 		}
 
 		if ($this->hasAction($category, $action) === false) {
-			return false;
+			return $default;
 		}
 
 		return $this->actions[$category][$action];

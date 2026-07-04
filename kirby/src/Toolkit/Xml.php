@@ -373,7 +373,7 @@ class Xml
 		string $name,
 		array|string|null $content = '',
 		array $attr = [],
-		string $indent = null,
+		string|null $indent = null,
 		int $level = 0
 	): string {
 		$attr       = static::attr($attr);
@@ -422,7 +422,13 @@ class Xml
 			return null;
 		}
 
-		if (Str::startsWith($value, '<![CDATA[') === true) {
+		// accept raw CDATA only if the entire string is made up of
+		// complete consecutive CDATA blocks without any content outside
+		if (
+			Str::startsWith($value, '<![CDATA[') === true &&
+			Str::endsWith($value, ']]>') === true &&
+			Str::matches($value, '/\]\]>(?!<!\[CDATA\[|$)/') === false
+		) {
 			return $value;
 		}
 
