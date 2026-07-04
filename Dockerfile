@@ -1,4 +1,4 @@
-FROM php:8.1-apache
+FROM php:8.4-apache
 
 # Activer mod_rewrite pour Kirby
 RUN a2enmod rewrite
