@@ -8,18 +8,18 @@ use Kirby\Exception\PermissionException;
  */
 return [
 	'fields' => [
-		'code' => function (License $license) {
-			try {
-				$this->validateAreaAccess('system');
-				return $this->kirby()->user()->isAdmin() ? $license->code() : $license->code(true);
-			} catch (PermissionException) {
-				return null;
-			}
-		},
 		'status' => function (License $license) {
 			try {
 				$this->validateAreaAccess('system');
 				return $license->status()->value();
+			} catch (PermissionException) {
+				return null;
+			}
+		},
+		'code' => function (License $license) {
+			try {
+				$this->validateAreaAccess('system');
+				return $this->kirby()->user()->isAdmin() ? $license->code() : $license->code(true);
 			} catch (PermissionException) {
 				return null;
 			}

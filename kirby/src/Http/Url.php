@@ -3,6 +3,7 @@
 namespace Kirby\Http;
 
 use Kirby\Toolkit\Str;
+use Whoops\Handler\PrettyPageHandler;
 
 /**
  * Static URL tools
@@ -64,6 +65,23 @@ class Url
 	}
 
 	/**
+	 * Use Whoops to create an editor URL to open
+	 * a file at the given line number
+	 * @since 5.3.0
+	 */
+	public static function editor(string|false $editor, string|null $file, int $line = 0): string|null
+	{
+		if ($editor === false || $file === null) {
+			return null;
+		}
+
+		$handler = new PrettyPageHandler();
+		$handler->setEditor($editor);
+
+		return $handler->getEditorHref($file, $line);
+	}
+
+	/**
 	 * Tries to fix a broken url without protocol
 	 * @psalm-return ($url is null ? string|null : string)
 	 */
@@ -97,7 +115,7 @@ class Url
 	 * Checks if a URL starts with a dangerous URI scheme
 	 * (e.g. javascript:) that must never appear in rendered href
 	 * or src attributes.
-	 * @since 4.9.1
+	 * @since 5.4.1
 	 */
 	public static function hasDangerousScheme(string|null $url = null): bool
 	{
@@ -134,17 +152,19 @@ class Url
 	/**
 	 * Convert a relative path into an absolute URL
 	 */
-	public static function makeAbsolute(string|null $path = null, string|null $home = null): string
-	{
+	public static function makeAbsolute(
+		string|null $path = null,
+		string|null $home = null
+	): string {
 		if ($path === '' || $path === '/' || $path === null) {
 			return $home ?? static::home();
 		}
 
-		if (substr($path, 0, 1) === '#') {
+		if (str_starts_with($path, '#') === true) {
 			return $path;
 		}
 
-		if (static::isAbsolute($path)) {
+		if (static::isAbsolute($path) === true) {
 			return $path;
 		}
 
@@ -152,11 +172,15 @@ class Url
 		$path   = ltrim($path, '/');
 		$home ??= static::home();
 
-		if (empty($path) === true) {
+		if ($path === '') {
 			return $home;
 		}
 
-		return $home === '/' ? '/' . $path : $home . '/' . $path;
+		if ($home === '/') {
+			return '/' . $path;
+		}
+
+		return $home . '/' . $path;
 	}
 
 	/**
@@ -199,15 +223,15 @@ class Url
 	): string {
 		$uri = static::toObject($url);
 
-		$uri->fragment = null;
-		$uri->query    = null;
-		$uri->password = null;
-		$uri->port     = null;
-		$uri->scheme   = null;
-		$uri->username = null;
+		$uri->setFragment(null);
+		$uri->setQuery(null);
+		$uri->setPassword(null);
+		$uri->setPort(null);
+		$uri->setScheme(null);
+		$uri->setUsername(null);
 
 		// remove the trailing slash from the path
-		$uri->slash = false;
+		$uri->setSlash(false);
 
 		$url = $base ? $uri->base() : $uri->toString();
 		$url = str_replace('www.', '', $url ?? '');
@@ -241,6 +265,7 @@ class Url
 
 	/**
 	 * Smart resolver for internal and external urls
+	 * @deprecated 5.3.0 Use `Kirby\Cms\Url::to()` instead
 	 */
 	public static function to(
 		string|null $path = null,
@@ -250,7 +275,10 @@ class Url
 		$path ??= '';
 
 		// keep relative urls
-		if (substr($path, 0, 2) === './' || substr($path, 0, 3) === '../') {
+		if (
+			str_starts_with($path, './') === true ||
+			str_starts_with($path, '../') === true
+		) {
 			return $path;
 		}
 

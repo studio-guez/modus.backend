@@ -1,5 +1,6 @@
 <?php
 
+use Kirby\Cms\App;
 use Kirby\Cms\Find;
 use Kirby\Toolkit\I18n;
 
@@ -25,6 +26,9 @@ return [
 				[
 					'label' => I18n::translate('view.resetPassword')
 				]
+			],
+			'props' => [
+				'requirePassword' => App::instance()->session()->get('kirby.resetPassword') !== true
 			]
 		]
 	]

@@ -30,6 +30,9 @@ use Kirby\Toolkit\Str;
  * @link      https://getkirby.com
  * @copyright Bastian Allgeier
  * @license   https://getkirby.com/license
+ *
+ * @use \Kirby\Cms\HasSiblings<\Kirby\Cms\Files>
+ * @method \Kirby\Uuid\FileUuid uuid()
  */
 class File extends ModelWithContent
 {
@@ -78,10 +81,10 @@ class File extends ModelWithContent
 	 */
 	public function __construct(array $props)
 	{
-		parent::__construct($props);
-
 		if (isset($props['filename'], $props['parent']) === false) {
-			throw new InvalidArgumentException('The filename and parent are required');
+			throw new InvalidArgumentException(
+				message: 'The filename and parent are required'
+			);
 		}
 
 		$this->filename = $props['filename'];
@@ -92,7 +95,14 @@ class File extends ModelWithContent
 		$this->root     = null;
 		$this->url      = $props['url'] ?? null;
 
+		// Set blueprint before setting content
+		// or translations in the parent constructor.
+		// Otherwise, the blueprint definition cannot be
+		// used when creating the right field values
+		// for the content.
 		$this->setBlueprint($props['blueprint'] ?? null);
+
+		parent::__construct($props);
 	}
 
 	/**
@@ -125,10 +135,11 @@ class File extends ModelWithContent
 	 */
 	public function __debugInfo(): array
 	{
-		return array_merge($this->toArray(), [
+		return [
+			...$this->toArray(),
 			'content'  => $this->content(),
 			'siblings' => $this->siblings(),
-		]);
+		];
 	}
 
 	/**
@@ -225,54 +236,38 @@ class File extends ModelWithContent
 	/**
 	 * Store the template in addition to the
 	 * other content.
-	 * @internal
+	 * @unstable
 	 */
 	public function contentFileData(
 		array $data,
 		string|null $languageCode = null
 	): array {
+		$language = Language::ensure($languageCode);
+
 		// only add the template in, if the $data array
-		// doesn't explicitly unsets it
-		if (
-			array_key_exists('template', $data) === false &&
-			$template = $this->template()
-		) {
+		// doesn't explicitly unset it and it was already
+		// set in the content before
+		if (array_key_exists('template', $data) === false && $template = $this->template()) {
 			$data['template'] = $template;
+		}
+
+		// don't store the template field for the default template
+		if (($data['template'] ?? null) === 'default') {
+			unset($data['template']);
+		}
+
+		// only keep the template and sort fields in the
+		// default language
+		if ($language->isDefault() === false) {
+			unset($data['template'], $data['sort']);
+			return $data;
 		}
 
 		return $data;
 	}
 
 	/**
-	 * Returns the directory in which
-	 * the content file is located
-	 * @internal
-	 * @deprecated 4.0.0
-	 * @todo Remove in v5
-	 * @codeCoverageIgnore
-	 */
-	public function contentFileDirectory(): string
-	{
-		Helpers::deprecated('The internal $model->contentFileDirectory() method has been deprecated. Please let us know via a GitHub issue if you need this method and tell us your use case.', 'model-content-file');
-		return dirname($this->root());
-	}
-
-	/**
-	 * Filename for the content file
-	 * @internal
-	 * @deprecated 4.0.0
-	 * @todo Remove in v5
-	 * @codeCoverageIgnore
-	 */
-	public function contentFileName(): string
-	{
-		Helpers::deprecated('The internal $model->contentFileName() method has been deprecated. Please let us know via a GitHub issue if you need this method and tell us your use case.', 'model-content-file');
-		return $this->filename();
-	}
-
-	/**
 	 * Constructs a File object
-	 * @internal
 	 */
 	public static function factory(array $props): static
 	{
@@ -300,10 +295,10 @@ class File extends ModelWithContent
 	 */
 	public function html(array $attr = []): string
 	{
-		return $this->asset()->html(array_merge(
-			['alt' => $this->alt()],
-			$attr
-		));
+		return $this->asset()->html([
+			'alt' => $this->alt(),
+			...$attr
+		]);
 	}
 
 	/**
@@ -329,35 +324,27 @@ class File extends ModelWithContent
 		return $this->id() === $file->id();
 	}
 
-	public static array $accessibleCache = [];
-	public static array $listableCache   = [];
-	public static array $readableCache   = [];
-
 	/**
-	 * Checks if the files is accessible.
-	 * This permission depends on the `read` option until v5
+	 * Checks if the file is accessible to the current user
+	 * This permission depends on the `read` option until v6
 	 */
 	public function isAccessible(): bool
 	{
-		// TODO: remove this check when `read` option deprecated in v5
+		// TODO: remove this check when `read` option deprecated in v6
 		if ($this->isReadable() === false) {
 			return false;
 		}
 
-		$role     = $this->kirby()->user()?->role()->id() ?? '__none__';
-		$template = $this->template() ?? '__none__';
-		static::$accessibleCache[$role] ??= [];
-
-		return static::$accessibleCache[$role][$template] ??= $this->permissions()->can('access');
+		return FilePermissions::canFromCache($this, 'access');
 	}
 
 	/**
 	 * Check if the file can be listable by the current user
-	 * This permission depends on the `read` option until v5
+	 * This permission depends on the `read` option until v6
 	 */
 	public function isListable(): bool
 	{
-		// TODO: remove this check when `read` option deprecated in v5
+		// TODO: remove this check when `read` option deprecated in v6
 		if ($this->isReadable() === false) {
 			return false;
 		}
@@ -367,30 +354,37 @@ class File extends ModelWithContent
 			return false;
 		}
 
-		$role     = $this->kirby()->user()?->role()->id() ?? '__none__';
-		$template = $this->template() ?? '__none__';
-		static::$listableCache[$role] ??= [];
-
-		return static::$listableCache[$role][$template] ??= $this->permissions()->can('list');
+		return FilePermissions::canFromCache($this, 'list');
 	}
 
 	/**
 	 * Check if the file can be read by the current user
 	 *
-	 * @todo Deprecate `read` option in v5 and make the necessary changes for `access` and `list` options.
+	 * @todo Deprecate `read` option in v6 and make the necessary changes for `access` and `list` options.
 	 */
 	public function isReadable(): bool
 	{
-		$role     = $this->kirby()->user()?->role()->id() ?? '__none__';
-		$template = $this->template() ?? '__none__';
-		static::$readableCache[$role] ??= [];
+		static $readable   = [];
+		$role              = $this->kirby()->role()?->id() ?? '__none__';
+		$template          = $this->template() ?? '__none__';
+		$readable[$role] ??= [];
 
-		return static::$readableCache[$role][$template] ??= $this->permissions()->can('read');
+		return $readable[$role][$template] ??= $this->permissions()->can('read');
+	}
+
+	/**
+	 * Returns the absolute path to the media folder
+	 * for the file and its versions
+	 * @since 5.0.0
+	 */
+	#[BlockCollectionAccess]
+	public function mediaDir(): string
+	{
+		return $this->parent()->mediaDir() . '/' . $this->mediaHash();
 	}
 
 	/**
 	 * Creates a unique media hash
-	 * @internal
 	 */
 	#[BlockCollectionAccess]
 	public function mediaHash(): string
@@ -400,17 +394,19 @@ class File extends ModelWithContent
 
 	/**
 	 * Returns the absolute path to the file in the public media folder
-	 * @internal
+	 *
+	 * @param string|null $filename Optional override for the filename
 	 */
 	#[BlockCollectionAccess]
-	public function mediaRoot(): string
+	public function mediaRoot(string|null $filename = null): string
 	{
-		return $this->parent()->mediaRoot() . '/' . $this->mediaHash() . '/' . $this->filename();
+		$filename ??= $this->filename();
+
+		return $this->mediaDir() . '/' . $filename;
 	}
 
 	/**
 	 * Creates a non-guessable token string for this file
-	 * @internal
 	 */
 	#[BlockCollectionAccess]
 	public function mediaToken(): string
@@ -421,11 +417,15 @@ class File extends ModelWithContent
 
 	/**
 	 * Returns the absolute Url to the file in the public media folder
-	 * @internal
+	 *
+	 * @param string|null $filename Optional override for the filename
 	 */
-	public function mediaUrl(): string
+	public function mediaUrl(string|null $filename = null): string
 	{
-		return $this->parent()->mediaUrl() . '/' . $this->mediaHash() . '/' . $this->filename();
+		$url        = $this->parent()->mediaUrl() . '/' . $this->mediaHash();
+		$filename ??= $this->filename();
+
+		return $url . '/' . $filename;
 	}
 
 	/**
@@ -451,7 +451,7 @@ class File extends ModelWithContent
 	 */
 	protected function modifiedContent(string|null $languageCode = null): int
 	{
-		return $this->storage()->modified('published', $languageCode) ?? 0;
+		return $this->version('latest')->modified($languageCode ?? 'current') ?? 0;
 	}
 
 	/**
@@ -493,7 +493,6 @@ class File extends ModelWithContent
 
 	/**
 	 * Returns the parent id if a parent exists
-	 * @internal
 	 */
 	public function parentId(): string
 	{
@@ -521,7 +520,7 @@ class File extends ModelWithContent
 	 */
 	public function permalink(): string|null
 	{
-		return $this->uuid()?->url();
+		return $this->uuid()?->toPermalink();
 	}
 
 	/**
@@ -567,7 +566,6 @@ class File extends ModelWithContent
 
 	/**
 	 * Returns the parent Files collection
-	 * @internal
 	 */
 	protected function siblingsCollection(): Files
 	{
@@ -610,10 +608,12 @@ class File extends ModelWithContent
 	#[BlockCollectionAccess]
 	public function toArray(): array
 	{
-		return array_merge(parent::toArray(), $this->asset()->toArray(), [
+		return [
+			...parent::toArray(),
+			...$this->asset()->toArray(),
 			'id'       => $this->id(),
 			'template' => $this->template(),
-		]);
+		];
 	}
 
 	/**

@@ -2,6 +2,7 @@
 
 namespace Kirby\Cms;
 
+use Kirby\Content\VersionId;
 use Kirby\Exception\InvalidArgumentException;
 use Kirby\Exception\LogicException;
 use Kirby\Filesystem\Dir;
@@ -20,6 +21,8 @@ use Kirby\Toolkit\BlockCollectionAccess;
  * @link      https://getkirby.com
  * @copyright Bastian Allgeier
  * @license   https://getkirby.com/license
+ *
+ * @method \Kirby\Uuid\SiteUuid uuid()
  */
 class Site extends ModelWithContent
 {
@@ -82,14 +85,20 @@ class Site extends ModelWithContent
 	 */
 	public function __construct(array $props = [])
 	{
-		parent::__construct($props);
-
 		$this->errorPageId = $props['errorPageId'] ?? 'error';
 		$this->homePageId  = $props['homePageId'] ?? 'home';
 		$this->page        = $props['page'] ?? null;
 		$this->url         = $props['url'] ?? null;
 
+		// Set blueprint before setting content
+		// or translations in the parent constructor.
+		// Otherwise, the blueprint definition cannot be
+		// used when creating the right field values
+		// for the content.
 		$this->setBlueprint($props['blueprint'] ?? null);
+
+		parent::__construct($props);
+
 		$this->setChildren($props['children'] ?? null);
 		$this->setDrafts($props['drafts'] ?? null);
 		$this->setFiles($props['files'] ?? null);
@@ -121,11 +130,12 @@ class Site extends ModelWithContent
 	 */
 	public function __debugInfo(): array
 	{
-		return array_merge($this->toArray(), [
+		return [
+			...$this->toArray(),
 			'content'  => $this->content(),
 			'children' => $this->children(),
 			'files'    => $this->files(),
-		]);
+		];
 	}
 
 	/**
@@ -188,20 +198,9 @@ class Site extends ModelWithContent
 		array $data,
 		string|null $languageCode = null
 	): array {
-		return A::prepend($data, ['title' => $data['title'] ?? null]);
-	}
-
-	/**
-	 * Filename for the content file
-	 * @internal
-	 * @deprecated 4.0.0
-	 * @todo Remove in v5
-	 * @codeCoverageIgnore
-	 */
-	public function contentFileName(): string
-	{
-		Helpers::deprecated('The internal $model->contentFileName() method has been deprecated. Please let us know via a GitHub issue if you need this method and tell us your use case.', 'model-content-file');
-		return 'site';
+		return A::prepend($data, [
+			'title' => $data['title'] ?? null
+		]);
 	}
 
 	/**
@@ -214,11 +213,10 @@ class Site extends ModelWithContent
 
 	/**
 	 * Returns the global error page id
-	 * @internal
 	 */
 	public function errorPageId(): string
 	{
-		return $this->errorPageId ?? 'error';
+		return $this->errorPageId;
 	}
 
 	/**
@@ -239,17 +237,15 @@ class Site extends ModelWithContent
 
 	/**
 	 * Returns the global home page id
-	 * @internal
 	 */
 	public function homePageId(): string
 	{
-		return $this->homePageId ?? 'home';
+		return $this->homePageId;
 	}
 
 	/**
 	 * Creates an inventory of all files
 	 * and children in the site directory
-	 * @internal
 	 */
 	#[BlockCollectionAccess]
 	public function inventory(): array
@@ -270,8 +266,6 @@ class Site extends ModelWithContent
 
 	/**
 	 * Compares the current object with the given site object
-	 *
-	 * @param mixed $site
 	 */
 	public function is($site): bool
 	{
@@ -284,26 +278,33 @@ class Site extends ModelWithContent
 
 	/**
 	 * Checks if the site is accessible to the current user
-	 * @since 4.9.0
+	 * @since 5.4.0
 	 */
 	public function isAccessible(): bool
 	{
-		return $this->permissions()->can('access');
+		return SitePermissions::canFromCache($this, 'access');
 	}
 
 	/**
-	 * Returns the root to the media folder for the site
-	 * @internal
+	 * Returns the absolute path to the media folder for the page
 	 */
 	#[BlockCollectionAccess]
-	public function mediaRoot(): string
+	public function mediaDir(): string
 	{
 		return $this->kirby()->root('media') . '/site';
 	}
 
 	/**
+	 * @see `::mediaDir`
+	 */
+	#[BlockCollectionAccess]
+	public function mediaRoot(): string
+	{
+		return $this->mediaDir();
+	}
+
+	/**
 	 * The site's base url for any files
-	 * @internal
 	 */
 	public function mediaUrl(): string
 	{
@@ -375,25 +376,18 @@ class Site extends ModelWithContent
 	}
 
 	/**
-	 * Preview Url
-	 * @internal
+	 * Returns the preview URL with authentication for drafts and versions
+	 * @unstable
 	 */
 	#[BlockCollectionAccess]
-	public function previewUrl(): string|null
+	public function previewUrl(VersionId|string $versionId = 'latest'): string|null
 	{
-		$preview = $this->blueprint()->preview();
-
-		if ($preview === false) {
+		// the site previews the home page and thus needs to check permissions for it
+		if ($this->homePage()?->permissions()->can('preview') !== true) {
 			return null;
 		}
 
-		if ($preview === true) {
-			$url = $this->url();
-		} else {
-			$url = $preview;
-		}
-
-		return $url;
+		return $this->version($versionId)->url();
 	}
 
 	/**
@@ -419,8 +413,10 @@ class Site extends ModelWithContent
 	 * Search all pages in the site
 	 */
 	#[BlockCollectionAccess]
-	public function search(string|null $query = null, string|array $params = []): Pages
-	{
+	public function search(
+		string|null $query = null,
+		string|array $params = []
+	): Pages {
 		return $this->index()->search($query, $params);
 	}
 
@@ -432,8 +428,10 @@ class Site extends ModelWithContent
 	protected function setBlueprint(array|null $blueprint = null): static
 	{
 		if ($blueprint !== null) {
-			$blueprint['model'] = $this;
-			$this->blueprint = new SiteBlueprint($blueprint);
+			$this->blueprint = new SiteBlueprint([
+				'model' => $this,
+				...$blueprint
+			]);
 		}
 
 		return $this;
@@ -445,7 +443,8 @@ class Site extends ModelWithContent
 	 */
 	public function toArray(): array
 	{
-		return array_merge(parent::toArray(), [
+		return [
+			...parent::toArray(),
 			'children'   => $this->children()->keys(),
 			'errorPage'  => $this->errorPage()?->id() ?? false,
 			'files'      => $this->files()->keys(),
@@ -453,7 +452,7 @@ class Site extends ModelWithContent
 			'page'       => $this->page()?->id() ?? false,
 			'title'      => $this->title()->value(),
 			'url'        => $this->url(),
-		]);
+		];
 	}
 
 	/**
@@ -476,27 +475,29 @@ class Site extends ModelWithContent
 		string|null $languageCode = null,
 		array|null $options = null
 	): string {
-		if ($language = $this->kirby()->language($languageCode)) {
-			return $language->url();
-		}
-
-		return $this->kirby()->url();
+		return
+			$this->kirby()->language($languageCode)?->url() ??
+			$this->kirby()->url();
 	}
 
 	/**
-	 * Sets the current page by
-	 * id or page object and
+	 * Sets the current page by id or page object and
 	 * returns the current page
-	 * @internal
 	 */
 	#[BlockCollectionAccess]
 	public function visit(
 		string|Page $page,
 		string|null $languageCode = null
 	): Page {
+		// always set the locale; in single-language mode this
+		// applies the locale from config, in multi-language mode
+		// it falls back to the default language when `null` is passed
+		$this->kirby()->setCurrentLanguage($languageCode);
+
+		// only set translation when explicitly passed;
+		// otherwise it would always fall back to 'en'
 		if ($languageCode !== null) {
 			$this->kirby()->setCurrentTranslation($languageCode);
-			$this->kirby()->setCurrentLanguage($languageCode);
 		}
 
 		// convert ids to a Page object
@@ -506,7 +507,7 @@ class Site extends ModelWithContent
 
 		// handle invalid pages
 		if ($page instanceof Page === false) {
-			throw new InvalidArgumentException('Invalid page object');
+			throw new InvalidArgumentException(message: 'Invalid page object');
 		}
 
 		// set and return the current active page

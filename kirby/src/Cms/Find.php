@@ -38,12 +38,10 @@ class Find
 			return $file;
 		}
 
-		throw new NotFoundException([
-			'key'  => 'file.notFound',
-			'data' => [
-				'filename' => $filename
-			]
-		]);
+		throw new NotFoundException(
+			key: 'file.notFound',
+			data: ['filename' => $filename]
+		);
 	}
 
 	/**
@@ -58,12 +56,10 @@ class Find
 			return $language;
 		}
 
-		throw new NotFoundException([
-			'key'  => 'language.notFound',
-			'data' => [
-				'code' => $code
-			]
-		]);
+		throw new NotFoundException(
+			key: 'language.notFound',
+			data: ['code' => $code]
+		);
 	}
 
 	/**
@@ -83,12 +79,10 @@ class Find
 			return $page;
 		}
 
-		throw new NotFoundException([
-			'key'  => 'page.notFound',
-			'data' => [
-				'slug' => $id
-			]
-		]);
+		throw new NotFoundException(
+			key: 'page.notFound',
+			data: ['slug' => $id]
+		);
 	}
 
 	/**
@@ -100,8 +94,11 @@ class Find
 	 */
 	public static function parent(string $path): ModelWithContent
 	{
-		$path       = trim($path, '/');
-		$modelType  = in_array($path, ['site', 'account']) ? $path : trim(dirname($path), '/');
+		$path      = trim($path, '/');
+		$modelType = match ($path) {
+			'site', 'account' => $path,
+			default           => trim(dirname($path), '/')
+		};
 		$modelTypes = [
 			'site'    => 'site',
 			'users'   => 'user',
@@ -126,39 +123,40 @@ class Find
 			// and filename
 			'file'    => static::file(...preg_split('$.*\K(/files/)$', $path)),
 			'user'    => static::user(basename($path)),
-			default   => throw new InvalidArgumentException('Invalid model type: ' . $modelType)
+			default   => throw new InvalidArgumentException(
+				message: 'Invalid model type: ' . $modelType
+			)
 		};
 
-		return $model ?? throw new NotFoundException([
-			'key' => $modelName . '.undefined'
-		]);
+		return $model ?? throw new NotFoundException(
+			key: $modelName . '.undefined'
+		);
 	}
 
 	/**
 	 * Returns the role object for the given name
 	 *
-	 * @throws \Kirby\Exception\NotFoundException if the role cannot be found or is inaccessible
-	 * @since 4.9.0
+	 * @param string $name Role name/id
+	 * @throws \Kirby\Exception\NotFoundException if the role cannot be found
 	 */
 	public static function role(string $name): Role
 	{
-		$role = App::instance()->roles()->find($name);
+		$role = App::instance()->role($name);
 
 		if ($role?->isAccessible() === true) {
 			return $role;
 		}
 
-		throw new NotFoundException([
-			'key'  => 'role.notFound',
-			'data' => [
-				'name' => $name
-			]
-		]);
+		throw new NotFoundException(
+			key: 'role.notFound',
+			data: ['name' => $name]
+		);
 	}
 
 	/**
 	 * Returns all accessible roles
-	 * @since 4.9.0
+	 *
+	 * @since 5.4.0
 	 */
 	public static function roles(): Roles
 	{
@@ -169,7 +167,7 @@ class Find
 	 * Returns the site object if the site is accessible
 	 *
 	 * @throws \Kirby\Exception\NotFoundException if the site cannot be accessed
-	 * @since 4.9.0
+	 * @since 5.4.0
 	 */
 	public static function site(): Site
 	{
@@ -179,9 +177,9 @@ class Find
 			return $site;
 		}
 
-		throw new NotFoundException([
-			'key' => 'site.notAccessible'
-		]);
+		throw new NotFoundException(
+			key: 'site.notAccessible'
+		);
 	}
 
 	/**
@@ -213,9 +211,9 @@ class Find
 				return $user;
 			}
 
-			throw new NotFoundException([
-				'key' => 'user.undefined'
-			]);
+			throw new NotFoundException(
+				key: 'user.undefined'
+			);
 		}
 
 		// get a specific user by id
@@ -225,16 +223,16 @@ class Find
 			return $user;
 		}
 
-		throw new NotFoundException([
-			'key'  => 'user.notFound',
-			'data' => [
-				'name' => $id
-			]
-		]);
+		throw new NotFoundException(
+			key: 'user.notFound',
+			data: ['name' => $id]
+		);
 	}
 
 	/**
 	 * Returns all accessible users
+	 *
+	 * @since 5.4.0
 	 */
 	public static function users(): Users
 	{

@@ -5,6 +5,7 @@ use Kirby\Cms\Url;
 use Kirby\Exception\NotFoundException;
 use Kirby\Text\KirbyTag;
 use Kirby\Toolkit\A;
+use Kirby\Toolkit\Escape;
 use Kirby\Toolkit\Str;
 use Kirby\Uuid\Uuid;
 
@@ -23,7 +24,9 @@ return [
 				return date('Y');
 			}
 
-			return date($tag->date);
+			// escape the formatted date to prevent injecting HTML
+			// through special characters in the tag value
+			return Escape::html(date($tag->date));
 		}
 	],
 
@@ -206,24 +209,25 @@ return [
 
 			// if value is a UUID, resolve to page/file model
 			// and use the URL as value
-			if (
-				Uuid::is($tag->value, 'page') === true ||
-				Uuid::is($tag->value, 'file') === true
-			) {
-				$tag->value = Uuid::for($tag->value)->model()?->url();
+			if (Uuid::is($tag->value, ['page', 'file']) === true) {
+				$tag->value = Uuid::for($tag->value)?->toUrl();
 			}
 
 			// if url is empty, throw exception or link to the error page
 			if ($tag->value === null) {
 				if ($tag->kirby()->option('debug', false) === true) {
+					$error = 'The linked page cannot be found';
+
 					if (empty($tag->text) === false) {
-						throw new NotFoundException('The linked page cannot be found for the link text "' . $tag->text . '"');
-					} else {
-						throw new NotFoundException('The linked page cannot be found');
+						$error .= ' for the link text "' . $tag->text . '"';
 					}
-				} else {
-					$tag->value = Url::to($tag->kirby()->site()->errorPageId());
+
+					throw new NotFoundException(
+						message: $error
+					);
 				}
+
+				$tag->value = Url::to($tag->kirby()->site()->errorPageId());
 			}
 
 			return Html::a($tag->value, $tag->text, [

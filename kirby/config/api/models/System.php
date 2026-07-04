@@ -35,16 +35,16 @@ return [
 		'title'       => fn () => $this->kirby()->site()->title()->value(),
 		'translation' => function () {
 			$kirby = $this->kirby();
-			$code  = $kirby->user()?->language() ??
-					 $kirby->panelLanguage();
+			$code = $kirby->user()?->language() ??
+					$kirby->panelLanguage();
 
 			return
 				$kirby->translation($code) ??
 				$kirby->translation('en');
 		},
 		'kirbytext' => fn () => $this->kirby()->option('panel.kirbytext') ?? true,
-		'user' => fn () => $this->user(),
-		'version' => function () {
+		'user'      => fn () => $this->user(),
+		'version'   => function () {
 			try {
 				$this->validateAreaAccess('system');
 				return $this->kirby()->version();

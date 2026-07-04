@@ -2,8 +2,9 @@
 
 namespace Kirby\Option;
 
-use Kirby\Blueprint\Collection;
+use Kirby\Cms\Collection;
 use Kirby\Cms\ModelWithContent;
+use Kirby\Toolkit\A;
 
 /**
  * Collection of possible options for
@@ -14,11 +15,11 @@ use Kirby\Cms\ModelWithContent;
  * @link      https://getkirby.com
  * @copyright Bastian Allgeier
  * @license   https://opensource.org/licenses/MIT
+ *
+ * @extends \Kirby\Cms\Collection<\Kirby\Option\Option>
  */
 class Options extends Collection
 {
-	public const TYPE = Option::class;
-
 	public function __construct(array $objects = [])
 	{
 		foreach ($objects as $object) {
@@ -26,6 +27,21 @@ class Options extends Collection
 		}
 	}
 
+	/**
+	 * The Kirby Collection class only shows the key to
+	 * avoid huge trees when dumping, but for the options
+	 * collections this is really not useful
+	 *
+	 * @codeCoverageIgnore
+	 */
+	public function __debugInfo(): array
+	{
+		return A::map($this->data, fn ($item) => (array)$item);
+	}
+
+	/**
+	 * @param bool $resolve Deprecated, will be removed in v6
+	 */
 	public static function factory(
 		array $items = [],
 		bool $resolve = true
@@ -52,8 +68,14 @@ class Options extends Collection
 		return $collection;
 	}
 
-	public function render(ModelWithContent $model): array
+	public function render(ModelWithContent $model, bool $safeMode = true): array
 	{
-		return array_values(parent::render($model));
+		$options = [];
+
+		foreach ($this->data as $key => $option) {
+			$options[$key] = $option->render($model, $safeMode);
+		}
+
+		return array_values($options);
 	}
 }
