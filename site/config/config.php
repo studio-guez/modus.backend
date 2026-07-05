@@ -240,6 +240,17 @@ return [
             }
         ],
         [
+            'pattern' => '/sitemap-data.json',
+            'method' => 'GET',
+            'action' => function () {
+                header("Access-Control-Allow-Origin: *");
+                return Page::factory([
+                    'template'  => 'sitemap.json',
+                    'slug'      => 'sitemap-data',
+                ]);
+            }
+        ],
+        [
             'pattern' => 'rapport/(:any)/pdf',
             'method' => 'GET',
             'action' => function ($slug) {
