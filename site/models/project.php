@@ -5,11 +5,11 @@ use Kirby\Cms\PagePermissions;
 
 class ContributeurLockedPermissions extends PagePermissions
 {
-    public function can(string $action): bool
+    public function can(string $action, bool $default = false): bool
     {
         $allowed = ['read', 'access', 'list', 'preview'];
         if (in_array($action, $allowed)) {
-            return parent::can($action);
+            return parent::can($action, $default);
         }
         return false;
     }

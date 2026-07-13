@@ -4,7 +4,7 @@ services:
       context: .
       dockerfile: Dockerfile.dev
       args:
-        PHP_VERSION: "8.1"
+        PHP_VERSION: "8.4"
         UID: ${UID:-1000}
         GID: ${GID:-1000}
     container_name: modus-app
