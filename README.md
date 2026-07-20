@@ -1,6 +1,6 @@
 # Modus Backend - Kirby CMS
 
-A content management platform built with Kirby CMS, running on PHP 8.1 with Apache in a Docker environment.
+A content management platform built with Kirby CMS, running on PHP 8.4 with Apache in a Docker environment.
 
 ## Local Development (docker-compose)
 
@@ -52,5 +52,38 @@ docker run -d -p 80:80 modus-backend
 - **PHP extension errors**: Ensure `mbstring`, `gd`, and `zip` extensions are enabled (included in the Dockerfile)
 
 Pour plus de détails sur la configuration avancée, consultez la [documentation officielle de Kirby](https://getkirby.com/docs/guide/quickstart).
+
+## Updating the project
+
+All update commands run **inside the Docker container** (no local PHP/Composer/npm required).
+
+### 1. Rebuild the image after PHP version changes
+
+```bash
+docker compose up -d --build
+```
+
+### 2. Update Composer dependencies (Kirby + all packages)
+
+```bash
+docker compose exec app composer update --no-interaction
+```
+
+### 3. Security audit
+
+```bash
+docker compose exec app composer audit
+```
+
+### PHP version
+
+The PHP version is defined in four places — keep them in sync:
+
+| File | Setting |
+|---|---|
+| `Dockerfile` | `FROM php:X.Y-apache` |
+| `Dockerfile.dev` | `FROM php:X.Y-apache` |
+| `docker-compose.yml` | `PHP_VERSION: "X.Y"` |
+| `composer.json` | `"php": "^X.Y"` |
 
 
