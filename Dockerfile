@@ -28,6 +28,9 @@ RUN echo "ServerName localhost" >> /etc/apache2/apache2.conf
 COPY apache.conf /etc/apache2/conf-available/custom.conf
 RUN a2enconf custom || true
 
+# Appliquer la config PHP custom (memory_limit, upload_max_filesize, ...)
+COPY php.ini /usr/local/etc/php/conf.d/zz-custom.ini
+
 # Copier les fichiers avec les bonnes permissions
 COPY --chown=www-data:www-data . /var/www/html
 WORKDIR /var/www/html

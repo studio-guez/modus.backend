@@ -33,6 +33,9 @@ RUN a2enconf custom || true
 # Modify www-data user to match host user UID/GID
 RUN usermod -u $UID www-data && groupmod -g $GID www-data
 
+# Appliquer la config PHP custom (memory_limit, upload_max_filesize, ...)
+COPY php.ini /usr/local/etc/php/conf.d/zz-custom.ini
+
 WORKDIR /var/www/html
 
 # Set Apache to run as www-data (which now has your UID/GID)
