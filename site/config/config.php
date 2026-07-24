@@ -41,6 +41,9 @@ return [
             'compiler' => false,
         ],
     ],
+    'cache' => [
+        'contact-form' => true, // file-based cache for contact form rate limiting
+    ],
     'emailFrom' => [
         'name'    => getenv('EMAIL_FROM_NAME') ?: 'Modus',
         'address' => getenv('EMAIL_FROM_ADDRESS') ?: 'webmaster@cms.modus-ge.ch',

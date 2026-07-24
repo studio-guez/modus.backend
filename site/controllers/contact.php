@@ -1,73 +1,152 @@
 <?php
+
+require_once dirname(__DIR__, 2) . '/_utils/SpamGuard.php';
+
 return function ($kirby, $pages, $page) {
 
-    $alert = null;
-    $data = [];
+    $alert   = null;
+    $data    = [];
+    $success = false;
 
     if ($kirby->request()->is('POST')) {
 
-        $data = [
-            'nom'           => strip_tags(get('nom')),
-            'prenom'        => strip_tags(get('prenom')),
-            'institution'   => strip_tags(get('institution')),
-            'email'         => strip_tags(get('email')),
-            'nomProjet'     => strip_tags(get('nomProjet')),
-            'description'   => strip_tags(get('description')),
+        // ── 1. Honeypot ─────────────────────────────────────────────────────
+        // Hidden from real users. Only bots that blindly fill every field
+        // will populate it. Return a fake success so the bot does not adapt.
+        if (trim((string) get('website', '')) !== '') {
+            return [
+                'alert'   => null,
+                'data'    => false,
+                'success' => 'Votre message a bien été envoyé. Nous revenons vers vous au plus vite.',
+            ];
+        }
+
+        // ── 2. Rate limiting ────────────────────────────────────────────────
+        // Max 10 submissions per IP per 15 minutes. Requires the 'contact-form'
+        // cache to be enabled in config.php. If it is not configured the
+        // exception is caught and rate limiting is skipped silently so that
+        // a misconfiguration never breaks the form for real users.
+        try {
+            $rateCache = $kirby->cache('contact-form');
+            $ipHash    = hash('sha256', (string) $kirby->visitor()->ip());
+            $rateKey   = 'attempts-' . $ipHash;
+            $attempts  = (int) $rateCache->get($rateKey, 0);
+
+            if ($attempts >= 10) {
+                return [
+                    'alert'   => null,
+                    'data'    => false,
+                    'success' => 'Votre message a bien été envoyé. Nous revenons vers vous au plus vite.',
+                ];
+            }
+
+            $rateCache->set($rateKey, $attempts + 1, 15);
+        } catch (Exception $e) {
+            // Cache not configured; skip rate limiting gracefully.
+        }
+
+        // ── 3. Collect input ────────────────────────────────────────────────
+        // Keep raw values for spam analysis: strip_tags() would remove
+        // executable tags before SpamGuard can detect them.
+        // Use the stripped values for validation and the outgoing email.
+        $rawData = [
+            'nom'         => trim((string) get('nom', '')),
+            'prenom'      => trim((string) get('prenom', '')),
+            'institution' => trim((string) get('institution', '')),
+            'email'       => trim((string) get('email', '')),
+            'nomProjet'   => trim((string) get('nomProjet', '')),
+            'description' => trim((string) get('description', '')),
         ];
 
+        $data = array_map(
+            static fn(string $v): string => trim(strip_tags($v)),
+            $rawData
+        );
+
+        // ── 4. Server-side validation ────────────────────────────────────────
         $rules = [
-            'email'     => ['required', 'email'],
-            //            'message'   => ['required', 'minLength' => 0, 'maxLength' => 3000],
+            'nom'         => ['required', 'minLength' => 2, 'maxLength' => 60],
+            'prenom'      => ['required', 'minLength' => 2, 'maxLength' => 60],
+            'institution' => ['required', 'minLength' => 2, 'maxLength' => 150],
+            'email'       => ['required', 'email', 'maxLength' => 190],
+            'nomProjet'   => ['required', 'minLength' => 3, 'maxLength' => 200],
+            'description' => ['required', 'minLength' => 10, 'maxLength' => 1250],
         ];
 
         $messages = [
-            'email'      => 'Entrez une adresse mail valide',
-            //            'message'    => 'Please enter a text between 0 and 3000 characters'
+            'nom'         => 'Merci de renseigner un nom valide',
+            'prenom'      => 'Merci de renseigner un prénom valide',
+            'institution' => 'Merci de renseigner une institution valide',
+            'email'       => 'Entrez une adresse mail valide',
+            'nomProjet'   => 'Merci de renseigner un titre de projet valide',
+            'description' => 'Merci de renseigner une description valide (10 caractères minimum)',
         ];
 
-        // some of the data is invalid
         if ($invalid = invalid($data, $rules, $messages)) {
             $alert = $invalid;
-
-            // the data is fine, let's send the email
         } else {
-            try {
-                $nom            = $data['nom'];
-                $prenom         = $data['prenom'];
-                $institution    = $data['institution'];
-                $email          = $data['email'];
-                $nomProjet      = $data['nomProjet'];
-                $description    = $data['description'];
 
-                $emailFrom = option('emailFrom');
-                $fromAddress = $emailFrom['address'] ?: 'webmaster@cms.modus-ge.ch';
-                $fromName = $emailFrom['name'] ?: 'Modus';
+            // ── 5. Spam scoring ─────────────────────────────────────────────
+            // Checks run on raw input so executable tags are still visible.
+            //   total ≥ 7 → silently discard
+            //   total ≥ 3 → deliver with [À VÉRIFIER]
+            //   total < 3 → deliver normally
+            $spamScore =
+                SpamGuard::scoreField($rawData['nom'],         SpamGuard::FIELD_NAME)
+                + SpamGuard::scoreField($rawData['prenom'],      SpamGuard::FIELD_NAME)
+                + SpamGuard::scoreField($rawData['institution'], SpamGuard::FIELD_SHORT)
+                + SpamGuard::scoreField($rawData['nomProjet'],   SpamGuard::FIELD_SHORT)
+                + SpamGuard::scoreField($rawData['description'], SpamGuard::FIELD_TEXT);
+
+            if ($spamScore >= 7) {
+                return [
+                    'alert'   => null,
+                    'data'    => false,
+                    'success' => 'Votre message a bien été envoyé. Nous revenons vers vous au plus vite.',
+                ];
+            }
+
+            $subjectPrefix = $spamScore >= 3 ? '[À VÉRIFIER] ' : '';
+
+            // ── 6. Send email ────────────────────────────────────────────────
+            try {
+                $nom         = $data['nom'];
+                $prenom      = $data['prenom'];
+                $institution = $data['institution'];
+                $email       = $data['email'];
+                $nomProjet   = $data['nomProjet'];
+                $description = $data['description'];
+
+                $emailFrom   = option('emailFrom', []);
+                $fromAddress = $emailFrom['address'] ?? 'webmaster@cms.modus-ge.ch';
+                $fromName    = $emailFrom['name'] ?? 'Modus';
+
+                // Strip newlines from values used in the subject line to
+                // prevent email header injection.
+                $safeNom    = (string) preg_replace('/[\r\n]+/', ' ', $nom);
+                $safePrenom = (string) preg_replace('/[\r\n]+/', ' ', $prenom);
 
                 $kirby->email([
-                    'from'     => [$fromAddress => $fromName],
-                    'to'       => [
-                        'info@modus-ge.ch',
-                    ],
-                    'body'     =>
-                    "Nouvelle prise de contact de $nom $prenom:"
+                    'from'    => [$fromAddress => $fromName],
+                    'to'      => ['info@modus-ge.ch'],
+                    'replyTo' => $email,
+                    'subject' => $subjectPrefix
+                        . 'contact modus-ge.ch | '
+                        . $safeNom . ' ' . $safePrenom
+                        . " vous a envoyé un message depuis l'application web modus-ge.ch",
+                    'body'    =>
+                        "Nouvelle prise de contact de $nom $prenom:"
                         . "\n\nNOM\n$nom"
                         . "\n\nPRÉNOM\n$prenom"
                         . "\n\nINSTITUTION\n$institution"
                         . "\n\nEMAIL\n$email"
                         . "\n\nTITRE DU PROJET\n$nomProjet"
                         . "\n\nDESCRIPTION\n$description",
-                    'replyTo'  => $email,
-                    'subject'  => 'contact modus-ge.ch | ' . $nom . $prenom . " vous a envoyé un message depuis l'application web modus-ge.ch",
                 ]);
             } catch (Exception $error) {
-                if (option('debug')):
-                    $alert['error'] = 'The form could not be sent: <strong>' . $error->getMessage() . '</strong>';
-                else:
-                    $alert['error'] = 'The form could not be sent!';
-                endif;
+                $alert['error'] = 'The form could not be sent: ' . $error->getMessage();
             }
 
-            // no exception occurred, let's send a success message
             if (empty($alert) === true) {
                 $success = 'Votre message a bien été envoyé. Nous revenons vers vous au plus vite.';
             }
