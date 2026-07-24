@@ -12,4 +12,17 @@ services:
       - "8080:80"
     volumes:
       - .:/var/www/html
+    environment:
+      SMTP_HOST: mailhog
+      SMTP_PORT: 1025
+      SMTP_SECURITY: ""
+    depends_on:
+      - mailhog
+    restart: unless-stopped
+
+  mailhog:
+    image: mailhog/mailhog
+    container_name: modus-mailhog
+    ports:
+      - "8025:8025"
     restart: unless-stopped

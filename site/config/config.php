@@ -22,6 +22,11 @@ V::$validators['youtubeUrl'] = function ($value, $mediaType) {
  * This setting must be set to false in production.
  * All config options: https://getkirby.com/docs/reference/system/options
  */
+
+// SMTP_SECURITY: '' (empty string) = no encryption (e.g. Mailhog), unset = default 'tls'
+$smtpSecurityEnv = getenv('SMTP_SECURITY');
+$smtpSecurity = ($smtpSecurityEnv === false) ? 'tls' : ($smtpSecurityEnv === '' ? false : $smtpSecurityEnv);
+
 return [
     'url' => getenv('CMS_URL') ?: 'http://localhost:8080',
     'debug' => getenv('KIRBY_DEBUG') === 'true',
@@ -45,8 +50,8 @@ return [
             'type'     => 'smtp',
             'host'     => getenv('SMTP_HOST') ?: 'smtp.example.com',
             'port'     => (int)(getenv('SMTP_PORT') ?: 587),
-            'security' => getenv('SMTP_SECURITY') ?: 'tls',
-            'auth'     => true,
+            'security' => $smtpSecurity,
+            'auth'     => !empty(getenv('SMTP_USERNAME')),
             'username' => getenv('SMTP_USERNAME') ?: '',
             'password' => getenv('SMTP_PASSWORD') ?: '',
         ]
