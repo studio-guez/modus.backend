@@ -88,9 +88,8 @@ return function ($kirby, $pages, $page) {
 
             // ── 5. Spam scoring ─────────────────────────────────────────────
             // Checks run on raw input so executable tags are still visible.
-            //   total ≥ 7 → silently discard
-            //   total ≥ 3 → deliver with [À VÉRIFIER]
-            //   total < 3 → deliver normally
+            //   total ≥ 4 → silently discard
+            //   total < 4 → deliver normally
             $spamScore =
                 SpamGuard::scoreField($rawData['nom'],         SpamGuard::FIELD_NAME)
                 + SpamGuard::scoreField($rawData['prenom'],      SpamGuard::FIELD_NAME)
@@ -98,15 +97,13 @@ return function ($kirby, $pages, $page) {
                 + SpamGuard::scoreField($rawData['nomProjet'],   SpamGuard::FIELD_SHORT)
                 + SpamGuard::scoreField($rawData['description'], SpamGuard::FIELD_TEXT);
 
-            if ($spamScore >= 7) {
+            if ($spamScore >= 4) {
                 return [
                     'alert'   => null,
                     'data'    => false,
                     'success' => 'Votre message a bien été envoyé. Nous revenons vers vous au plus vite.',
                 ];
             }
-
-            $subjectPrefix = $spamScore >= 3 ? '[À VÉRIFIER] ' : '';
 
             // ── 6. Send email ────────────────────────────────────────────────
             try {
@@ -130,12 +127,11 @@ return function ($kirby, $pages, $page) {
                     'from'    => [$fromAddress => $fromName],
                     'to'      => ['info@modus-ge.ch'],
                     'replyTo' => $email,
-                    'subject' => $subjectPrefix
-                        . 'contact modus-ge.ch | '
+                    'subject' => 'contact modus-ge.ch | '
                         . $safeNom . ' ' . $safePrenom
                         . " vous a envoyé un message depuis l'application web modus-ge.ch",
                     'body'    =>
-                        "Nouvelle prise de contact de $nom $prenom:"
+                    "Nouvelle prise de contact de $nom $prenom:"
                         . "\n\nNOM\n$nom"
                         . "\n\nPRÉNOM\n$prenom"
                         . "\n\nINSTITUTION\n$institution"
