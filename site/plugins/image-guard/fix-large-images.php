@@ -12,17 +12,17 @@
  * Panel) afterwards so Kirby regenerates thumbnails from the fixed originals.
  *
  * Usage (run from the project root, inside the container):
- *   php _utils/fix-large-images.php --dry-run   # list what would change
- *   php _utils/fix-large-images.php             # actually fix the files
+ *   php site/plugins/image-guard/fix-large-images.php --dry-run   # list what would change
+ *   php site/plugins/image-guard/fix-large-images.php             # actually fix the files
  *
  * @author    Octoplus Solutions
  * @license   Proprietary - All rights reserved. Not free for use.
  */
 
-require_once __DIR__ . '/../vendor/autoload.php';
+require_once __DIR__ . '/../../../vendor/autoload.php';
 require_once __DIR__ . '/ImageGuard.php';
 
-$contentRoot = realpath(__DIR__ . '/../content');
+$contentRoot = realpath(__DIR__ . '/../../../content');
 
 if ($contentRoot === false) {
     fwrite(STDERR, "content/ directory not found\n");
