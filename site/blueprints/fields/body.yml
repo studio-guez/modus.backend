@@ -40,3 +40,4 @@ fields:
       - dropdown
       - highlights
       - navigateProjectsByTags
+      - linksSection
