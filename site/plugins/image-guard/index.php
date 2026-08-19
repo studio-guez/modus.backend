@@ -11,8 +11,8 @@
  * - Downscales images whose longest edge exceeds ImageGuard::MAX_DIMENSION
  * - Converts CMYK JPEGs to RGB
  *
- * See _utils/ImageGuard.php for the actual processing logic, which is shared
- * with the _utils/fix-large-images.php one-off cleanup script.
+ * See ImageGuard.php (in this plugin directory) for the actual processing
+ * logic, which is also shared with _utils/fix-large-images.php.
  *
  * @author    Octoplus Solutions
  * @license   Proprietary - All rights reserved. Not free for use.
@@ -21,7 +21,7 @@
 
 use Kirby\Cms\File;
 
-require_once dirname(__DIR__, 3) . '/_utils/ImageGuard.php';
+require_once __DIR__ . '/ImageGuard.php';
 
 Kirby::plugin('oplus/image-guard', [
     'hooks' => [

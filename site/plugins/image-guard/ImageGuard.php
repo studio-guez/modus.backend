@@ -13,8 +13,8 @@ use claviska\SimpleImage;
  *   since GD does not reliably support the CMYK color space
  *
  * Used by:
- * - site/plugins/image-guard (hooks into new uploads)
- * - _utils/fix-large-images.php (one-off cleanup of existing content)
+ * - site/plugins/image-guard/index.php (hooks into new uploads)
+ * - site/plugins/image-guard/fix-large-images.php (one-off cleanup of existing content)
  *
  * @author    Octoplus Solutions
  * @license   Proprietary - All rights reserved. Not free for use.

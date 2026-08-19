@@ -1,0 +1,14 @@
+name: Intro de page
+icon: title
+wysiwyg: true
+preview: fields
+fields:
+  text:
+    label: Texte
+    type: writer
+    inline: true
+    marks:
+      - bold
+      - italic
+      - underline
+      - strike
