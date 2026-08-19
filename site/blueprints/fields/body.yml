@@ -28,6 +28,7 @@ fields:
     type: blocks
     fieldsets:
       - body
+      - pageIntro
       - internalLink
       - internalLinks
       - listPoints
