@@ -6,8 +6,23 @@ wysiwyg: true
 fields:
 
   title:
+    width: 1/2
     label: titre
     type: text
+
+  collapsible:
+    width: 1/4
+    label: Afficher dans un panneau dépliable
+    type: toggle
+    default: false
+
+  openByDefault:
+    width: 1/4
+    label: Panneau dépliable ouvert par défaut
+    type: toggle
+    default: false
+    when:
+      collapsible: true
 
   links:
     label: Liens

@@ -62,6 +62,8 @@ if (count($linkedReports) > 0) {
       'type' => 'linksSection',
       'content' => [
         'title' => 'Rapports en lien',
+        'collapsible' => 'false',
+        'openbydefault' => 'false',
         'links' => $linkedReports,
       ],
     ],
