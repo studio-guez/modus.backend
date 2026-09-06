@@ -1,3 +1,15 @@
+> [!IMPORTANT]
+> **Archived — this repository is read-only.**
+>
+> The code has moved to the **[studio-guez/modus](https://github.com/studio-guez/modus)**
+> monorepo, where it now lives under `cms/`. Every commit of this repository was
+> imported there with `git subtree` and is an ancestor of the monorepo's `main`,
+> so the whole history is preserved — nothing here is lost.
+>
+> Open issues and pull requests, and all new work, belong in the monorepo.
+> Everything below describes the old standalone setup and is kept for reference
+> only; the current instructions are in the monorepo's `README.md`.
+
 # Modus Backend - Kirby CMS
 
 A content management platform built with Kirby CMS, running on PHP 8.4 with Apache in a Docker environment.
